@@ -14,6 +14,9 @@ open the project via `iosClient.xcworkspace`** rather than the `.xcodeproj` file
 for dependencies to be imported correctly.
 
 ## Using `synx` to synchronize project directories
+
+NOTE: Synx currently doesn't support multilanguage projects. Use [Spencer's fork](https://github.com/sxmichaels/synx) instead.
+
 By default, Xcode puts all source code files in the project root directory,
 which is messy. If you've created new groups or files, before you commit, please
 use `synx` to organize the project directory structure based on its
