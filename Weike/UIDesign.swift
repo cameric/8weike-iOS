@@ -1,5 +1,5 @@
 //
-//  UI.swift
+//  UIDesign.swift
 //  Weike
 //
 //  Created by Weiyu Zhou on 7/24/16.
@@ -11,18 +11,26 @@ enum UITheme {
   case Holiday
 }
 
-class UI: NSObject {
+class UIDesign: NSObject {
   let theme: UITheme
-  static var sharedUI = UI()
-  
+  static var sharedUIDesign = UIDesign()
+
   override convenience init() {
     self.init(withTheme: .None)
   }
-  
+
   init(withTheme theme: UITheme) {
     self.theme = theme
     super.init()
-    UI.sharedUI = self
+    UIDesign.sharedUIDesign = self
   }
-  
+
+  // MARK - Color
+
+
+  // MARK - Font
+
+
+  // MARK - Icon
+
 }

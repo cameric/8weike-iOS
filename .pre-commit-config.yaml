@@ -1,0 +1,40 @@
+-   repo: git@git.yelpcorp.com:mirrors/pre-commit/pre-commit-hooks
+    sha: v0.5.1
+    hooks:
+    -   id: check-merge-conflict
+        language_version: python2.7
+    -   id: trailing-whitespace
+        language_version: python2.7
+        files: \.(h|m|py|swift)$
+        exclude: .+\.xcassets/.+
+    -   id: end-of-file-fixer
+        language_version: python2.7
+        files: \.(h|m|py|swift)$
+        exclude: .+\.xcassets/.+
+-   repo: git@git.yelpcorp.com:mirrors/benasher44/pre-commit-hooks
+    sha: 3966408a63a3da43f1b296bb3919989ae3ab1f15
+    hooks:
+    -   id: remove-tabs
+        language_version: python2.7
+        args: [ --whitespaces-count, '2' ]
+        files: \.(h|m|swift)$
+-   repo: git@git.yelpcorp.com:ios/pre-commit-hooks
+    sha: v0.2.1
+    hooks:
+    -   id: swiftlint-wrapper
+        name: Runs up-to-date swiftlint
+        language_version: python2.7
+        args: [ --minimum-version, '0.11.1' ]
+-   repo: local
+    hooks:
+    -   id: clang-format
+        name: Clang format Obj-C files
+        entry: ./tools/clang-format
+        args: [ -i, --style=file ]
+        language: script
+        files: \.(h|m)$
+    -   id: check-proj-test-files
+        name: Check project file integrity
+        entry: ./tools/verify_test_files.py
+        language: script
+        files: Yelp\.xcodeproj/project\.pbxproj$
