@@ -7,10 +7,8 @@
 //
 
 class DiscoverViewController: UIViewController {
-  override func loadView() {
-    self.title = "Discover"
-    self.tabBarItem = UITabBarItem(title: "Discover", image: nil, tag: 0)
-    self.view = UIView()
-  }
-
+    override func loadView() {
+        self.title = "Discover"
+        self.view = UIView()
+    }
 }

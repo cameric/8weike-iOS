@@ -8,6 +8,14 @@ target 'Weike' do
   # Pods for Weike
   pod 'Mixpanel'
 
+  pod 'ChatKit' # ChatKit includes AVOSCloud
+  pod 'MBProgressHUD'
+  pod 'CYLTabBarController'
+  pod 'TWMessageBarManager'
+  #pod "FDStackView", "1.0"
+  pod "MWPhotoBrowser", "2.1.2"
+  pod 'MLPAutoCompleteTextField'
+
   target 'WeikeTests' do
     inherit! :search_paths
     # Pods for testing

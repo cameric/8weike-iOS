@@ -10,5 +10,6 @@
 #define Weike_Bridging_Header_h
 
 #import "Mixpanel/Mixpanel.h"
+#import <ChatKit/LCChatKit.h>
 
 #endif /* Weike_Bridging_Header_h */

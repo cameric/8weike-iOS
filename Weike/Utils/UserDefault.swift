@@ -7,6 +7,5 @@
 //
 
 class UserDefaults: NSObject {
-  let sharedUserDefault = UserDefaults()
-		
+    let sharedUserDefault = UserDefaults()
 }
