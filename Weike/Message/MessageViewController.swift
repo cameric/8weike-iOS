@@ -6,13 +6,12 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-import UIKit
 import ChatKit
 
 class MessageViewController: UIViewController {
-
+    
     override func loadView() {
-      self.title = "Message"
+        self.title = "Message"
     }
 
     override func viewDidLoad() {

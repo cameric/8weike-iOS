@@ -46,6 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
 
+        tabBarController.present(LoginViewController(), animated: true) { 
+            
+        }
+        
         return true
     }
 
@@ -57,6 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         LCChatKit.sharedInstance().syncBadge()
     }
 
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        AVOSCloud.handleRemoteNotifications(withDeviceToken: deviceToken)
+    }
+    
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         if application.applicationState == .active {

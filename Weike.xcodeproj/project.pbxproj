@@ -11,7 +11,13 @@
 		6F41F9A21D458B1400F7BD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F41F9A11D458B1400F7BD43 /* Assets.xcassets */; };
 		6F41F9B01D458B1400F7BD43 /* WeikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41F9AF1D458B1400F7BD43 /* WeikeTests.swift */; };
 		6F41F9BB1D458B1500F7BD43 /* WeikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41F9BA1D458B1500F7BD43 /* WeikeUITests.swift */; };
+		6F429C1E1D51794C00E8B1A4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F429C1D1D51794C00E8B1A4 /* SignupView.swift */; };
+		6F429C221D51828D00E8B1A4 /* UIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F429C211D51828D00E8B1A4 /* UIViewUtils.swift */; };
+		6F429C241D51A4A800E8B1A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F429C231D51A4A800E8B1A4 /* LoginView.swift */; };
+		6F6E9E531D51C303007CC2A2 /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E9E521D51C303007CC2A2 /* UITheme.swift */; };
+		6F6E9E551D51C40A007CC2A2 /* HolidayTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E9E541D51C40A007CC2A2 /* HolidayTheme.swift */; };
 		6FB429BC1D4C541F0025FCE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB429BB1D4C541F0025FCE2 /* LoginViewController.swift */; };
+		6FC15CE71D512C9100F913AC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC15CE61D512C9100F913AC /* SignupViewController.swift */; };
 		6FDCE1171D459EAA0013B62C /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCE1161D459EAA0013B62C /* UIDesign.swift */; };
 		6FDCE11A1D45A06E0013B62C /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCE1191D45A06E0013B62C /* UserDefault.swift */; };
 		6FDCE11D1D45A6D10013B62C /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCE11C1D45A6D10013B62C /* ProfileTableViewController.swift */; };
@@ -57,7 +63,13 @@
 		6F41F9B61D458B1500F7BD43 /* WeikeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeikeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F41F9BA1D458B1500F7BD43 /* WeikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeikeUITests.swift; sourceTree = "<group>"; };
 		6F41F9BC1D458B1500F7BD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F429C1D1D51794C00E8B1A4 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		6F429C211D51828D00E8B1A4 /* UIViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewUtils.swift; sourceTree = "<group>"; };
+		6F429C231D51A4A800E8B1A4 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6F6E9E521D51C303007CC2A2 /* UITheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITheme.swift; sourceTree = "<group>"; };
+		6F6E9E541D51C40A007CC2A2 /* HolidayTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidayTheme.swift; sourceTree = "<group>"; };
 		6FB429BB1D4C541F0025FCE2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6FC15CE61D512C9100F913AC /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		6FDCE1161D459EAA0013B62C /* UIDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
 		6FDCE1191D45A06E0013B62C /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		6FDCE11C1D45A6D10013B62C /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -136,13 +148,16 @@
 		6F41F9971D458B1400F7BD43 /* Weike */ = {
 			isa = PBXGroup;
 			children = (
-				6FB429BD1D4C54270025FCE2 /* Login */,
 				6FDCE1201D45A8AA0013B62C /* Discover */,
+				6FB429BD1D4C54270025FCE2 /* Login */,
 				6FABFA491D4B2CB40006E093 /* Message */,
 				6F41F9CA1D458F1400F7BD43 /* Profile */,
+				6FC15CE81D512C9600F913AC /* Signup */,
 				6FDCE1181D459EAE0013B62C /* UI */,
+				6F429C201D51823500E8B1A4 /* User */,
 				6FDCE11B1D45A0720013B62C /* Utils */,
 				6F41F9981D458B1400F7BD43 /* AppDelegate.swift */,
+				6F41F9A61D458B1400F7BD43 /* Info.plist */,
 				6FF5B66D1D4B44B6000E9554 /* LaunchScreen.storyboard */,
 			);
 			path = Weike;
@@ -174,6 +189,38 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		6F429C1F1D51795200E8B1A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F429C1D1D51794C00E8B1A4 /* SignupView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6F429C201D51823500E8B1A4 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				6FDCE1191D45A06E0013B62C /* UserDefault.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		6F429C251D51A4AC00E8B1A4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F429C231D51A4A800E8B1A4 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6F6E9E561D51C462007CC2A2 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				6F6E9E541D51C40A007CC2A2 /* HolidayTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		6FABFA491D4B2CB40006E093 /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,16 +232,28 @@
 		6FB429BD1D4C54270025FCE2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				6F429C251D51A4AC00E8B1A4 /* Views */,
 				6FB429BB1D4C541F0025FCE2 /* LoginViewController.swift */,
 			);
-			name = Login;
+			path = Login;
+			sourceTree = "<group>";
+		};
+		6FC15CE81D512C9600F913AC /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				6F429C1F1D51795200E8B1A4 /* Views */,
+				6FC15CE61D512C9100F913AC /* SignupViewController.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		6FDCE1181D459EAE0013B62C /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6F6E9E561D51C462007CC2A2 /* Theme */,
 				6F41F9A11D458B1400F7BD43 /* Assets.xcassets */,
 				6FDCE1161D459EAA0013B62C /* UIDesign.swift */,
+				6F6E9E521D51C303007CC2A2 /* UITheme.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -202,8 +261,7 @@
 		6FDCE11B1D45A0720013B62C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				6F41F9A61D458B1400F7BD43 /* Info.plist */,
-				6FDCE1191D45A06E0013B62C /* UserDefault.swift */,
+				6F429C211D51828D00E8B1A4 /* UIViewUtils.swift */,
 				6F24A9FF1D45953A00672A50 /* Weike-Bridging-Header.h */,
 			);
 			path = Utils;
@@ -498,11 +556,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F429C221D51828D00E8B1A4 /* UIViewUtils.swift in Sources */,
+				6F429C1E1D51794C00E8B1A4 /* SignupView.swift in Sources */,
 				6FB429BC1D4C541F0025FCE2 /* LoginViewController.swift in Sources */,
 				6FDCE11A1D45A06E0013B62C /* UserDefault.swift in Sources */,
+				6F6E9E551D51C40A007CC2A2 /* HolidayTheme.swift in Sources */,
+				6FC15CE71D512C9100F913AC /* SignupViewController.swift in Sources */,
 				6FDCE11D1D45A6D10013B62C /* ProfileTableViewController.swift in Sources */,
 				6F41F9991D458B1400F7BD43 /* AppDelegate.swift in Sources */,
 				6FDCE1171D459EAA0013B62C /* UIDesign.swift in Sources */,
+				6F429C241D51A4A800E8B1A4 /* LoginView.swift in Sources */,
+				6F6E9E531D51C303007CC2A2 /* UITheme.swift in Sources */,
 				6FDCE11F1D45A8A60013B62C /* DiscoverViewController.swift in Sources */,
 				6FF5B66C1D4B35E1000E9554 /* MessageViewController.swift in Sources */,
 			);
@@ -635,7 +699,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Weike/Utils/Info.plist;
+				INFOPLIST_FILE = Weike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cameric.Weike;
@@ -651,7 +715,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = Weike/Utils/Info.plist;
+				INFOPLIST_FILE = Weike/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Cameric.Weike;
