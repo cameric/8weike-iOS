@@ -8,7 +8,7 @@
 
 let buttonPadding = CGFloat(10)
 
-protocol LoginViewDelegate : class {
+protocol LoginViewDelegate: class {
     func LoginViewSkipButtonTapped()
     func LoginViewLoginButtonTapped()
     func LoginViewSignupButtonTapped()

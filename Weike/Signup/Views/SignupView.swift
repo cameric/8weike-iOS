@@ -6,13 +6,13 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-protocol SignupViewDelegate {
+protocol SignupViewDelegate: class {
     
 }
 
 class SignupView: UIView {
     // MARK: Properties
-    var delegate: SignupViewDelegate?
+    weak var delegate: SignupViewDelegate?
     
     
 }
