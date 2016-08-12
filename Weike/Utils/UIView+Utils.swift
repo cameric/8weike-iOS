@@ -1,5 +1,5 @@
 //
-//  UIViewUtils.swift
+//  UIView+Utils.swift
 //  Weike
 //
 //  Created by Weiyu Zhou on 8/2/16.

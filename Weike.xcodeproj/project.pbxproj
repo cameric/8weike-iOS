@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F1CC7A41D5C576E00E7BDA0 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1CC7A31D5C576E00E7BDA0 /* UserRequest.swift */; };
 		6F41F9991D458B1400F7BD43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41F9981D458B1400F7BD43 /* AppDelegate.swift */; };
 		6F41F9A21D458B1400F7BD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F41F9A11D458B1400F7BD43 /* Assets.xcassets */; };
 		6F41F9B01D458B1400F7BD43 /* WeikeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41F9AF1D458B1400F7BD43 /* WeikeTests.swift */; };
 		6F41F9BB1D458B1500F7BD43 /* WeikeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41F9BA1D458B1500F7BD43 /* WeikeUITests.swift */; };
 		6F429C1E1D51794C00E8B1A4 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F429C1D1D51794C00E8B1A4 /* SignupView.swift */; };
-		6F429C221D51828D00E8B1A4 /* UIViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F429C211D51828D00E8B1A4 /* UIViewUtils.swift */; };
+		6F429C221D51828D00E8B1A4 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F429C211D51828D00E8B1A4 /* UIView+Utils.swift */; };
 		6F429C241D51A4A800E8B1A4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F429C231D51A4A800E8B1A4 /* LoginView.swift */; };
-		6F6E9E531D51C303007CC2A2 /* UITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E9E521D51C303007CC2A2 /* UITheme.swift */; };
+		6F43FDF51D590EC0002CC1B6 /* UIImage+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F43FDF41D590EC0002CC1B6 /* UIImage+Utils.swift */; };
+		6F49BA9E1D5D17C50028ED52 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F49BA9D1D5D17C50028ED52 /* UIColor+Utils.swift */; };
+		6F49BAA01D5D18340028ED52 /* UIFont+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F49BA9F1D5D18340028ED52 /* UIFont+Utils.swift */; };
+		6F51D6B11D5D34E800803FC6 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D6B01D5D34E800803FC6 /* APIRequest.swift */; };
+		6F51D6B41D5D945100803FC6 /* UIButton+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D6B31D5D945100803FC6 /* UIButton+Utils.swift */; };
+		6F51D6B61D5D955F00803FC6 /* UIScreen+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D6B51D5D955F00803FC6 /* UIScreen+Utils.swift */; };
+		6F6E9E531D51C303007CC2A2 /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E9E521D51C303007CC2A2 /* UIDesign.swift */; };
 		6F6E9E551D51C40A007CC2A2 /* HolidayTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E9E541D51C40A007CC2A2 /* HolidayTheme.swift */; };
 		6FB429BC1D4C541F0025FCE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB429BB1D4C541F0025FCE2 /* LoginViewController.swift */; };
 		6FC15CE71D512C9100F913AC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC15CE61D512C9100F913AC /* SignupViewController.swift */; };
-		6FDCE1171D459EAA0013B62C /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCE1161D459EAA0013B62C /* UIDesign.swift */; };
-		6FDCE11A1D45A06E0013B62C /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCE1191D45A06E0013B62C /* UserDefault.swift */; };
 		6FDCE11D1D45A6D10013B62C /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCE11C1D45A6D10013B62C /* ProfileTableViewController.swift */; };
 		6FDCE11F1D45A8A60013B62C /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCE11E1D45A8A60013B62C /* DiscoverViewController.swift */; };
+		6FE5A5E31D5C427000ED329C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5A5E21D5C427000ED329C /* User.swift */; };
 		6FF5B66C1D4B35E1000E9554 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF5B66B1D4B35E1000E9554 /* MessageViewController.swift */; };
 		6FF5B66E1D4B44B6000E9554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FF5B66D1D4B44B6000E9554 /* LaunchScreen.storyboard */; };
 		72093A1BFB496428F5826DCC /* Pods_WeikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BFCD6E011BC18F3FDAB994 /* Pods_WeikeTests.framework */; };
@@ -52,6 +58,7 @@
 		37294425CE1B4DC320F64FC6 /* Pods-WeikeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeikeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeikeTests/Pods-WeikeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E331BCD3982987A26DED219 /* Pods_WeikeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeikeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53BFFD4B66BBAD73BB2A187E /* Pods-WeikeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeikeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeikeUITests/Pods-WeikeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6F1CC7A31D5C576E00E7BDA0 /* UserRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequest.swift; sourceTree = "<group>"; };
 		6F24A9FF1D45953A00672A50 /* Weike-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Weike-Bridging-Header.h"; sourceTree = "<group>"; };
 		6F41F9951D458B1400F7BD43 /* Weike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weike.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F41F9981D458B1400F7BD43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,16 +71,21 @@
 		6F41F9BA1D458B1500F7BD43 /* WeikeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeikeUITests.swift; sourceTree = "<group>"; };
 		6F41F9BC1D458B1500F7BD43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6F429C1D1D51794C00E8B1A4 /* SignupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
-		6F429C211D51828D00E8B1A4 /* UIViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewUtils.swift; sourceTree = "<group>"; };
+		6F429C211D51828D00E8B1A4 /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		6F429C231D51A4A800E8B1A4 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		6F6E9E521D51C303007CC2A2 /* UITheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITheme.swift; sourceTree = "<group>"; };
+		6F43FDF41D590EC0002CC1B6 /* UIImage+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Utils.swift"; sourceTree = "<group>"; };
+		6F49BA9D1D5D17C50028ED52 /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		6F49BA9F1D5D18340028ED52 /* UIFont+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Utils.swift"; sourceTree = "<group>"; };
+		6F51D6B01D5D34E800803FC6 /* APIRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		6F51D6B31D5D945100803FC6 /* UIButton+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Utils.swift"; sourceTree = "<group>"; };
+		6F51D6B51D5D955F00803FC6 /* UIScreen+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Utils.swift"; sourceTree = "<group>"; };
+		6F6E9E521D51C303007CC2A2 /* UIDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
 		6F6E9E541D51C40A007CC2A2 /* HolidayTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidayTheme.swift; sourceTree = "<group>"; };
 		6FB429BB1D4C541F0025FCE2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6FC15CE61D512C9100F913AC /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		6FDCE1161D459EAA0013B62C /* UIDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
-		6FDCE1191D45A06E0013B62C /* UserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		6FDCE11C1D45A6D10013B62C /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		6FDCE11E1D45A8A60013B62C /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		6FE5A5E21D5C427000ED329C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6FF5B66B1D4B35E1000E9554 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		6FF5B66D1D4B44B6000E9554 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF2E638E317A4F993DAF9D84 /* Pods-Weike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weike/Pods-Weike.debug.xcconfig"; sourceTree = "<group>"; };
@@ -123,6 +135,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6F1CC7A51D5C577400E7BDA0 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				6F1CC7A31D5C576E00E7BDA0 /* UserRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
 		6F41F98C1D458B1400F7BD43 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +172,7 @@
 				6FB429BD1D4C54270025FCE2 /* Login */,
 				6FABFA491D4B2CB40006E093 /* Message */,
 				6F41F9CA1D458F1400F7BD43 /* Profile */,
+				6F51D6B21D5D34F200803FC6 /* Request */,
 				6FC15CE81D512C9600F913AC /* Signup */,
 				6FDCE1181D459EAE0013B62C /* UI */,
 				6F429C201D51823500E8B1A4 /* User */,
@@ -200,7 +221,8 @@
 		6F429C201D51823500E8B1A4 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				6FDCE1191D45A06E0013B62C /* UserDefault.swift */,
+				6F1CC7A51D5C577400E7BDA0 /* Request */,
+				6FE5A5E21D5C427000ED329C /* User.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -211,6 +233,14 @@
 				6F429C231D51A4A800E8B1A4 /* LoginView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		6F51D6B21D5D34F200803FC6 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				6F51D6B01D5D34E800803FC6 /* APIRequest.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		6F6E9E561D51C462007CC2A2 /* Theme */ = {
@@ -252,8 +282,10 @@
 			children = (
 				6F6E9E561D51C462007CC2A2 /* Theme */,
 				6F41F9A11D458B1400F7BD43 /* Assets.xcassets */,
-				6FDCE1161D459EAA0013B62C /* UIDesign.swift */,
-				6F6E9E521D51C303007CC2A2 /* UITheme.swift */,
+				6F49BA9D1D5D17C50028ED52 /* UIColor+Utils.swift */,
+				6F6E9E521D51C303007CC2A2 /* UIDesign.swift */,
+				6F49BA9F1D5D18340028ED52 /* UIFont+Utils.swift */,
+				6F51D6B31D5D945100803FC6 /* UIButton+Utils.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -261,8 +293,10 @@
 		6FDCE11B1D45A0720013B62C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				6F429C211D51828D00E8B1A4 /* UIViewUtils.swift */,
+				6F43FDF41D590EC0002CC1B6 /* UIImage+Utils.swift */,
+				6F429C211D51828D00E8B1A4 /* UIView+Utils.swift */,
 				6F24A9FF1D45953A00672A50 /* Weike-Bridging-Header.h */,
+				6F51D6B51D5D955F00803FC6 /* UIScreen+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -556,18 +590,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F429C221D51828D00E8B1A4 /* UIViewUtils.swift in Sources */,
+				6F429C221D51828D00E8B1A4 /* UIView+Utils.swift in Sources */,
+				6F43FDF51D590EC0002CC1B6 /* UIImage+Utils.swift in Sources */,
 				6F429C1E1D51794C00E8B1A4 /* SignupView.swift in Sources */,
 				6FB429BC1D4C541F0025FCE2 /* LoginViewController.swift in Sources */,
-				6FDCE11A1D45A06E0013B62C /* UserDefault.swift in Sources */,
 				6F6E9E551D51C40A007CC2A2 /* HolidayTheme.swift in Sources */,
 				6FC15CE71D512C9100F913AC /* SignupViewController.swift in Sources */,
 				6FDCE11D1D45A6D10013B62C /* ProfileTableViewController.swift in Sources */,
+				6F49BA9E1D5D17C50028ED52 /* UIColor+Utils.swift in Sources */,
 				6F41F9991D458B1400F7BD43 /* AppDelegate.swift in Sources */,
-				6FDCE1171D459EAA0013B62C /* UIDesign.swift in Sources */,
 				6F429C241D51A4A800E8B1A4 /* LoginView.swift in Sources */,
-				6F6E9E531D51C303007CC2A2 /* UITheme.swift in Sources */,
+				6F6E9E531D51C303007CC2A2 /* UIDesign.swift in Sources */,
 				6FDCE11F1D45A8A60013B62C /* DiscoverViewController.swift in Sources */,
+				6F1CC7A41D5C576E00E7BDA0 /* UserRequest.swift in Sources */,
+				6F51D6B41D5D945100803FC6 /* UIButton+Utils.swift in Sources */,
+				6FE5A5E31D5C427000ED329C /* User.swift in Sources */,
+				6F51D6B11D5D34E800803FC6 /* APIRequest.swift in Sources */,
+				6F49BAA01D5D18340028ED52 /* UIFont+Utils.swift in Sources */,
+				6F51D6B61D5D955F00803FC6 /* UIScreen+Utils.swift in Sources */,
 				6FF5B66C1D4B35E1000E9554 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

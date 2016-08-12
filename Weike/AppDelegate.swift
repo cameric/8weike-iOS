@@ -12,12 +12,15 @@ import ChatKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
-
     var window: UIWindow?
+    var currentUser: User?
+    static var shared: AppDelegate? { get { return UIApplication.shared().delegate as? AppDelegate } }
 
     var discoverViewController: DiscoverViewController?
     var messageViewController: MessageViewController?
     var profileViewController: ProfileTableViewController?
+
+    // MARK: UIApplicationDelegate
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -75,7 +78,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         }
     }
 
-    // MARK - Setup Third Party
+    // MARK: Setup Third Party
 
     private func setupMixpanel() {
         let token = "ff3427461722afac1dd1312b42fa7b54"
@@ -88,8 +91,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         AVIMClient.setTimeoutIntervalInSeconds(20)
     }
 
-    // MARK - UITabBarControllerDelegate
+    // MARK: UITabBarControllerDelegate
 
-
+    // MARK: SharedDelegate
+    
 
 }
