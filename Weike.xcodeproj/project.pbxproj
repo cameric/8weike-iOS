@@ -22,7 +22,6 @@
 		6F51D6B41D5D945100803FC6 /* UIButton+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D6B31D5D945100803FC6 /* UIButton+Utils.swift */; };
 		6F51D6B61D5D955F00803FC6 /* UIScreen+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F51D6B51D5D955F00803FC6 /* UIScreen+Utils.swift */; };
 		6F6E9E531D51C303007CC2A2 /* UIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E9E521D51C303007CC2A2 /* UIDesign.swift */; };
-		6F6E9E551D51C40A007CC2A2 /* HolidayTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6E9E541D51C40A007CC2A2 /* HolidayTheme.swift */; };
 		6FB429BC1D4C541F0025FCE2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB429BB1D4C541F0025FCE2 /* LoginViewController.swift */; };
 		6FC15CE71D512C9100F913AC /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC15CE61D512C9100F913AC /* SignupViewController.swift */; };
 		6FDCE11D1D45A6D10013B62C /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDCE11C1D45A6D10013B62C /* ProfileTableViewController.swift */; };
@@ -80,7 +79,6 @@
 		6F51D6B31D5D945100803FC6 /* UIButton+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Utils.swift"; sourceTree = "<group>"; };
 		6F51D6B51D5D955F00803FC6 /* UIScreen+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Utils.swift"; sourceTree = "<group>"; };
 		6F6E9E521D51C303007CC2A2 /* UIDesign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDesign.swift; sourceTree = "<group>"; };
-		6F6E9E541D51C40A007CC2A2 /* HolidayTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidayTheme.swift; sourceTree = "<group>"; };
 		6FB429BB1D4C541F0025FCE2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6FC15CE61D512C9100F913AC /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		6FDCE11C1D45A6D10013B62C /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
@@ -243,14 +241,6 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
-		6F6E9E561D51C462007CC2A2 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				6F6E9E541D51C40A007CC2A2 /* HolidayTheme.swift */,
-			);
-			path = Theme;
-			sourceTree = "<group>";
-		};
 		6FABFA491D4B2CB40006E093 /* Message */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,7 +270,6 @@
 		6FDCE1181D459EAE0013B62C /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				6F6E9E561D51C462007CC2A2 /* Theme */,
 				6F41F9A11D458B1400F7BD43 /* Assets.xcassets */,
 				6F49BA9D1D5D17C50028ED52 /* UIColor+Utils.swift */,
 				6F6E9E521D51C303007CC2A2 /* UIDesign.swift */,
@@ -594,7 +583,6 @@
 				6F43FDF51D590EC0002CC1B6 /* UIImage+Utils.swift in Sources */,
 				6F429C1E1D51794C00E8B1A4 /* SignupView.swift in Sources */,
 				6FB429BC1D4C541F0025FCE2 /* LoginViewController.swift in Sources */,
-				6F6E9E551D51C40A007CC2A2 /* HolidayTheme.swift in Sources */,
 				6FC15CE71D512C9100F913AC /* SignupViewController.swift in Sources */,
 				6FDCE11D1D45A6D10013B62C /* ProfileTableViewController.swift in Sources */,
 				6F49BA9E1D5D17C50028ED52 /* UIColor+Utils.swift in Sources */,

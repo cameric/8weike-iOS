@@ -14,5 +14,12 @@ enum UITheme {
 class UIDesign: NSObject {
     
     // MARK: Icons
+    static func logo() -> UIImage {
+        let image = UIImage(named: "logo")
+        return image == nil ? self.defaultImage() : image!
+    }
     
+    static func defaultImage() -> UIImage {
+        return UIImage()
+    }
 }

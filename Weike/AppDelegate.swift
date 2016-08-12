@@ -14,6 +14,7 @@ import ChatKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
     var window: UIWindow?
     var currentUser: User?
+    var theme = UITheme.none
     static var shared: AppDelegate? { get { return UIApplication.shared().delegate as? AppDelegate } }
 
     var discoverViewController: DiscoverViewController?

@@ -8,15 +8,14 @@
 
 extension UIButton {
     static func whiteBorderTransparent() -> UIButton {
-        let button = UIButton(type: .custom)
+        let button = UIButton(type: .system)
         
         button.layer.borderWidth = length(fromPixel: 1.0)
         button.layer.cornerRadius = length(fromPixel: 10.0)
         button.layer.borderColor = UIColor.white().cgColor
         
-        button.backgroundColor = UIColor.main()
-        button.adjustsImageWhenHighlighted = true
-        button.adjustsImageWhenDisabled = true
+        button.setTitleColor(UIColor.white(), for: [])
+        button.tintColor = UIColor.black()
 
         return button
     }
