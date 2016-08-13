@@ -2,12 +2,9 @@
 //  LoginViewController.swift
 //  Weike
 //
-//  Created by Weiyu Zhou on 7/29/16.
+//  Created by Cam on 8/13/16.
 //  Copyright © 2016 Cameric. All rights reserved.
 //
-
-import AVKit
-import AVFoundation
 
 class LoginViewController: UIViewController {
     // MARK: Properties
@@ -16,37 +13,7 @@ class LoginViewController: UIViewController {
     // MARK: UIViewController
     override func loadView() {
         super.loadView()
-        loginView.delegate = self
         view = loginView
-        loadBackgroundVideo()
     }
     
-    private func loadBackgroundVideo() {
-        let player = AVPlayer(url: URL(string:
-            "http://trailers.apple.com/movies/universal/stateofplay/stateofplay-tlr2_h.640.mov")!)
-        player.isMuted = true
-        let playerController = AVPlayerViewController()
-        playerController.player = player
-        playerController.showsPlaybackControls = false
-        playerController.videoGravity = AVLayerVideoGravityResizeAspectFill
-        addChildViewController(playerController)
-        playerController.view.isUserInteractionEnabled = false
-        loginView.backgroundView = playerController.view
-        player.play()
-    }
-}
-
-// MARK: LoginViewDelegate
-extension LoginViewController: LoginViewDelegate {
-    func LoginViewWechatButtonTapped() {
-        
-    }
-    
-    func LoginViewLoginButtonTapped() {
-        
-    }
-
-    func LoginViewSignupButtonTapped() {
-        
-    }
 }

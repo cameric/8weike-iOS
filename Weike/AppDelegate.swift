@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
 
-        tabBarController.present(LoginViewController(), animated: true) { 
+        tabBarController.present(LandingViewController(), animated: true) {
             
         }
         
