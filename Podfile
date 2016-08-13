@@ -8,7 +8,6 @@ target 'Weike' do
   # Pods for Weike
   pod 'Mixpanel'
 
-  pod 'ChatKit' # ChatKit includes AVOSCloud
   pod 'MBProgressHUD'
   pod 'CYLTabBarController'
   pod 'TWMessageBarManager'
