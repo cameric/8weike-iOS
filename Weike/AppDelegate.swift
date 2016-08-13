@@ -8,7 +8,6 @@
 
 import UIKit
 import Mixpanel
-import ChatKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegate {
@@ -26,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         setupMixpanel()
-        setupLeanCloud()
 
         self.window = UIWindow()
 
@@ -58,16 +56,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
-        LCChatKit.sharedInstance().syncBadge()
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        LCChatKit.sharedInstance().syncBadge()
     }
 
     func application(_ application: UIApplication,
                      didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        AVOSCloud.handleRemoteNotifications(withDeviceToken: deviceToken)
     }
     
     func application(_ application: UIApplication,
@@ -75,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         if application.applicationState == .active {
             // App is active
         } else {
-            LCChatKit.sharedInstance().didReceiveRemoteNotification(userInfo)
+            
         }
     }
 
@@ -84,12 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     private func setupMixpanel() {
         let token = "ff3427461722afac1dd1312b42fa7b54"
         _ = Mixpanel.sharedInstance(withToken: token)
-    }
-
-    private func setupLeanCloud() {
-        LCChatKit.setAppId("cedm8TEgr8pziVzQMGCljPA3-gzGzoHsz", appKey: "46HvkDRV2zdmnoNK0RxjltpQ")
-        AVOSCloud.registerForRemoteNotification()
-        AVIMClient.setTimeoutIntervalInSeconds(20)
     }
 
     // MARK: UITabBarControllerDelegate

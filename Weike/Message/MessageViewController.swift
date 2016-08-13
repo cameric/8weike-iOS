@@ -6,7 +6,6 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-import ChatKit
 
 class MessageViewController: UIViewController {
     
