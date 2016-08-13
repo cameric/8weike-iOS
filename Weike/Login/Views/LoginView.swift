@@ -32,9 +32,10 @@ class LoginView: UIView {
     }
     private let logoView = UIImageView(image: UIDesign.logo())
     private let weikeLabel = UILabel()
-    private let wechatButton = UIButton.whiteBorderTransparent()
-    private let loginButton = UIButton.whiteBorderTransparent()
-    private let signupButton = UIButton.whiteBorderTransparent()
+    private let wechatButton = UIButton.whiteBorderTransparent(withTitle: "Wechat",
+                                                               accessoryImage: UIDesign.wechatLogo())
+    private let loginButton = UIButton.whiteBorderTransparent(withTitle: "Login")
+    private let signupButton = UIButton.whiteBorderTransparent(withTitle: "Signup")
     
     // MARK: Initializers
     override init(frame: CGRect) {
@@ -56,15 +57,12 @@ class LoginView: UIView {
         weikeLabel.textColor = UIColor.white()
         
         // Configure Wechat Button
-        wechatButton.setTitle("Wechat", for: [])
         wechatButton.addTarget(self, action: #selector(wechatButtonTapped), for: .touchUpInside)
         
         // Configure Login Button
-        loginButton.setTitle("Login", for: [])
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         
         // Configure Signup Button
-        signupButton.setTitle("Signup", for: [])
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
     
@@ -94,6 +92,7 @@ class LoginView: UIView {
         // Vertical Constraints
         constraints.append(weikeLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: logoPadding))
         constraints.append(weikeLabel.centerYAnchor.constraint(equalTo: centerYAnchor))
+        constraints.append(wechatButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor))
         constraints.append(loginButton.topAnchor.constraint(equalTo: wechatButton.bottomAnchor, constant: buttonPadding))
         constraints.append(bottomAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: buttonPadding))
         constraints.append(bottomAnchor.constraint(equalTo: signupButton.bottomAnchor, constant: buttonPadding))

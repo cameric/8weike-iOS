@@ -19,6 +19,12 @@ class UIDesign: NSObject {
         return image == nil ? self.defaultImage() : image!
     }
     
+    // MARK: Third Party
+    static func wechatLogo() -> UIImage {
+        let image = UIImage(named: "wechat")
+        return image == nil ? self.defaultImage() : image!
+    }
+    
     static func defaultImage() -> UIImage {
         return UIImage()
     }

@@ -271,10 +271,10 @@
 			isa = PBXGroup;
 			children = (
 				6F41F9A11D458B1400F7BD43 /* Assets.xcassets */,
+				6F51D6B31D5D945100803FC6 /* UIButton+Utils.swift */,
 				6F49BA9D1D5D17C50028ED52 /* UIColor+Utils.swift */,
 				6F6E9E521D51C303007CC2A2 /* UIDesign.swift */,
 				6F49BA9F1D5D18340028ED52 /* UIFont+Utils.swift */,
-				6F51D6B31D5D945100803FC6 /* UIButton+Utils.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -283,9 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				6F43FDF41D590EC0002CC1B6 /* UIImage+Utils.swift */,
+				6F51D6B51D5D955F00803FC6 /* UIScreen+Utils.swift */,
 				6F429C211D51828D00E8B1A4 /* UIView+Utils.swift */,
 				6F24A9FF1D45953A00672A50 /* Weike-Bridging-Header.h */,
-				6F51D6B51D5D955F00803FC6 /* UIScreen+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
