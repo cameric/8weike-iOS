@@ -55,25 +55,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         return true
     }
 
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-    }
-
-    func application(_ application: UIApplication,
-                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    }
-    
-    func application(_ application: UIApplication,
-                     didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        if application.applicationState == .active {
-            // App is active
-        } else {
-            
-        }
-    }
-
     // MARK: Setup Third Party
 
     private func setupMixpanel() {

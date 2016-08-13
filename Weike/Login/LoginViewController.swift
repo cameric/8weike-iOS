@@ -7,6 +7,7 @@
 //
 
 import AVKit
+import AVFoundation
 
 class LoginViewController: UIViewController {
     // MARK: Properties
@@ -23,11 +24,13 @@ class LoginViewController: UIViewController {
     private func loadBackgroundVideo() {
         let player = AVPlayer(url: URL(string:
             "http://trailers.apple.com/movies/universal/stateofplay/stateofplay-tlr2_h.640.mov")!)
+        player.isMuted = true
         let playerController = AVPlayerViewController()
         playerController.player = player
         playerController.showsPlaybackControls = false
         playerController.videoGravity = AVLayerVideoGravityResizeAspectFill
         addChildViewController(playerController)
+        playerController.view.isUserInteractionEnabled = false
         loginView.backgroundView = playerController.view
         player.play()
     }
