@@ -6,18 +6,23 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
+private let topPadding = CGFloat(50)
 private let horizontalPadding = CGFloat(30)
 private let verticalPadding = CGFloat(20)
 
 class LoginView: UIView {
+    // MARK: Properties
+    var verticalAnchor: NSLayoutConstraint?
+    
     // MARK: Views
 
-    let userNameTextField = UITextField()
-    let passwordTextField = UITextField()
-    let loginButton = UIButton()
-    let forgetPassword = UIButton()
+    private let userNameTextField = UITextField()
+    private let passwordTextField = UITextField()
+    private let loginButton = UIButton.whiteBorderTransparent(withTitle: "Login")
+    private let forgetPassword = UIButton(type: .system)
     
     // MARK: Initializers
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
@@ -31,13 +36,13 @@ class LoginView: UIView {
     
     private func configureSubviews() {
         backgroundColor = UIColor.main()
-        
+        startListenToKeyboardEvent()
+
         userNameTextField.placeholder = "Username/Phone Number"
         passwordTextField.placeholder = "Password"
-        loginButton.setTitle("Login", for: [])
         forgetPassword.setTitle("Forget Password?", for: [])
     }
-    
+
     private func installConstraints() {
         let views = ["userNameTextField": userNameTextField,
                      "passwordTextField": passwordTextField,
@@ -63,12 +68,37 @@ class LoginView: UIView {
             options: [], metrics: metrics, views: views))
         
         // Vertical constraints
-        constraints.append(passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor))
+        verticalAnchor = passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
+        constraints.append(verticalAnchor!)
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "V:[userNameTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[loginButton]-(verticalPadding)-[forgetPassword]",
             options: [], metrics: metrics, views: views))
         
         NSLayoutConstraint.activate(constraints)
     }
-    
+}
+
+extension LoginView: KeyboardDelegate {
+    func keyboardWillShow() {
+        if verticalAnchor != nil {
+            NSLayoutConstraint.deactivate([verticalAnchor!])
+        }
+        
+        verticalAnchor = userNameTextField.topAnchor.constraint(equalTo: topAnchor,
+                                                                constant: topPadding)
+        NSLayoutConstraint.activate([verticalAnchor!])
+        
+        setNeedsLayout()
+    }
+
+    func keyboardWillHide() {
+        if verticalAnchor != nil {
+            NSLayoutConstraint.deactivate([verticalAnchor!])
+        }
+        
+        verticalAnchor = passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
+        NSLayoutConstraint.activate([verticalAnchor!])
+        
+        setNeedsLayout()
+    }
 }
