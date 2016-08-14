@@ -8,9 +8,11 @@
 
 class LoginViewController: UIViewController {
     // MARK: Properties
+    
     private let loginView = LoginView()
     
     // MARK: UIViewController
+    
     override func loadView() {
         super.loadView()
         view = loginView

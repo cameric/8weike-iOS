@@ -16,9 +16,12 @@ protocol LandingViewDelegate: class {
 }
 
 class LandingView: UIView {
+    // MARK: Properties
+
     weak var delegate: LandingViewDelegate?
-    
+
     // MARK: Views
+
     var backgroundView: UIView? {
         willSet {
             backgroundView?.removeFromSuperview()
@@ -42,6 +45,7 @@ class LandingView: UIView {
     private let signupButton = UIButton.whiteBorderTransparent(withTitle: "Signup")
     
     // MARK: Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
@@ -54,6 +58,7 @@ class LandingView: UIView {
     }
     
     // MARK: Private Helpers
+    
     private func configureSubviews() {
         self.backgroundColor = UIColor.main()
         // Configure Weike Label

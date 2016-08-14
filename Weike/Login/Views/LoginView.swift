@@ -12,7 +12,8 @@ private let verticalPadding = CGFloat(20)
 
 class LoginView: UIView {
     // MARK: Properties
-    var verticalAnchor: NSLayoutConstraint?
+
+    private var verticalAnchor: NSLayoutConstraint?
     
     // MARK: Views
 
@@ -77,6 +78,8 @@ class LoginView: UIView {
         NSLayoutConstraint.activate(constraints)
     }
 }
+
+// MARK: KeyboardDelegate
 
 extension LoginView: KeyboardDelegate {
     func keyboardWillShow() {

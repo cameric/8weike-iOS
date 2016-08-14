@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
+/// This method is for converting a length to actual pixel number shown on device
 func length(fromPixel pixel: CGFloat) -> CGFloat {
     return pixel / UIScreen.main.scale
 }

@@ -11,9 +11,11 @@ import AVFoundation
 
 class LandingViewController: UIViewController {
     // MARK: Properties
+    
     private let landingView = LandingView()
     
     // MARK: UIViewController
+    
     override func loadView() {
         super.loadView()
         landingView.delegate = self
@@ -37,6 +39,7 @@ class LandingViewController: UIViewController {
 }
 
 // MARK: LandingViewDelegate
+
 extension LandingViewController: LandingViewDelegate {
     func LandingViewWechatButtonTapped() {
         
