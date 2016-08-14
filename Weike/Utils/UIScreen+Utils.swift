@@ -7,5 +7,5 @@
 //
 
 func length(fromPixel pixel: CGFloat) -> CGFloat {
-    return pixel / UIScreen.main().scale
+    return pixel / UIScreen.main.scale
 }

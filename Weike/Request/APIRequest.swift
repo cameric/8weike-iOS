@@ -14,15 +14,15 @@ enum HTTPMethod {
 protocol APIRequest {}
 
 extension APIRequest {
-    static func getTask(endpoint: String, params: [String: AnyObject], completion: (json: AnyObject?) -> Void) -> URLSessionDataTask? {
-        return self.task(endpoint: endpoint, method: .GET, params: params, completion: completion)
+    static func getTask(endpoint: String, params: [String: AnyObject], completion: (json: AnyObject?, error: Error?) -> Void) throws -> URLSessionDataTask {
+        return try self.task(endpoint: endpoint, method: .GET, params: params, completion: completion)
     }
 
-    static func postTask(endpoint: String, params: [String: AnyObject], completion: (json: AnyObject?) -> Void) -> URLSessionDataTask? {
-        return self.task(endpoint: endpoint, method: .POST, params: params, completion: completion)
+    static func postTask(endpoint: String, params: [String: AnyObject], completion: (json: AnyObject?, error: Error?) -> Void) throws -> URLSessionDataTask {
+        return try self.task(endpoint: endpoint, method: .POST, params: params, completion: completion)
     }
 
-    private static func task(endpoint: String, method: HTTPMethod, params: [String: AnyObject], completion: (json: AnyObject?) -> Void) -> URLSessionDataTask? {
+    private static func task(endpoint: String, method: HTTPMethod, params: [String: AnyObject], completion: (json: AnyObject?, error: Error?) -> Void) throws -> URLSessionDataTask {
         var request = URLRequest(url: URL(string: "api/\(endpoint)")!)
         
         switch method {
@@ -35,21 +35,16 @@ extension APIRequest {
         }
         
         request.setValue("", forHTTPHeaderField: "")
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
-        } catch {
-            // Unable to create JSON object
-            return nil
-        }
+        request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
         
-        let session = URLSession.shared()
+        let session = URLSession.shared
         let task = session.dataTask(with: request) {
-            (data: Data?, response: URLResponse?, error: NSError?) -> Void in
+            (data: Data?, response: URLResponse?, error: Error?) -> Void in
             guard let jsonData = data else {
-                completion(json: nil)
+                completion(json: nil, error: nil)
                 return
             }
-            completion(json: try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers))
+            completion(json: try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers), error: nil)
         }
         return task
     }

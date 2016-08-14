@@ -9,7 +9,7 @@
 class UserRequest: APIRequest {
     static func user(id: String, completion: (user: User?) -> Void) {
         var user: User?
-        let task = getTask(endpoint: "/user", params: ["id": id], completion: { (json) in
+        let task = try? getTask(endpoint: "/user", params: ["id": id], completion: { (json, error) in
             guard let userJson = json else {
                 completion(user: nil)
                 return

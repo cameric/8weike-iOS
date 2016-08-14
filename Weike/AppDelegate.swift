@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     var window: UIWindow?
     var currentUser: User?
     var theme = UITheme.none
-    static var shared: AppDelegate? { get { return UIApplication.shared().delegate as? AppDelegate } }
+    static var shared: AppDelegate? { get { return UIApplication.shared.delegate as? AppDelegate } }
 
     var discoverViewController: DiscoverViewController?
     var messageViewController: MessageViewController?

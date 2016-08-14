@@ -10,10 +10,10 @@ extension UIColor {
     // MARK: Colors
     
     static func background() -> UIColor {
-        return UIColor.white()
+        return UIColor.white
     }
     
     static func main() -> UIColor {
-        return UIColor.orange()
+        return UIColor.orange
     }
 }

@@ -14,9 +14,9 @@ extension UIButton {
         
         button.layer.borderWidth = length(fromPixel: 1.0)
         button.layer.cornerRadius = length(fromPixel: 10.0)
-        button.layer.borderColor = UIColor.white().cgColor
+        button.layer.borderColor = UIColor.white.cgColor
         
-        button.setTitleColor(UIColor.white(), for: [])
+        button.setTitleColor(UIColor.white, for: [])
         button.backgroundColor = UIColor(white: 0, alpha: 0.4)
         
         guard let accessoryImage = image else {
@@ -24,7 +24,7 @@ extension UIButton {
         }
 
         button.setImage(accessoryImage, for: [])
-        button.tintColor = UIColor.white()
+        button.tintColor = UIColor.white
         
         return button
     }

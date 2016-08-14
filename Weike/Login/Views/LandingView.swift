@@ -54,7 +54,7 @@ class LandingView: UIView {
         self.backgroundColor = UIColor.main()
         // Configure Weike Label
         weikeLabel.text = "8 Microgram"
-        weikeLabel.textColor = UIColor.white()
+        weikeLabel.textColor = UIColor.white
         
         // Configure Wechat Button
         wechatButton.addTarget(self, action: #selector(wechatButtonTapped), for: .touchUpInside)
