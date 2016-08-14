@@ -19,3 +19,15 @@ extension UIView {
         }
     }
 }
+
+@objc protocol KeyboardDelegate: class {
+    func keyboardWillShow()
+    func keyboardWillHide()
+}
+
+extension KeyboardDelegate {
+    func startListenToKeyboardEvent() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+    }
+}
