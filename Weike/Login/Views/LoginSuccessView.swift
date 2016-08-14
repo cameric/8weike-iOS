@@ -15,10 +15,11 @@ class LoginSuccessView: UIView {
     
     // MARK: Views
     
-    let loginSuccessMessageLabel = UILabel()
-    let loginSuccessImageView = UIImageView(image: UIImage(named: "success")!)
+    private let loginSuccessMessageLabel = UILabel()
+    private let loginSuccessImageView = UIImageView(image: UIImage(named: "success")!)
     
     // MARK: Initializers
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
@@ -34,10 +35,8 @@ class LoginSuccessView: UIView {
         backgroundColor = UIColor.main()
         
         // Message related
-        let messageFont = UIFont(name: "SourceHanSansCN-Normal", size: 10) ?? UIFont.systemFont(ofSize: 10)
-        
         loginSuccessMessageLabel.text = "登录成功"
-        loginSuccessMessageLabel.font = messageFont
+        loginSuccessMessageLabel.font = UIFont.large()
         loginSuccessMessageLabel.textColor = UIColor.white
         loginSuccessMessageLabel.textAlignment = NSTextAlignment.center
         
