@@ -52,6 +52,6 @@ extension LandingViewController: LandingViewDelegate {
     }
 
     func LandingViewSignupButtonTapped() {
-        
+        dismiss(animated: true, completion: nil)
     }
 }
