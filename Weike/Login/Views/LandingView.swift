@@ -30,10 +30,6 @@ class LandingView: UIView {
             if let view = backgroundView {
                 insertSubview(view, at: 0)
                 view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                let blurEffect = UIBlurEffect(style: .light)
-                let blurEffectView = UIVisualEffectView(effect: blurEffect)
-                blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                insertSubview(blurEffectView, at: 1)
             }
         }
     }

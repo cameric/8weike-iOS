@@ -8,5 +8,26 @@
 
 
 class ProfileTableViewController: UITableViewController {
+    // MARK: Views
+    
+    private let profileView = UITableView()
+    private let profileDataSource = ProfileTableViewDataSource()
+    
+    // MARK: Initializers
 
+    init() {
+        super.init(style: .grouped)
+        profileView.delegate = self
+        profileView.dataSource = profileDataSource
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: UITableViewDelegate
+
+extension ProfileTableViewController {
+    
 }

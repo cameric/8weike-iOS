@@ -25,6 +25,7 @@ extension UIButton {
 
         button.setImage(accessoryImage, for: [])
         button.tintColor = UIColor.white
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
         
         return button
     }

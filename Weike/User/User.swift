@@ -11,6 +11,8 @@ class User: NSObject {
     var name: String
     var phone: String
     
+    var avatar: UIImage?
+    
     init(id: String, name: String, phone: String) {
         self.id = id
         self.name = name

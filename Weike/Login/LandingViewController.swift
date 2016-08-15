@@ -24,6 +24,7 @@ class LandingViewController: UIViewController {
     }
     
     private func loadBackgroundVideo() {
+        // todo: Set preloading or change it to local video
         let player = AVPlayer(url: URL(string:
             "http://trailers.apple.com/movies/universal/stateofplay/stateofplay-tlr2_h.640.mov")!)
         player.isMuted = true
