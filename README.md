@@ -1,5 +1,5 @@
-# iOS Client
-iOS client for the expert-finder service (name TBD).
+# 8weike-iOS
+Finding great freelancers.
 
 ## `cocoapods` setup for first use
 This repo uses Cocoapods for dependency management. Dependencies and their
