@@ -35,7 +35,7 @@ class LoginSuccessView: UIView {
         backgroundColor = UIColor.main()
         
         // Message related
-        loginSuccessMessageLabel.text = "登录成功"
+        loginSuccessMessageLabel.text = "Login Successful"
         loginSuccessMessageLabel.font = UIFont.large()
         loginSuccessMessageLabel.textColor = UIColor.white
         loginSuccessMessageLabel.textAlignment = NSTextAlignment.center

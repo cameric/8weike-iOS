@@ -27,9 +27,11 @@ class LoginSuccessViewController: UIViewController {
         // Automatically load next view
         let dispatchTime: DispatchTime = DispatchTime.now() + 2.0
         DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
-            // self.present(nextViewController, animated: true, completion: nil)
+            if self.isBeingPresented {
+                self.dismiss(animated: true, completion: nil)
+                return
+            }
         })
-        
     }
     
 }
