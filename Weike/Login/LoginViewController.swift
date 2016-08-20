@@ -28,17 +28,11 @@ class LoginViewController: UIViewController {
         } else {
             print("View not nested in Navigation Controller")
         }
-        
-        // Just for testing purposes
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(testNextAction))
     }
     
-    // MARK: UINavigationController
-    
-    func testNextAction(sender: UIBarButtonItem) {
+    func loginButtonPressed(sender: UIButton) {
         let loginSuccessViewController = LoginSuccessViewController()
         self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
-        print("Done button pressed")
+        print("Login button pressed")
     }
-    
 }

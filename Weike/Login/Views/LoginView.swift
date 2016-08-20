@@ -42,6 +42,7 @@ class LoginView: UIView {
         userNameTextField.placeholder = "Username/Phone Number"
         passwordTextField.placeholder = "Password"
         forgetPassword.setTitle("Forget Password?", for: [])
+        loginButton.addTarget(self, action: #selector(LoginViewController.loginButtonPressed(sender:)), for: .touchUpInside)
     }
     
     private func installConstraints() {
