@@ -6,13 +6,10 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-import UIKit
-
 class LoginSuccessViewController: UIViewController {
     // MARK: Properties
     
     private let loginSuccessView = LoginSuccessView()
-    // Also initialize next view's controller for transition, waiting for next view to be implemented.
     
     // MARK: UIViewController
     

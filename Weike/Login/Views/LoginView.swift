@@ -22,25 +22,12 @@ class LoginView: UIView {
     private let loginButton = UIButton.whiteBorderTransparent(withTitle: "Login")
     private let forgetPassword = UIButton(type: .system)
     
-    // MARK: Navigation Bar
-    
-    private let navigationBar: UINavigationBar = UINavigationBar()
-    
-    func configureNavigationBar() {
-        let navigationTitle = UINavigationItem(title: "Login")
-        navigationBar.setItems([navigationTitle], animated: false)
-    }
-    
-    func backToLandingView() {
-        
-    }
-    
     // MARK: Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
-        addSubviews([userNameTextField, passwordTextField, loginButton, forgetPassword, navigationBar])
+        addSubviews([userNameTextField, passwordTextField, loginButton, forgetPassword])
         installConstraints()
     }
     
