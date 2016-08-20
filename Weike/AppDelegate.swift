@@ -49,9 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         self.window?.makeKeyAndVisible()
 
         let navController4 = UINavigationController(rootViewController: LandingViewController())
-        tabBarController.present(navController4, animated: true) {
-            
-        }
+        tabBarController.present(navController4, animated: true) {}
         
         return true
     }

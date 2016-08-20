@@ -32,7 +32,7 @@ class LoginSuccessView: UIView {
     }
     
     private func configureSubviews() {
-        backgroundColor = UIColor.main()
+        backgroundColor = UIColor.main
         
         // Message related
         loginSuccessMessageLabel.text = "Login Successful"
@@ -56,12 +56,13 @@ class LoginSuccessView: UIView {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[loginSuccessMessageLabel]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:|-(horizontalPadding)-[loginSuccessImageView]-(horizontalPadding)-|",
-                                                                      options: [], metrics: metrics, views: views))
+        constraints.append(loginSuccessImageView.widthAnchor.constraint(equalTo: widthAnchor,
+                                                                        multiplier: 0.3))
+        constraints.append(loginSuccessImageView.centerXAnchor.constraint(equalTo: centerXAnchor))
         
         // Vertical constraints
-        constraints.append(loginSuccessMessageLabel.centerYAnchor.constraint(equalTo: centerYAnchor))
+        constraints.append(loginSuccessImageView.centerYAnchor.constraint(equalTo: centerYAnchor))
+        constraints.append(loginSuccessImageView.heightAnchor.constraint(equalTo: loginSuccessImageView.widthAnchor))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "V:[loginSuccessMessageLabel]-(verticalPadding)-[loginSuccessImageView]",
                                                                       options: [], metrics: metrics, views: views))

@@ -24,7 +24,7 @@ class LoginView: UIView {
     
     private let userNameTextField = UITextField()
     private let passwordTextField = UITextField()
-    private let loginButton = UIButton.whiteBorderTransparent(withTitle: "Login")
+    private let loginButton = UIButton.rounded
     private let forgetPassword = UIButton(type: .system)
     
     // MARK: Initializers
@@ -41,13 +41,17 @@ class LoginView: UIView {
     }
     
     private func configureSubviews() {
-        backgroundColor = UIColor.main()
+        backgroundColor = UIColor.background
         startListenToKeyboardEvent()
         
         userNameTextField.placeholder = "Username/Phone Number"
         passwordTextField.placeholder = "Password"
-        forgetPassword.setTitle("Forget Password?", for: [])
+
+        loginButton.setTitle("Login", for: [])
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        
+        forgetPassword.setTitle("Forget Password?", for: [])
+        forgetPassword.setTitleColor(UIColor.main, for: [])
     }
     
     private func installConstraints() {

@@ -9,11 +9,11 @@
 extension UIColor {
     // MARK: Colors
     
-    static func background() -> UIColor {
+    static var background: UIColor {
         return UIColor.white
     }
     
-    static func main() -> UIColor {
+    static var main: UIColor {
         return UIColor.orange
     }
 }

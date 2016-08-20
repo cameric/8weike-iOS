@@ -56,7 +56,7 @@ class LandingView: UIView {
     // MARK: Private Helpers
     
     private func configureSubviews() {
-        self.backgroundColor = UIColor.main()
+        self.backgroundColor = UIColor.main
         // Configure Weike Label
         weikeLabel.text = "8 Microgram"
         weikeLabel.textColor = UIColor.white

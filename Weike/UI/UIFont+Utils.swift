@@ -14,11 +14,11 @@ extension UIFont {
     }
     
     static func normal() -> UIFont {
-        return UIFont.systemFont(ofSize: 11)
+        return UIFont.systemFont(ofSize: 13)
     }
     
     static func large() -> UIFont {
-        return UIFont.systemFont(ofSize: 13)
+        return UIFont.systemFont(ofSize: 17)
     }
     
     static func smallBold() -> UIFont {
@@ -26,10 +26,10 @@ extension UIFont {
     }
     
     static func normalBold() -> UIFont {
-        return UIFont.boldSystemFont(ofSize: 11)
+        return UIFont.boldSystemFont(ofSize: 13)
     }
     
     static func largeBold() -> UIFont {
-        return UIFont.boldSystemFont(ofSize: 13)
+        return UIFont.boldSystemFont(ofSize: 17)
     }
 }
