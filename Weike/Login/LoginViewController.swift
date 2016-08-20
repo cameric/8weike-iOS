@@ -8,30 +8,27 @@
 
 class LoginViewController: UIViewController {
     // MARK: Properties
-    
+
     private let loginView = LoginView()
-    
+
     // MARK: UIViewController
-    
+
     override func loadView() {
         super.loadView()
         loginView.delegate = self
         view = loginView
         self.title = "Login"
-        
+
         // NavigationBar style
         if let navBar = navigationController?.navigationBar {
             navBar.barTintColor = UIColor.orange
             navBar.tintColor = UIColor.white
             navBar.barStyle = UIBarStyle.black
             navBar.setValue(true, forKey: "hidesShadow")
-            
         } else {
             print("View not nested in Navigation Controller")
         }
     }
-    
-    
 }
 
 // MARK: LoginViewDelegate
@@ -42,5 +39,8 @@ extension LoginViewController: LoginViewDelegate {
         self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
         print("Login button pressed")
     }
-    
+
+    func forgetPasswordTapped() {
+
+    }
 }
