@@ -48,7 +48,8 @@ extension LandingViewController: LandingViewDelegate {
     
     func LandingViewLoginButtonTapped() {
         let loginController = LoginViewController()
-        present(loginController, animated: true, completion: nil)
+        let loginNavController = UINavigationController(rootViewController: loginController)
+        present(loginNavController, animated: true, completion: nil)
     }
 
     func LandingViewSignupButtonTapped() {
