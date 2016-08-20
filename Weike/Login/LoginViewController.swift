@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
+        loginView.delegate = self
         view = loginView
         self.title = "Login"
         
@@ -30,9 +31,16 @@ class LoginViewController: UIViewController {
         }
     }
     
-    func loginButtonPressed(sender: UIButton) {
+    
+}
+
+// MARK: LoginViewDelegate
+
+extension LoginViewController: LoginViewDelegate {
+    func loginButtonTapped() {
         let loginSuccessViewController = LoginSuccessViewController()
         self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
         print("Login button pressed")
     }
+    
 }
