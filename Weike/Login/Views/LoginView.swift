@@ -10,9 +10,14 @@ private let topPadding = CGFloat(50)
 private let horizontalPadding = CGFloat(30)
 private let verticalPadding = CGFloat(20)
 
+protocol LoginViewDelegate: class {
+    func loginButtonTapped()
+}
+
 class LoginView: UIView {
     // MARK: Properties
     
+    weak var delegate: LoginViewDelegate?
     private var verticalAnchor: NSLayoutConstraint?
     
     // MARK: Views
@@ -42,6 +47,7 @@ class LoginView: UIView {
         userNameTextField.placeholder = "Username/Phone Number"
         passwordTextField.placeholder = "Password"
         forgetPassword.setTitle("Forget Password?", for: [])
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
     
     private func installConstraints() {
@@ -76,6 +82,12 @@ class LoginView: UIView {
                                                                       options: [], metrics: metrics, views: views))
         
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    // MARK: Private Helpers
+    
+    func loginButtonTapped(event: UIEvent) {
+        delegate?.loginButtonTapped()
     }
 }
 

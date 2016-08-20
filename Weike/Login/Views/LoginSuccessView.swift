@@ -62,7 +62,6 @@ class LoginSuccessView: UIView {
         
         // Vertical constraints
         constraints.append(loginSuccessMessageLabel.centerYAnchor.constraint(equalTo: centerYAnchor))
-        constraints.append(loginSuccessImageView.centerYAnchor.constraint(equalTo: centerYAnchor))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "V:[loginSuccessMessageLabel]-(verticalPadding)-[loginSuccessImageView]",
                                                                       options: [], metrics: metrics, views: views))

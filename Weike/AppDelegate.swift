@@ -48,7 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
 
-        tabBarController.present(LandingViewController(), animated: true) {
+        let navController4 = UINavigationController(rootViewController: LandingViewController())
+        tabBarController.present(navController4, animated: true) {
             
         }
         
