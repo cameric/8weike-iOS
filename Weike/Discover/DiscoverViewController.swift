@@ -8,7 +8,7 @@
 
 class DiscoverViewController: UIViewController {
     override func loadView() {
-        self.title = "Discover"
-        self.view = UIView()
+        title = "Discover"
+        view = UIView()
     }
 }

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 
     var discoverViewController: DiscoverViewController?
     var messageViewController: MessageViewController?
-    var profileViewController: ProfileTableViewController?
+    var moreViewController: MoreTableViewController?
 
     // MARK: UIApplicationDelegate
 
@@ -30,15 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 
         discoverViewController = DiscoverViewController()
         messageViewController = MessageViewController()
-        profileViewController = ProfileTableViewController()
+        moreViewController = MoreTableViewController()
 
         let navController1 = UINavigationController(rootViewController: discoverViewController!)
         let navController2 = UINavigationController(rootViewController: messageViewController!)
-        let navController3 = UINavigationController(rootViewController: profileViewController!)
+        let navController3 = UINavigationController(rootViewController: moreViewController!)
 
         navController1.tabBarItem = UITabBarItem(title: "Discover", image: nil, selectedImage: nil)
         navController2.tabBarItem = UITabBarItem(title: "Message", image: nil, selectedImage: nil)
-        navController3.tabBarItem = UITabBarItem(title: "Profile", image: nil, selectedImage: nil)
+        navController3.tabBarItem = UITabBarItem(title: "More", image: nil, selectedImage: nil)
 
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [navController1,

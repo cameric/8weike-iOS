@@ -8,17 +8,17 @@
 
 
 class ProfileTableViewController: UITableViewController {
-    // MARK: Views
+    // MARK: Properties
     
-    private let profileView = UITableView()
     private let profileDataSource = ProfileTableViewDataSource()
     
     // MARK: Initializers
 
     init() {
         super.init(style: .grouped)
-        profileView.delegate = self
-        profileView.dataSource = profileDataSource
+        title = "Profile"
+        tableView.delegate = self
+        tableView.dataSource = profileDataSource
     }
     
     required init?(coder aDecoder: NSCoder) {

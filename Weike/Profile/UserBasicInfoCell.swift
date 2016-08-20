@@ -14,7 +14,6 @@ class UserBasicInfoCell: UITableViewCell {
     
     init(user: User, reuseIdentifier: String?) {
         super.init(style: .default, reuseIdentifier: reuseIdentifier)
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
