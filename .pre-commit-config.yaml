@@ -4,4 +4,6 @@
     -   id: trailing-whitespace
         files: \.(h|m|swift|js|rb|md|py|sh|txt|yaml|yml)$
     -   id: check-merge-conflict
+        files: \.(h|m|swift|js|rb|md|py|sh|txt|yaml|yml)$
     -   id: end-of-file-fixer
+        files: \.(h|m|swift|js|rb|md|py|sh|txt|yaml|yml)$
