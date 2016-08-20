@@ -16,11 +16,19 @@ class LandingViewController: UIViewController {
     
     // MARK: UIViewController
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func loadView() {
         super.loadView()
         landingView.delegate = self
         view = landingView
         loadBackgroundVideo()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     private func loadBackgroundVideo() {
@@ -48,8 +56,7 @@ extension LandingViewController: LandingViewDelegate {
     
     func LandingViewLoginButtonTapped() {
         let loginController = LoginViewController()
-        let loginNavController = UINavigationController(rootViewController: loginController)
-        present(loginNavController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(loginController, animated: true)
     }
 
     func LandingViewSignupButtonTapped() {

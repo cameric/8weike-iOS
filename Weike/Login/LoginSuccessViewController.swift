@@ -16,10 +16,6 @@ class LoginSuccessViewController: UIViewController {
     override func loadView() {
         super.loadView()
         view = loginSuccessView
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
         // Automatically load next view
         let dispatchTime: DispatchTime = DispatchTime.now() + 2.0

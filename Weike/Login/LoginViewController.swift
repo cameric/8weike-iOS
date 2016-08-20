@@ -29,19 +29,16 @@ class LoginViewController: UIViewController {
             print("View not nested in Navigation Controller")
         }
         
-        // I tried writing this to UIButton extension, but selector was not working in that case, I'll fix it next.
-        let backButton = UIButton(type: .custom)
-        // backButton.setImage(UIImage(named: "BackButton.png"), forState: .Normal)
-        backButton.setTitle("Back", for: .normal)
-        backButton.setTitleColor(UIColor.white, for: .normal) // Back button currently can be pressed but is not showing up.
-        backButton.addTarget(self, action: #selector(backAction), for: .touchUpInside)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
-        
+        // Just for testing purposes
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(testNextAction))
     }
     
     // MARK: UINavigationController
-    func backAction(sender: UIBarButtonItem) {
-        print("Back button pressed")
+    
+    func testNextAction(sender: UIBarButtonItem) {
+        let loginSuccessViewController = LoginSuccessViewController()
+        self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
+        print("Done button pressed")
     }
     
 }
