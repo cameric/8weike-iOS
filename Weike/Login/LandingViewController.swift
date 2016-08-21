@@ -11,26 +11,26 @@ import AVFoundation
 
 class LandingViewController: UIViewController {
     // MARK: Properties
-    
+
     private let landingView = LandingView()
-    
+
     // MARK: UIViewController
-    
+
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }
-    
+
     override func loadView() {
         super.loadView()
         landingView.delegate = self
         view = landingView
         loadBackgroundVideo()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = false
     }
-    
+
     private func loadBackgroundVideo() {
         // todo: Set preloading or change it to local video
         let player = AVPlayer(url: URL(string:
@@ -44,6 +44,18 @@ class LandingViewController: UIViewController {
         playerController.view.isUserInteractionEnabled = false
         landingView.backgroundView = playerController.view
         player.play()
+        player.actionAtItemEnd = .none
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(replayBackgroundVideo),
+                                               name: .AVPlayerItemDidPlayToEndTime,
+                                               object: player.currentItem)
+    }
+
+    /// Replay the background video when it reaches the end
+    func replayBackgroundVideo(notification: NSNotification) {
+        if let playerItem: AVPlayerItem = notification.object as? AVPlayerItem {
+            playerItem.seek(to: kCMTimeZero)
+        }
     }
 }
 
@@ -51,9 +63,9 @@ class LandingViewController: UIViewController {
 
 extension LandingViewController: LandingViewDelegate {
     func LandingViewWechatButtonTapped() {
-        
+
     }
-    
+
     func LandingViewLoginButtonTapped() {
         let loginController = LoginViewController()
         self.navigationController?.pushViewController(loginController, animated: true)
