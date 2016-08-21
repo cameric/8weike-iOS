@@ -60,6 +60,6 @@ extension LandingViewController: LandingViewDelegate {
     }
 
     func LandingViewSignupButtonTapped() {
-        dismiss(animated: true, completion: nil)
-    }
+        let signupController = SignupViewController()
+        self.navigationController?.pushViewController(signupController, animated: true)    }
 }

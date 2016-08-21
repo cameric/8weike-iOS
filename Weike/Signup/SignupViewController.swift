@@ -9,9 +9,36 @@
 import UIKit
 
 class SignupViewController: UIViewController {
-
+    // MARK: Properties
+    
+    private let signupView = SignupView()
+    
+    // MARK: UIViewController
+    
+    override func loadView() {
+        super.loadView()
+        signupView.delegate = self
+        view = signupView
+        self.title = "Signup"
+        
+        // NavigationBar style
+        if let navBar = navigationController?.navigationBar {
+            navBar.barTintColor = UIColor.orange
+            navBar.tintColor = UIColor.white
+            navBar.barStyle = UIBarStyle.black
+            navBar.setValue(true, forKey: "hidesShadow")
+        } else {
+            print("View not nested in Navigation Controller")
+        }
+    }
 }
 
 extension SignupViewController: SignupViewDelegate {
+    func getVerificationCodeButtonTapped(){
+        
+    }
     
+    func confirmButtonTapped(){
+        
+    }
 }

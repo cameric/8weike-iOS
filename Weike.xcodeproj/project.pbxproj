@@ -40,6 +40,8 @@
 		843C73FE6476E4E93371B6AC /* Pods_Weike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11961CD8041B7EA8F78EC0CD /* Pods_Weike.framework */; };
 		FAADD3241D63801A00CAE4F9 /* LoginSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3231D63801A00CAE4F9 /* LoginSuccessViewController.swift */; };
 		FAADD3261D63805A00CAE4F9 /* LoginSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3251D63805A00CAE4F9 /* LoginSuccessView.swift */; };
+		FAADD3281D692E6B00CAE4F9 /* SignupSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3271D692E6B00CAE4F9 /* SignupSuccessView.swift */; };
+		FAADD32A1D692E8A00CAE4F9 /* SignupSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3291D692E8A00CAE4F9 /* SignupSuccessViewController.swift */; };
 		FEB1596E43375FC821F7689E /* Pods_WeikeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E331BCD3982987A26DED219 /* Pods_WeikeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +110,8 @@
 		D1BFCD6E011BC18F3FDAB994 /* Pods_WeikeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeikeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAADD3231D63801A00CAE4F9 /* LoginSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessViewController.swift; sourceTree = "<group>"; };
 		FAADD3251D63805A00CAE4F9 /* LoginSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessView.swift; sourceTree = "<group>"; };
+		FAADD3271D692E6B00CAE4F9 /* SignupSuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupSuccessView.swift; sourceTree = "<group>"; };
+		FAADD3291D692E8A00CAE4F9 /* SignupSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupSuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				6F429C1D1D51794C00E8B1A4 /* SignupView.swift */,
+				FAADD3271D692E6B00CAE4F9 /* SignupSuccessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 			children = (
 				6F429C1F1D51795200E8B1A4 /* Views */,
 				6FC15CE61D512C9100F913AC /* SignupViewController.swift */,
+				FAADD3291D692E8A00CAE4F9 /* SignupSuccessViewController.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -648,6 +654,7 @@
 				321D79551D614060006F68C2 /* ProfileTableViewDataSource.swift in Sources */,
 				6F49BA9E1D5D17C50028ED52 /* UIColor+Utils.swift in Sources */,
 				6F41F9991D458B1400F7BD43 /* AppDelegate.swift in Sources */,
+				FAADD32A1D692E8A00CAE4F9 /* SignupSuccessViewController.swift in Sources */,
 				321A0BAA1D5FD80400B07B09 /* LoginViewController.swift in Sources */,
 				6F429C241D51A4A800E8B1A4 /* LandingView.swift in Sources */,
 				321D79581D615C1E006F68C2 /* UserBasicInfoCell.swift in Sources */,
@@ -660,6 +667,7 @@
 				6FE5A5E31D5C427000ED329C /* User.swift in Sources */,
 				6F51D6B11D5D34E800803FC6 /* APIRequest.swift in Sources */,
 				6F49BAA01D5D18340028ED52 /* UIFont+Utils.swift in Sources */,
+				FAADD3281D692E6B00CAE4F9 /* SignupSuccessView.swift in Sources */,
 				321A0BA81D5FD35E00B07B09 /* LoginView.swift in Sources */,
 				321743D81D6923C20068C63E /* UITextField+Utils.swift in Sources */,
 				6F51D6B61D5D955F00803FC6 /* UIScreen+Utils.swift in Sources */,
