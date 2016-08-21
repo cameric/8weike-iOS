@@ -10,7 +10,7 @@ are not. The first time you use this repo, run
     pod install
 
 This will download and set up the dependencies specified in `Podfile`. **You must
-open the project via `iosClient.xcworkspace`** rather than the `.xcodeproj` file
+open the project via `Weike.xcworkspace`** rather than the `.xcodeproj` file
 for dependencies to be imported correctly.
 
 ## Using `synx` to synchronize project directories
