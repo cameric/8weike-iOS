@@ -1,5 +1,5 @@
 //
-//  LoginSuccessView.swift
+//  successView.swift
 //  Weike
 //
 //  Created by Danny Yulang Wang on 8/13/16.
@@ -11,19 +11,19 @@ import UIKit
 private let horizontalPadding = CGFloat(30)
 private let verticalPadding = CGFloat(22)
 
-class LoginSuccessView: UIView {
+class SuccessView: UIView {
     
     // MARK: Views
     
-    private let loginSuccessMessageLabel = UILabel()
-    private let loginSuccessImageView = UIImageView(image: UIImage(named: "success")!)
+    let successMessageLabel = UILabel()
+    private let successImageView = UIImageView(image: UIImage(named: "success")!)
     
     // MARK: Initializers
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, message: String) {
         super.init(frame: frame)
-        configureSubviews()
-        addSubviews([loginSuccessMessageLabel, loginSuccessImageView])
+        configureSubviews(message: message)
+        addSubviews([successMessageLabel, successImageView])
         installConstraints()
     }
     
@@ -31,22 +31,22 @@ class LoginSuccessView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configureSubviews() {
+    private func configureSubviews(message: String) {
         backgroundColor = UIColor.main
         
         // Message related
-        loginSuccessMessageLabel.text = "Login Successful"
-        loginSuccessMessageLabel.font = UIFont.large()
-        loginSuccessMessageLabel.textColor = UIColor.white
-        loginSuccessMessageLabel.textAlignment = NSTextAlignment.center
+        successMessageLabel.text = message
+        successMessageLabel.font = UIFont.large()
+        successMessageLabel.textColor = UIColor.white
+        successMessageLabel.textAlignment = NSTextAlignment.center
         
         // Image related
-        loginSuccessImageView.isUserInteractionEnabled = false // TODO: Make it enabled, a button leading to main page?
+        successImageView.isUserInteractionEnabled = false // TODO: Make it enabled, a button leading to main page?
     }
     
     private func installConstraints() {
-        let views = ["loginSuccessMessageLabel": loginSuccessMessageLabel,
-                     "loginSuccessImageView": loginSuccessImageView]
+        let views = ["successMessageLabel": successMessageLabel,
+                     "successImageView": successImageView]
         let metrics = ["horizontalPadding": horizontalPadding,
                        "verticalPadding": verticalPadding]
         disableTranslatesAutoresizingMaskIntoConstraints(views)
@@ -54,17 +54,17 @@ class LoginSuccessView: UIView {
         
         // Horizontal constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:|-(horizontalPadding)-[loginSuccessMessageLabel]-(horizontalPadding)-|",
+            "H:|-(horizontalPadding)-[successMessageLabel]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
-        constraints.append(loginSuccessImageView.widthAnchor.constraint(equalTo: widthAnchor,
+        constraints.append(successImageView.widthAnchor.constraint(equalTo: widthAnchor,
                                                                         multiplier: 0.3))
-        constraints.append(loginSuccessImageView.centerXAnchor.constraint(equalTo: centerXAnchor))
+        constraints.append(successImageView.centerXAnchor.constraint(equalTo: centerXAnchor))
         
         // Vertical constraints
-        constraints.append(loginSuccessImageView.centerYAnchor.constraint(equalTo: centerYAnchor))
-        constraints.append(loginSuccessImageView.heightAnchor.constraint(equalTo: loginSuccessImageView.widthAnchor))
+        constraints.append(successImageView.centerYAnchor.constraint(equalTo: centerYAnchor))
+        constraints.append(successImageView.heightAnchor.constraint(equalTo: successImageView.widthAnchor))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[loginSuccessMessageLabel]-(verticalPadding)-[loginSuccessImageView]",
+            "V:[successMessageLabel]-(verticalPadding)-[successImageView]",
                                                                       options: [], metrics: metrics, views: views))
         
         NSLayoutConstraint.activate(constraints)

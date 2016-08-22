@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewDelegate {
     func loginButtonTapped() {
-        let loginSuccessViewController = LoginSuccessViewController()
+        let loginSuccessViewController = SuccessViewController(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0), message: "Login Successful")
         self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
         print("Login button pressed")
     }

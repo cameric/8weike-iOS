@@ -39,6 +39,8 @@ extension SignupViewController: SignupViewDelegate {
     }
     
     func confirmButtonTapped(){
-        
+        let signupSuccessViewController = SuccessViewController(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0), message: "Signup Successful")
+        self.navigationController?.pushViewController(signupSuccessViewController, animated: true)
+        print("Signup button pressed")
     }
 }
