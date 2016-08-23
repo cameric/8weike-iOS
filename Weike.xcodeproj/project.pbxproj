@@ -106,8 +106,8 @@
 		BFBAFE4C54913564B55DAA8A /* Pods-WeikeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeikeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeikeUITests/Pods-WeikeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD4003D7FA1C493BB129BB5E /* Pods-Weike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weike.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weike/Pods-Weike.release.xcconfig"; sourceTree = "<group>"; };
 		D1BFCD6E011BC18F3FDAB994 /* Pods_WeikeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeikeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAADD3231D63801A00CAE4F9 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuccessViewController.swift; path = Login/SuccessViewController.swift; sourceTree = "<group>"; };
-		FAADD3251D63805A00CAE4F9 /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuccessView.swift; path = Login/Views/SuccessView.swift; sourceTree = "<group>"; };
+		FAADD3231D63801A00CAE4F9 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		FAADD3251D63805A00CAE4F9 /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,14 +156,14 @@
 			children = (
 				321D79571D615C1E006F68C2 /* UserBasicInfoCell.swift */,
 			);
-			name = Cells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		321D795B1D618B32006F68C2 /* Login */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Login;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		321D795C1D618C8C006F68C2 /* Login */ = {
@@ -171,7 +171,7 @@
 			children = (
 				321D795D1D618CAA006F68C2 /* LandingViewUITest.swift */,
 			);
-			name = Login;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		321D79611D6307B5006F68C2 /* More */ = {
@@ -179,7 +179,7 @@
 			children = (
 				321D795F1D6307B1006F68C2 /* MoreTableViewController.swift */,
 			);
-			name = More;
+			path = More;
 			sourceTree = "<group>";
 		};
 		6F1CC7A51D5C577400E7BDA0 /* Request */ = {
@@ -218,16 +218,14 @@
 				6FDCE1201D45A8AA0013B62C /* Discover */,
 				6FB429BD1D4C54270025FCE2 /* Login */,
 				6FABFA491D4B2CB40006E093 /* Message */,
+				321D79611D6307B5006F68C2 /* More */,
 				6F41F9CA1D458F1400F7BD43 /* Profile */,
 				6F51D6B21D5D34F200803FC6 /* Request */,
 				6FC15CE81D512C9600F913AC /* Signup */,
-				321D79611D6307B5006F68C2 /* More */,
 				6FDCE1181D459EAE0013B62C /* UI */,
 				6F429C201D51823500E8B1A4 /* User */,
 				6FDCE11B1D45A0720013B62C /* Utils */,
 				6F41F9981D458B1400F7BD43 /* AppDelegate.swift */,
-				FAADD3251D63805A00CAE4F9 /* SuccessView.swift */,
-				FAADD3231D63801A00CAE4F9 /* SuccessViewController.swift */,
 				6F41F9A61D458B1400F7BD43 /* Info.plist */,
 				6FF5B66D1D4B44B6000E9554 /* LaunchScreen.storyboard */,
 			);
@@ -237,9 +235,9 @@
 		6F41F9AE1D458B1400F7BD43 /* WeikeTests */ = {
 			isa = PBXGroup;
 			children = (
+				321D795B1D618B32006F68C2 /* Login */,
 				6F41F9B11D458B1400F7BD43 /* Info.plist */,
 				6F41F9AF1D458B1400F7BD43 /* WeikeTests.swift */,
-				321D795B1D618B32006F68C2 /* Login */,
 			);
 			path = WeikeTests;
 			sourceTree = "<group>";
@@ -247,9 +245,9 @@
 		6F41F9B91D458B1500F7BD43 /* WeikeUITests */ = {
 			isa = PBXGroup;
 			children = (
+				321D795C1D618C8C006F68C2 /* Login */,
 				6F41F9BC1D458B1500F7BD43 /* Info.plist */,
 				6F41F9BA1D458B1500F7BD43 /* WeikeUITests.swift */,
-				321D795C1D618C8C006F68C2 /* Login */,
 			);
 			path = WeikeUITests;
 			sourceTree = "<group>";
@@ -286,6 +284,7 @@
 			children = (
 				6F429C231D51A4A800E8B1A4 /* LandingView.swift */,
 				321A0BA71D5FD35E00B07B09 /* LoginView.swift */,
+				FAADD3251D63805A00CAE4F9 /* SuccessView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -312,6 +311,7 @@
 				6F429C251D51A4AC00E8B1A4 /* Views */,
 				6FB429BB1D4C541F0025FCE2 /* LandingViewController.swift */,
 				321A0BA91D5FD80400B07B09 /* LoginViewController.swift */,
+				FAADD3231D63801A00CAE4F9 /* SuccessViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";

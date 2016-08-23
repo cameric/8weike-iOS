@@ -10,17 +10,17 @@ import UIKit
 
 class SignupViewController: UIViewController {
     // MARK: Properties
-    
+
     private let signupView = SignupView()
-    
+
     // MARK: UIViewController
-    
+
     override func loadView() {
         super.loadView()
         signupView.delegate = self
         view = signupView
         self.title = "Signup"
-        
+
         // NavigationBar style
         if let navBar = navigationController?.navigationBar {
             navBar.barTintColor = UIColor.main
@@ -35,11 +35,11 @@ class SignupViewController: UIViewController {
 
 extension SignupViewController: SignupViewDelegate {
     func getVerificationCodeButtonTapped(){
-        
+
     }
-    
+
     func confirmButtonTapped(){
-        let signupSuccessViewController = SuccessViewController(frame: CGRect(x: 0.0, y: 0.0, width: 100.0, height: 100.0), message: "Signup Successful")
+        let signupSuccessViewController = SuccessViewController(message: "Signup Successful")
         self.navigationController?.pushViewController(signupSuccessViewController, animated: true)
         print("Signup button pressed")
     }

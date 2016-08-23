@@ -10,18 +10,18 @@ class SuccessViewController: UIViewController {
     // MARK: Properties
 
     private let successView: SuccessView
-    
+
     // MARK: Initializers
-    
-    init(frame: CGRect, message: String) {
-        self.successView = SuccessView(frame: frame, message: message)
+
+    init(message: String) {
+        self.successView = SuccessView(message: message)
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: UIViewController
 
     override func loadView() {
