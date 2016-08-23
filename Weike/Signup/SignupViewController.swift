@@ -23,7 +23,7 @@ class SignupViewController: UIViewController {
         
         // NavigationBar style
         if let navBar = navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.orange
+            navBar.barTintColor = UIColor.main
             navBar.tintColor = UIColor.white
             navBar.barStyle = UIBarStyle.black
             navBar.setValue(true, forKey: "hidesShadow")

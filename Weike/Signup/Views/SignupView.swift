@@ -73,7 +73,7 @@ class SignupView: UIView {
             "H:|-(horizontalPadding)-[phoneNumberTextField]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:|-(horizontalPadding)-[verificationCodeTextField]-[getVerificationCodeButton(>=30)]-(horizontalPadding)-|",
+            "H:|-(horizontalPadding)-[verificationCodeTextField]-[getVerificationCodeButton]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[passwordTextField]-(horizontalPadding)-|",
@@ -81,12 +81,16 @@ class SignupView: UIView {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[confirmButton]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
+//        NSLayoutConstraint(item: getVerificationCodeButton, attribute: .centerX , relatedBy: .equal, toItem: verificationCodeTextField, attribute: .centerX, multiplier: 1.0, constant: 0.0).isActive = true
         
         // Vertical constraints
         verticalAnchor = passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
         constraints.append(verticalAnchor!)
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "V:[phoneNumberTextField]-[verificationCodeTextField]-[passwordTextField]-(verticalPadding)-[confirmButton]",
+                                                                      options: [], metrics: metrics, views: views))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
+            "V:[phoneNumberTextField]-[getVerificationCodeButton]-[passwordTextField]-(verticalPadding)-[confirmButton]",
                                                                       options: [], metrics: metrics, views: views))
         
         NSLayoutConstraint.activate(constraints)
@@ -97,13 +101,13 @@ class SignupView: UIView {
     func getVerificationCodeButtonTapped(event: UIEvent) {
         // Color change after tap
         getVerificationCodeButton.setTitle("Code Sent", for: [])
-        getVerificationCodeButton.tintColor = UIColor.gray
+        getVerificationCodeButton.backgroundColor = UIColor.gray
         
         // Change back after 5 seconds
         let dispatchTime: DispatchTime = DispatchTime.now() + 5.0
         DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
             self.getVerificationCodeButton.setTitle("Get Code", for: [])
-            self.getVerificationCodeButton.tintColor = UIColor.orange
+            self.getVerificationCodeButton.backgroundColor = UIColor.main
         })
         
         // Action
