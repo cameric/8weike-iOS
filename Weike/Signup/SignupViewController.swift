@@ -19,7 +19,7 @@ class SignupViewController: UIViewController {
         super.loadView()
         signupView.delegate = self
         view = signupView
-        self.title = "Signup"
+        self.title = "Sign up"
 
         // NavigationBar style
         if let navBar = navigationController?.navigationBar {
@@ -34,13 +34,5 @@ class SignupViewController: UIViewController {
 }
 
 extension SignupViewController: SignupViewDelegate {
-    func getVerificationCodeButtonTapped(){
 
-    }
-
-    func confirmButtonTapped(){
-        let signupSuccessViewController = SuccessViewController(message: "Signup Successful")
-        self.navigationController?.pushViewController(signupSuccessViewController, animated: true)
-        print("Signup button pressed")
-    }
 }

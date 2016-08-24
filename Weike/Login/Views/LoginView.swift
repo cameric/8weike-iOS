@@ -46,8 +46,10 @@ class LoginView: UIView {
         startListenToKeyboardEvent()
 
         userNameTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
+        userNameTextField.keyboardType = .phonePad
 
         passwordTextField.setPlaceholder("Password", floatingTitle: "Password")
+        passwordTextField.isSecureTextEntry = true
 
         loginButton.setTitle("Login", for: [])
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
