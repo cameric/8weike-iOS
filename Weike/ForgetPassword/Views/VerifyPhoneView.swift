@@ -1,8 +1,8 @@
 //
-//  SignupView.swift
+//  VerifyPhoneView.swift
 //  Weike
 //
-//  Created by Weiyu Zhou on 8/2/16.
+//  Created by Danny Yulang Wang on 8/23/16.
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
@@ -10,22 +10,21 @@ private let topPadding = CGFloat(80)
 private let horizontalPadding = CGFloat(20)
 private let verticalPadding = CGFloat(20)
 
-protocol SignupViewDelegate: class {
+protocol VerifyPhoneDelegate: class {
     func getVerificationCodeButtonTapped()
     func confirmButtonTapped()
 }
 
-class SignupView: UIView {
+class VerifyPhoneView: UIView {
     // MARK: Properties
     
-    weak var delegate: SignupViewDelegate?
+    weak var delegate: VerifyPhoneDelegate?
     private var verticalAnchor: NSLayoutConstraint?
     
     // MARK: Views
     
     private let phoneNumberTextField = UITextField.floatLabeled
     private let verificationCodeTextField = UITextField.floatLabeled
-    private let passwordTextField = UITextField.floatLabeled
     private let getVerificationCodeButton = UIButton.rounded
     private let confirmButton = UIButton.rounded
     
@@ -34,7 +33,7 @@ class SignupView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
-        addSubviews([phoneNumberTextField, verificationCodeTextField, passwordTextField, getVerificationCodeButton, confirmButton])
+        addSubviews([phoneNumberTextField, verificationCodeTextField, getVerificationCodeButton, confirmButton])
         installConstraints()
     }
     
@@ -48,7 +47,6 @@ class SignupView: UIView {
         
         phoneNumberTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
         verificationCodeTextField.setPlaceholder("Verification Code", floatingTitle: "Verification Code")
-        passwordTextField.setPlaceholder("Set Password", floatingTitle: "Set Password")
         
         getVerificationCodeButton.setTitle("Get Code", for: [])
         getVerificationCodeButton.addTarget(self, action: #selector(getVerificationCodeButtonTapped), for: .touchUpInside)
@@ -60,7 +58,6 @@ class SignupView: UIView {
     private func installConstraints() {
         let views = ["phoneNumberTextField": phoneNumberTextField,
                      "verificationCodeTextField": verificationCodeTextField,
-                     "passwordTextField": passwordTextField,
                      "getVerificationCodeButton": getVerificationCodeButton,
                      "confirmButton": confirmButton]
         let metrics = ["horizontalPadding": horizontalPadding,
@@ -76,20 +73,17 @@ class SignupView: UIView {
             "H:|-(horizontalPadding)-[verificationCodeTextField]-[getVerificationCodeButton]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:|-(horizontalPadding)-[passwordTextField]-(horizontalPadding)-|",
-                                                                      options: [], metrics: metrics, views: views))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[confirmButton]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
         
         // Vertical constraints
-        verticalAnchor = passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
+        verticalAnchor = verificationCodeTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
         constraints.append(verticalAnchor!)
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[phoneNumberTextField]-[verificationCodeTextField]-[passwordTextField]-(verticalPadding)-[confirmButton]",
+            "V:[phoneNumberTextField]-[verificationCodeTextField]-(verticalPadding)-[confirmButton]",
                                                                       options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[phoneNumberTextField]-[getVerificationCodeButton]-[passwordTextField]-(verticalPadding)-[confirmButton]",
+            "V:[phoneNumberTextField]-[getVerificationCodeButton]-(verticalPadding)-[confirmButton]",
                                                                       options: [], metrics: metrics, views: views))
         
         NSLayoutConstraint.activate(constraints)
@@ -120,14 +114,14 @@ class SignupView: UIView {
 
 // MARK: KeyboardDelegate
 
-extension SignupView: KeyboardDelegate {
+extension VerifyPhoneView: KeyboardDelegate {
     func keyboardWillShow() {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
         
         verticalAnchor = phoneNumberTextField.topAnchor.constraint(equalTo: topAnchor,
-                                                                constant: topPadding)
+                                                                   constant: topPadding)
         NSLayoutConstraint.activate([verticalAnchor!])
         
         setNeedsLayout()
@@ -138,7 +132,7 @@ extension SignupView: KeyboardDelegate {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
         
-        verticalAnchor = passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
+        verticalAnchor = verificationCodeTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
         NSLayoutConstraint.activate([verticalAnchor!])
         
         setNeedsLayout()

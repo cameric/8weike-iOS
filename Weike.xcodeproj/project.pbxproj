@@ -40,6 +40,10 @@
 		843C73FE6476E4E93371B6AC /* Pods_Weike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11961CD8041B7EA8F78EC0CD /* Pods_Weike.framework */; };
 		FAADD3241D63801A00CAE4F9 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3231D63801A00CAE4F9 /* SuccessViewController.swift */; };
 		FAADD3261D63805A00CAE4F9 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3251D63805A00CAE4F9 /* SuccessView.swift */; };
+		FAADD3311D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3301D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift */; };
+		FAADD3331D6CEFCB00CAE4F9 /* VerifyPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3321D6CEFCB00CAE4F9 /* VerifyPhoneView.swift */; };
+		FAADD3361D6D087A00CAE4F9 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */; };
+		FAADD3381D6D089000CAE4F9 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */; };
 		FEB1596E43375FC821F7689E /* Pods_WeikeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E331BCD3982987A26DED219 /* Pods_WeikeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +112,10 @@
 		D1BFCD6E011BC18F3FDAB994 /* Pods_WeikeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeikeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAADD3231D63801A00CAE4F9 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		FAADD3251D63805A00CAE4F9 /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		FAADD3301D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
+		FAADD3321D6CEFCB00CAE4F9 /* VerifyPhoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneView.swift; sourceTree = "<group>"; };
+		FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
+		FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +230,7 @@
 				6F41F9CA1D458F1400F7BD43 /* Profile */,
 				6F51D6B21D5D34F200803FC6 /* Request */,
 				6FC15CE81D512C9600F913AC /* Signup */,
+				FAADD32F1D6CEF6300CAE4F9 /* ForgetPassword */,
 				6FDCE1181D459EAE0013B62C /* UI */,
 				6F429C201D51823500E8B1A4 /* User */,
 				6FDCE11B1D45A0720013B62C /* Utils */,
@@ -365,6 +374,25 @@
 				3E331BCD3982987A26DED219 /* Pods_WeikeUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FAADD32F1D6CEF6300CAE4F9 /* ForgetPassword */ = {
+			isa = PBXGroup;
+			children = (
+				FAADD3341D6CEFCF00CAE4F9 /* Views */,
+				FAADD3301D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift */,
+				FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */,
+			);
+			path = ForgetPassword;
+			sourceTree = "<group>";
+		};
+		FAADD3341D6CEFCF00CAE4F9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAADD3321D6CEFCB00CAE4F9 /* VerifyPhoneView.swift */,
+				FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -639,9 +667,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F429C221D51828D00E8B1A4 /* UIView+Utils.swift in Sources */,
+				FAADD3311D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift in Sources */,
 				6F43FDF51D590EC0002CC1B6 /* UIImage+Utils.swift in Sources */,
 				FAADD3241D63801A00CAE4F9 /* SuccessViewController.swift in Sources */,
 				6F429C1E1D51794C00E8B1A4 /* SignupView.swift in Sources */,
+				FAADD3361D6D087A00CAE4F9 /* ResetPasswordView.swift in Sources */,
 				6FB429BC1D4C541F0025FCE2 /* LandingViewController.swift in Sources */,
 				6FC15CE71D512C9100F913AC /* SignupViewController.swift in Sources */,
 				6FDCE11D1D45A6D10013B62C /* ProfileTableViewController.swift in Sources */,
@@ -663,6 +693,8 @@
 				321A0BA81D5FD35E00B07B09 /* LoginView.swift in Sources */,
 				321743D81D6923C20068C63E /* UITextField+Utils.swift in Sources */,
 				6F51D6B61D5D955F00803FC6 /* UIScreen+Utils.swift in Sources */,
+				FAADD3381D6D089000CAE4F9 /* ResetPasswordViewController.swift in Sources */,
+				FAADD3331D6CEFCB00CAE4F9 /* VerifyPhoneView.swift in Sources */,
 				6FF5B66C1D4B35E1000E9554 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
