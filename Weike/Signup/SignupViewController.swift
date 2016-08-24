@@ -6,8 +6,6 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-import UIKit
-
 class SignupViewController: UIViewController {
     // MARK: Properties
 
@@ -19,13 +17,13 @@ class SignupViewController: UIViewController {
         super.loadView()
         signupView.delegate = self
         view = signupView
-        self.title = "Sign up"
+        self.title = "Sign Up"
 
         // NavigationBar style
         if let navBar = navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.main
-            navBar.tintColor = UIColor.white
-            navBar.barStyle = UIBarStyle.black
+            navBar.barTintColor = .main
+            navBar.tintColor = .white
+            navBar.barStyle = .black
             navBar.setValue(true, forKey: "hidesShadow")
         } else {
             print("View not nested in Navigation Controller")
@@ -34,5 +32,8 @@ class SignupViewController: UIViewController {
 }
 
 extension SignupViewController: SignupViewDelegate {
-
+    func signupButtonTapped() {
+        let controller = SignupUsernameViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
 }

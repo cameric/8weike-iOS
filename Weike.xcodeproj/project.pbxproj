@@ -15,6 +15,8 @@
 		321D795E1D618CAA006F68C2 /* LandingViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D795D1D618CAA006F68C2 /* LandingViewUITest.swift */; };
 		321D79601D6307B1006F68C2 /* MoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321D795F1D6307B1006F68C2 /* MoreTableViewController.swift */; };
 		3265234E1D6C9A120026BB42 /* SignupUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3265234D1D6C9A120026BB42 /* SignupUsernameView.swift */; };
+		326523501D6DB0DC0026BB42 /* SignupUsernameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3265234F1D6DB0DC0026BB42 /* SignupUsernameViewController.swift */; };
+		326523521D6DB3F00026BB42 /* UINavigationBar+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326523511D6DB3F00026BB42 /* UINavigationBar+Utils.swift */; };
 		6F1CC7A41D5C576E00E7BDA0 /* UserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1CC7A31D5C576E00E7BDA0 /* UserRequest.swift */; };
 		6F41F9991D458B1400F7BD43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41F9981D458B1400F7BD43 /* AppDelegate.swift */; };
 		6F41F9A21D458B1400F7BD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F41F9A11D458B1400F7BD43 /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 		321D795D1D618CAA006F68C2 /* LandingViewUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandingViewUITest.swift; sourceTree = "<group>"; };
 		321D795F1D6307B1006F68C2 /* MoreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreTableViewController.swift; sourceTree = "<group>"; };
 		3265234D1D6C9A120026BB42 /* SignupUsernameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupUsernameView.swift; sourceTree = "<group>"; };
+		3265234F1D6DB0DC0026BB42 /* SignupUsernameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupUsernameViewController.swift; sourceTree = "<group>"; };
+		326523511D6DB3F00026BB42 /* UINavigationBar+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Utils.swift"; sourceTree = "<group>"; };
 		339ACA791CFE753B51235C37 /* Pods-WeikeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeikeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeikeTests/Pods-WeikeTests.release.xcconfig"; sourceTree = "<group>"; };
 		37294425CE1B4DC320F64FC6 /* Pods-WeikeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeikeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeikeTests/Pods-WeikeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E331BCD3982987A26DED219 /* Pods_WeikeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeikeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,8 +271,8 @@
 		6F429C1F1D51795200E8B1A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6F429C1D1D51794C00E8B1A4 /* SignupView.swift */,
 				3265234D1D6C9A120026BB42 /* SignupUsernameView.swift */,
+				6F429C1D1D51794C00E8B1A4 /* SignupView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				6F429C1F1D51795200E8B1A4 /* Views */,
+				3265234F1D6DB0DC0026BB42 /* SignupUsernameViewController.swift */,
 				6FC15CE61D512C9100F913AC /* SignupViewController.swift */,
 			);
 			path = Signup;
@@ -336,6 +341,7 @@
 				6F49BA9D1D5D17C50028ED52 /* UIColor+Utils.swift */,
 				6F6E9E521D51C303007CC2A2 /* UIDesign.swift */,
 				6F49BA9F1D5D18340028ED52 /* UIFont+Utils.swift */,
+				326523511D6DB3F00026BB42 /* UINavigationBar+Utils.swift */,
 				321743D71D6923C20068C63E /* UITextField+Utils.swift */,
 			);
 			path = UI;
@@ -655,6 +661,8 @@
 				6F429C241D51A4A800E8B1A4 /* LandingView.swift in Sources */,
 				321D79581D615C1E006F68C2 /* UserBasicInfoCell.swift in Sources */,
 				6F6E9E531D51C303007CC2A2 /* UIDesign.swift in Sources */,
+				326523501D6DB0DC0026BB42 /* SignupUsernameViewController.swift in Sources */,
+				326523521D6DB3F00026BB42 /* UINavigationBar+Utils.swift in Sources */,
 				FAADD3261D63805A00CAE4F9 /* SuccessView.swift in Sources */,
 				321D79601D6307B1006F68C2 /* MoreTableViewController.swift in Sources */,
 				6FDCE11F1D45A8A60013B62C /* DiscoverViewController.swift in Sources */,
