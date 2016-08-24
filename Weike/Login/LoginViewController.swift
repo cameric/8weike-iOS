@@ -41,6 +41,8 @@ extension LoginViewController: LoginViewDelegate {
     }
 
     func forgetPasswordTapped() {
-
+        let verifyPhoneViewController = VerifyPhoneViewController()
+        self.navigationController?.pushViewController(verifyPhoneViewController, animated: true)
+        print("Forgot password button pressed")
     }
 }
