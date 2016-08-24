@@ -10,6 +10,7 @@ target 'Weike' do
 
   # UI/UX Components
   pod 'JVFloatLabeledTextField'
+  pod 'zxcvbn-ios'
 
   target 'WeikeTests' do
     inherit! :search_paths

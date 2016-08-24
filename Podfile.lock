@@ -3,15 +3,18 @@ PODS:
   - Mixpanel (3.0.0):
     - Mixpanel/Mixpanel (= 3.0.0)
   - Mixpanel/Mixpanel (3.0.0)
+  - zxcvbn-ios (1.0.4)
 
 DEPENDENCIES:
   - JVFloatLabeledTextField
   - Mixpanel
+  - zxcvbn-ios
 
 SPEC CHECKSUMS:
   JVFloatLabeledTextField: 0e5524b097f102036214dd8279edc8ecf08b5e18
   Mixpanel: ac92056ee35a961362513ba11049e67cffcaa1f1
+  zxcvbn-ios: fef98b7c80f1512ff0eec47ac1fa399fc00f7e3c
 
-PODFILE CHECKSUM: d2f194bc7d0d34f506260eaafaaa37b14c90e262
+PODFILE CHECKSUM: 75dd15dc27f682d09e4de53d1be24ebdf627535d
 
 COCOAPODS: 1.0.1
