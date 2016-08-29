@@ -11,7 +11,7 @@ private let horizontalPadding = CGFloat(20)
 private let verticalPadding = CGFloat(20)
 
 protocol SignupViewDelegate: class {
-
+    func signupButtonTapped()
 }
 
 class SignupView: UIView {
@@ -51,9 +51,9 @@ class SignupView: UIView {
         passwordTextField.isSecureTextEntry = true
 
         confirmPasswordTextField.setPlaceholder("Confirm Password", floatingTitle: "Confirm Password")
-        passwordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.isSecureTextEntry = true
 
-        signupButton.setTitle("Sign up", for: [])
+        signupButton.setTitle("Sign Up", for: [])
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
 
@@ -94,7 +94,7 @@ class SignupView: UIView {
     // MARK: Private Helpers
 
     func signupButtonTapped(event: UIEvent) {
-
+        delegate?.signupButtonTapped()
     }
 }
 
