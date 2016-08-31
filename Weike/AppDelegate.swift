@@ -23,8 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     // MARK: UIApplicationDelegate
 
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        setupMixpanel()
+                     didFinishLaunchingWithOptions
+                     launchOptions: [NSObject: AnyObject]?) -> Bool {
+        registerAnalytics()
 
         self.window = UIWindow()
 
@@ -50,20 +51,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 
         let navController4 = UINavigationController(rootViewController: LandingViewController())
         tabBarController.present(navController4, animated: true) {}
-        
+
         return true
-    }
-
-    // MARK: Setup Third Party
-
-    private func setupMixpanel() {
-        let token = "ff3427461722afac1dd1312b42fa7b54"
-        _ = Mixpanel.sharedInstance(withToken: token)
     }
 
     // MARK: UITabBarControllerDelegate
 
     // MARK: SharedDelegate
-    
+
 
 }
