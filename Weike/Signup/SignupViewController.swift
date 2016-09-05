@@ -6,10 +6,12 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-class SignupViewController: UIViewController {
+class SignupViewController: WKUIViewController {
     // MARK: Properties
 
     private let signupView = SignupView()
+    var phone: String? { get { return signupView.phone } }
+    var password: String? { get { return signupView.password } }
 
     // MARK: UIViewController
 
@@ -18,22 +20,18 @@ class SignupViewController: UIViewController {
         signupView.delegate = self
         view = signupView
         self.title = "Sign Up"
-
-        // NavigationBar style
-        if let navBar = navigationController?.navigationBar {
-            navBar.barTintColor = .main
-            navBar.tintColor = .white
-            navBar.barStyle = .black
-            navBar.setValue(true, forKey: "hidesShadow")
-        } else {
-            print("View not nested in Navigation Controller")
-        }
     }
 }
 
 extension SignupViewController: SignupViewDelegate {
     func signupButtonTapped() {
-        let controller = SignupUsernameViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        SignupRequests.signup(phone: phone!, password: password!, completion: { (user, error) in
+            guard let _ = user else {
+                return
+            }
+
+            let controller = SignupUsernameViewController()
+            self.navigationController?.pushViewController(controller, animated: true)
+        })
     }
 }

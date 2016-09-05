@@ -10,14 +10,24 @@ import UIKit
 
 class WKTableViewController: UITableViewController {
 
+    var IRI: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        // NavigationBar style
+        if let navBar = navigationController?.navigationBar {
+            navBar.barTintColor = UIColor.main
+            navBar.tintColor = UIColor.white
+            navBar.barStyle = UIBarStyle.black
+            navBar.setValue(true, forKey: "hidesShadow")
+            navBar.isTranslucent = false
+            navBar.isHidden = false
+        } else {
+            print("View not nested in Navigation Controller")
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if IRI != nil { track(event: IRI!) }
     }
 
     override func didReceiveMemoryWarning() {

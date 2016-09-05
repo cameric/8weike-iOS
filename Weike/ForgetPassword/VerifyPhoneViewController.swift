@@ -10,26 +10,16 @@ import UIKit
 
 class VerifyPhoneViewController: UIViewController {
     // MARK: Properties
-    
+
     private let verifyPhoneView = VerifyPhoneView()
-    
+
     // MARK: UIViewController
-    
+
     override func loadView() {
         super.loadView()
         verifyPhoneView.delegate = self
         view = verifyPhoneView
         self.title = "Verify Phone Number"
-        
-        // NavigationBar style
-        if let navBar = navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.main
-            navBar.tintColor = UIColor.white
-            navBar.barStyle = UIBarStyle.black
-            navBar.setValue(true, forKey: "hidesShadow")
-        } else {
-            print("View not nested in Navigation Controller")
-        }
     }
 
 
@@ -37,9 +27,9 @@ class VerifyPhoneViewController: UIViewController {
 
 extension VerifyPhoneViewController: VerifyPhoneDelegate {
     func getVerificationCodeButtonTapped(){
-        
+
     }
-    
+
     func confirmButtonTapped(){
         let resetPasswordViewController = ResetPasswordViewController()
         self.navigationController?.pushViewController(resetPasswordViewController, animated: true)

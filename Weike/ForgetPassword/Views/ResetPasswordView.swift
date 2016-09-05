@@ -16,38 +16,38 @@ protocol ResetPasswordViewDelegate: class {
 
 class ResetPasswordView: UIView {
     // MARK: Properties
-    
+
     weak var delegate: ResetPasswordViewDelegate?
-    private var verticalAnchor: NSLayoutConstraint?
-    
+    fileprivate var verticalAnchor: NSLayoutConstraint?
+
     // MARK: Views
-    
-    private let passwordTextField = UITextField.floatLabeled
-    private let confirmButton = UIButton.rounded
-    
+
+    fileprivate let passwordTextField = UITextField.floatLabeled
+    fileprivate let confirmButton = UIButton.rounded
+
     // MARK: Initializers
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
         addSubviews([passwordTextField, confirmButton])
         installConstraints()
     }
-    
+
     convenience required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func configureSubviews() {
         backgroundColor = UIColor.background
         startListenToKeyboardEvent()
-        
+
         passwordTextField.setPlaceholder("Set Password", floatingTitle: "Set Password")
-        
+
         confirmButton.setTitle("Confirm", for: [])
         confirmButton.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
     }
-    
+
     private func installConstraints() {
         let views = ["passwordTextField": passwordTextField,
                      "confirmButton": confirmButton]
@@ -55,7 +55,7 @@ class ResetPasswordView: UIView {
                        "verticalPadding": verticalPadding]
         disableTranslatesAutoresizingMaskIntoConstraints(views)
         var constraints = [NSLayoutConstraint]()
-        
+
         // Horizontal constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[passwordTextField]-(horizontalPadding)-|",
@@ -63,19 +63,19 @@ class ResetPasswordView: UIView {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[confirmButton]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
-        
+
         // Vertical constraints
         verticalAnchor = passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
         constraints.append(verticalAnchor!)
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "V:[passwordTextField]-(verticalPadding)-[confirmButton]",
                                                                       options: [], metrics: metrics, views: views))
-        
+
         NSLayoutConstraint.activate(constraints)
     }
-    
+
     // MARK: Private Helpers
-    
+
     func confirmButtonTapped(event: UIEvent) {
         delegate?.confirmButtonTapped()
     }
@@ -88,22 +88,22 @@ extension ResetPasswordView: KeyboardDelegate {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
-        
+
         verticalAnchor = passwordTextField.topAnchor.constraint(equalTo: topAnchor,
                                                                    constant: topPadding)
         NSLayoutConstraint.activate([verticalAnchor!])
-        
+
         setNeedsLayout()
     }
-    
+
     func keyboardWillHide() {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
-        
+
         verticalAnchor = passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
         NSLayoutConstraint.activate([verticalAnchor!])
-        
+
         setNeedsLayout()
     }
 }

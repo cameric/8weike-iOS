@@ -14,11 +14,11 @@ enum HTTPMethod {
 protocol APIRequest {}
 
 extension APIRequest {
-    static func getTask(endpoint: String, params: [String: AnyObject], completion: (json: AnyObject?, error: Error?) -> Void) throws -> URLSessionDataTask {
+    static func getTask(endpoint: String, params: [String: AnyObject], completion: @escaping (_ json: AnyObject?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
         return try self.task(endpoint: endpoint, method: .GET, params: params, completion: completion)
     }
 
-    static func postTask(endpoint: String, params: [String: AnyObject], completion: (json: AnyObject?, error: Error?) -> Void) throws -> URLSessionDataTask {
+    static func postTask(endpoint: String, params: [String: AnyObject], completion: @escaping (_ json: AnyObject?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
         return try self.task(endpoint: endpoint, method: .POST, params: params, completion: completion)
     }
 
@@ -26,8 +26,10 @@ extension APIRequest {
      * Get a request task
      * It throws an error if the front end has error, and it returns backend error in completion
      */
-    private static func task(endpoint: String, method: HTTPMethod, params: [String: AnyObject], completion: (json: AnyObject?, error: Error?) -> Void) throws -> URLSessionDataTask {
-        var request = URLRequest(url: URL(string: "api/\(endpoint)")!)
+    private static func task(endpoint: String, method: HTTPMethod, params: [String: AnyObject], completion: @escaping (_ json: AnyObject?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
+        let hostName = "http://8weike.com/api"
+
+        var request = URLRequest(url: URL(string: "\(hostName)\(endpoint)")!)
 
         switch method {
         case .GET:
@@ -40,16 +42,20 @@ extension APIRequest {
 
         request.setValue("", forHTTPHeaderField: "")
         request.httpBody = try JSONSerialization.data(withJSONObject: params, options: .prettyPrinted)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("XMLHttpRequest", forHTTPHeaderField: "X-Requested-With")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
 
         let session = URLSession.shared
-        let task = session.dataTask(with: request) {
-            (data: Data?, response: URLResponse?, error: Error?) -> Void in
+        let task = session.dataTask(with: request, completionHandler: {
+            (data, response, error) in
             guard let jsonData = data else {
-                completion(json: nil, error: nil)
+                completion(nil, nil)
                 return
             }
-            completion(json: try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers), error: nil)
-        }
+            let json = try? JSONSerialization.jsonObject(with: jsonData, options: .mutableContainers)
+            completion(json as AnyObject?, nil)
+        })
         return task
     }
 }

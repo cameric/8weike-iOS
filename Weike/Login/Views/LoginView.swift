@@ -19,21 +19,23 @@ class LoginView: UIView {
     // MARK: Properties
 
     weak var delegate: LoginViewDelegate?
-    private var verticalAnchor: NSLayoutConstraint?
 
     // MARK: Views
 
-    private let userNameTextField = UITextField.floatLabeled
-    private let passwordTextField = UITextField.floatLabeled
-    private let loginButton = UIButton.rounded
-    private let forgetPassword = UIButton(type: .system)
+    fileprivate let phoneTextField = UITextField.floatLabeled
+    fileprivate let passwordTextField = UITextField.floatLabeled
+    fileprivate let loginButton = UIButton.rounded
+    fileprivate let forgetPassword = UIButton(type: .system)
+
+    var phone: String? { get { return phoneTextField.text } }
+    var password: String? { get { return passwordTextField.text } }
 
     // MARK: Initializers
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
-        addSubviews([userNameTextField, passwordTextField, loginButton, forgetPassword])
+        addSubviews([phoneTextField, passwordTextField, loginButton, forgetPassword])
         installConstraints()
     }
 
@@ -43,10 +45,9 @@ class LoginView: UIView {
 
     private func configureSubviews() {
         backgroundColor = UIColor.background
-        startListenToKeyboardEvent()
 
-        userNameTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
-        userNameTextField.keyboardType = .phonePad
+        phoneTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
+        phoneTextField.keyboardType = .phonePad
 
         passwordTextField.setPlaceholder("Password", floatingTitle: "Password")
         passwordTextField.isSecureTextEntry = true
@@ -60,7 +61,7 @@ class LoginView: UIView {
     }
 
     private func installConstraints() {
-        let views = ["userNameTextField": userNameTextField,
+        let views = ["phoneTextField": phoneTextField,
                      "passwordTextField": passwordTextField,
                      "loginButton": loginButton,
                      "forgetPassword": forgetPassword]
@@ -71,7 +72,7 @@ class LoginView: UIView {
 
         // Horizontal constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:|-(horizontalPadding)-[userNameTextField]-(horizontalPadding)-|",
+            "H:|-(horizontalPadding)-[phoneTextField]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[passwordTextField]-(horizontalPadding)-|",
@@ -84,10 +85,8 @@ class LoginView: UIView {
                                                                       options: [], metrics: metrics, views: views))
 
         // Vertical constraints
-        verticalAnchor = passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
-        constraints.append(verticalAnchor!)
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[userNameTextField]-[passwordTextField]-(verticalPadding)-[loginButton]-[forgetPassword]",
+            "V:|-(verticalPadding)-[phoneTextField]-[passwordTextField]-(verticalPadding)-[loginButton]-[forgetPassword]",
                                                                       options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)
@@ -101,32 +100,5 @@ class LoginView: UIView {
 
     func forgetPasswordTapped(event: UIEvent) {
         delegate?.forgetPasswordTapped()
-    }
-}
-
-// MARK: KeyboardDelegate
-
-extension LoginView: KeyboardDelegate {
-    func keyboardWillShow() {
-        if verticalAnchor != nil {
-            NSLayoutConstraint.deactivate([verticalAnchor!])
-        }
-
-        verticalAnchor = userNameTextField.topAnchor.constraint(equalTo: topAnchor,
-                                                                constant: topPadding)
-        NSLayoutConstraint.activate([verticalAnchor!])
-
-        setNeedsLayout()
-    }
-
-    func keyboardWillHide() {
-        if verticalAnchor != nil {
-            NSLayoutConstraint.deactivate([verticalAnchor!])
-        }
-
-        verticalAnchor = passwordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
-        NSLayoutConstraint.activate([verticalAnchor!])
-
-        setNeedsLayout()
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-class SignupUsernameViewController: UIViewController {
+class SignupUsernameViewController: WKUIViewController {
     // MARK: Properties
 
     private let signupUsernameView = SignupUsernameView()
@@ -17,15 +17,5 @@ class SignupUsernameViewController: UIViewController {
         super.loadView()
         view = signupUsernameView
         self.title = "Sign Up"
-
-        // NavigationBar style
-        if let navBar = navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.main
-            navBar.tintColor = UIColor.white
-            navBar.barStyle = UIBarStyle.black
-            navBar.setValue(true, forKey: "hidesShadow")
-        } else {
-            print("View not nested in Navigation Controller")
-        }
     }
 }

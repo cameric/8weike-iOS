@@ -25,9 +25,7 @@ func registerAnalytics() {
 }
 
 func track(event: String, properties: [NSObject : AnyObject]? = nil) {
-    var allProperties: [NSObject : AnyObject] = properties == nil ? [NSObject : AnyObject]() : properties!
-
-    allProperties["battery_level"] = UIDevice.current.batteryLevel
+    let allProperties: [NSObject : AnyObject] = properties == nil ? [NSObject : AnyObject]() : properties!
 
     Mixpanel.sharedInstance().track(event, properties: allProperties)
 }

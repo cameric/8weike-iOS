@@ -51,8 +51,9 @@ class SignupUsernameView: UIView {
             "H:|-(horizontalPadding)-[confirmUsernameButton]-(horizontalPadding)-|", options: [], metrics: metrics, views: views))
 
         // Vertical Constraints
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[usernameTextField]-(verticalPadding)-[confirmUsernameButton]", options: [], metrics: metrics, views: views))
-        constraints.append(confirmUsernameButton.centerYAnchor.constraint(equalTo: centerYAnchor))
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
+            "V:|-(verticalPadding)-[usernameTextField]-(verticalPadding)-[confirmUsernameButton]",
+            options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)
     }

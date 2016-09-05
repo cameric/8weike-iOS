@@ -18,14 +18,15 @@ class SignupView: UIView {
     // MARK: Properties
 
     weak var delegate: SignupViewDelegate?
-    private var verticalAnchor: NSLayoutConstraint?
+    var phone: String? { get { return phoneNumberTextField.text } }
+    var password: String? { get { return passwordTextField.text } }
 
     // MARK: Views
 
-    private let phoneNumberTextField = UITextField.floatLabeled
-    private let passwordTextField = UITextField.floatLabeled
-    private let confirmPasswordTextField = UITextField.floatLabeled
-    private let signupButton = UIButton.rounded
+    fileprivate let phoneNumberTextField = UITextField.floatLabeled
+    fileprivate let passwordTextField = UITextField.floatLabeled
+    fileprivate let confirmPasswordTextField = UITextField.floatLabeled
+    fileprivate let signupButton = UIButton.rounded
 
     // MARK: Initializers
 
@@ -42,7 +43,6 @@ class SignupView: UIView {
 
     private func configureSubviews() {
         backgroundColor = UIColor.background
-        startListenToKeyboardEvent()
 
         phoneNumberTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
         phoneNumberTextField.keyboardType = .phonePad
@@ -82,10 +82,8 @@ class SignupView: UIView {
                                                                       options: [], metrics: metrics, views: views))
 
         // Vertical constraints
-        verticalAnchor = confirmPasswordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
-        constraints.append(verticalAnchor!)
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[phoneNumberTextField]-[passwordTextField]-[confirmPasswordTextField]-(verticalPadding)-[signupButton]",
+            "V:|-(verticalPadding)-[phoneNumberTextField]-[passwordTextField]-[confirmPasswordTextField]-(verticalPadding)-[signupButton]",
                                                                       options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)
@@ -95,32 +93,5 @@ class SignupView: UIView {
 
     func signupButtonTapped(event: UIEvent) {
         delegate?.signupButtonTapped()
-    }
-}
-
-// MARK: KeyboardDelegate
-
-extension SignupView: KeyboardDelegate {
-    func keyboardWillShow() {
-        if verticalAnchor != nil {
-            NSLayoutConstraint.deactivate([verticalAnchor!])
-        }
-
-        verticalAnchor = phoneNumberTextField.topAnchor.constraint(equalTo: topAnchor,
-                                                                constant: topPadding)
-        NSLayoutConstraint.activate([verticalAnchor!])
-
-        setNeedsLayout()
-    }
-
-    func keyboardWillHide() {
-        if verticalAnchor != nil {
-            NSLayoutConstraint.deactivate([verticalAnchor!])
-        }
-
-        verticalAnchor = confirmPasswordTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
-        NSLayoutConstraint.activate([verticalAnchor!])
-
-        setNeedsLayout()
     }
 }

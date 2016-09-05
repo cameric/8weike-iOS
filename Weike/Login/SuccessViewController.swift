@@ -6,7 +6,7 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-class SuccessViewController: UIViewController {
+final class SuccessViewController: WKUIViewController {
     // MARK: Properties
 
     private let successView: SuccessView

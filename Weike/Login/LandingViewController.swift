@@ -9,26 +9,31 @@
 import AVKit
 import AVFoundation
 
-class LandingViewController: UIViewController {
+final class LandingViewController: WKUIViewController {
     // MARK: Properties
 
     private let landingView = LandingView()
 
     // MARK: UIViewController
 
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = true
-    }
-
     override func loadView() {
         super.loadView()
         landingView.delegate = self
         view = landingView
+
         loadBackgroundVideo()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        // Hide navigation bar
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        super.viewWillAppear(animated)
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.isNavigationBarHidden = false
+        // Show navigation bar
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        super.viewWillDisappear(animated)
     }
 
     private func loadBackgroundVideo() {

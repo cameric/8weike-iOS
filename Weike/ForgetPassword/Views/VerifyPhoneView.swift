@@ -17,44 +17,44 @@ protocol VerifyPhoneDelegate: class {
 
 class VerifyPhoneView: UIView {
     // MARK: Properties
-    
+
     weak var delegate: VerifyPhoneDelegate?
-    private var verticalAnchor: NSLayoutConstraint?
-    
+    fileprivate var verticalAnchor: NSLayoutConstraint?
+
     // MARK: Views
-    
-    private let phoneNumberTextField = UITextField.floatLabeled
-    private let verificationCodeTextField = UITextField.floatLabeled
-    private let getVerificationCodeButton = UIButton.rounded
-    private let confirmButton = UIButton.rounded
-    
+
+    fileprivate let phoneNumberTextField = UITextField.floatLabeled
+    fileprivate let verificationCodeTextField = UITextField.floatLabeled
+    fileprivate let getVerificationCodeButton = UIButton.rounded
+    fileprivate let confirmButton = UIButton.rounded
+
     // MARK: Initializers
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
         addSubviews([phoneNumberTextField, verificationCodeTextField, getVerificationCodeButton, confirmButton])
         installConstraints()
     }
-    
+
     convenience required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func configureSubviews() {
         backgroundColor = UIColor.background
         startListenToKeyboardEvent()
-        
+
         phoneNumberTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
         verificationCodeTextField.setPlaceholder("Verification Code", floatingTitle: "Verification Code")
-        
+
         getVerificationCodeButton.setTitle("Get Code", for: [])
         getVerificationCodeButton.addTarget(self, action: #selector(getVerificationCodeButtonTapped), for: .touchUpInside)
-        
+
         confirmButton.setTitle("Confirm", for: [])
         confirmButton.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
     }
-    
+
     private func installConstraints() {
         let views = ["phoneNumberTextField": phoneNumberTextField,
                      "verificationCodeTextField": verificationCodeTextField,
@@ -64,7 +64,7 @@ class VerifyPhoneView: UIView {
                        "verticalPadding": verticalPadding]
         disableTranslatesAutoresizingMaskIntoConstraints(views)
         var constraints = [NSLayoutConstraint]()
-        
+
         // Horizontal constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[phoneNumberTextField]-(horizontalPadding)-|",
@@ -75,7 +75,7 @@ class VerifyPhoneView: UIView {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[confirmButton]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
-        
+
         // Vertical constraints
         verticalAnchor = verificationCodeTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
         constraints.append(verticalAnchor!)
@@ -85,28 +85,28 @@ class VerifyPhoneView: UIView {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "V:[phoneNumberTextField]-[getVerificationCodeButton]-(verticalPadding)-[confirmButton]",
                                                                       options: [], metrics: metrics, views: views))
-        
+
         NSLayoutConstraint.activate(constraints)
     }
-    
+
     // MARK: Private Helpers
-    
+
     func getVerificationCodeButtonTapped(event: UIEvent) {
         // Color change after tap
         getVerificationCodeButton.setTitle("Code Sent", for: [])
         getVerificationCodeButton.backgroundColor = UIColor.gray
-        
+
         // Change back after 5 seconds
         let dispatchTime: DispatchTime = DispatchTime.now() + 5.0
         DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
             self.getVerificationCodeButton.setTitle("Get Code", for: [])
             self.getVerificationCodeButton.backgroundColor = UIColor.main
         })
-        
+
         // Action
         delegate?.getVerificationCodeButtonTapped()
     }
-    
+
     func confirmButtonTapped(event: UIEvent) {
         delegate?.confirmButtonTapped()
     }
@@ -119,22 +119,22 @@ extension VerifyPhoneView: KeyboardDelegate {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
-        
+
         verticalAnchor = phoneNumberTextField.topAnchor.constraint(equalTo: topAnchor,
                                                                    constant: topPadding)
         NSLayoutConstraint.activate([verticalAnchor!])
-        
+
         setNeedsLayout()
     }
-    
+
     func keyboardWillHide() {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
-        
+
         verticalAnchor = verificationCodeTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
         NSLayoutConstraint.activate([verticalAnchor!])
-        
+
         setNeedsLayout()
     }
 }

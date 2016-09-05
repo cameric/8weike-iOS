@@ -6,10 +6,12 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-class LoginViewController: UIViewController {
+final class LoginViewController: WKUIViewController {
     // MARK: Properties
 
     private let loginView = LoginView()
+    var phone: String? { get { return loginView.phone } }
+    var password: String? { get { return loginView.password } }
 
     // MARK: UIViewController
 
@@ -35,9 +37,14 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginViewDelegate {
     func loginButtonTapped() {
-        let loginSuccessViewController = SuccessViewController(message: "Login Successful")
-        self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
-        print("Login button pressed")
+        LoginRequests.login(phone: phone!, password: password!, completion: { (user, error) in
+            guard let _ = user else {
+                return
+            }
+            let loginSuccessViewController = SuccessViewController(message: "Login Successful")
+            self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
+            print("Login button pressed")
+        })
     }
 
     func forgetPasswordTapped() {

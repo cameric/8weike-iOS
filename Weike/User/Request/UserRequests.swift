@@ -7,15 +7,15 @@
 //
 
 class UserRequests: APIRequest {
-    static func user(id: String, completion: (user: User?, error: Error?) -> Void) {
+    static func user(id: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
         var user: User?
-        let task = try? getTask(endpoint: "/user", params: ["id": id], completion: { (json, error) in
+        let task = try? getTask(endpoint: "/user", params: ["id": id as AnyObject], completion: { (json, error) in
             guard let userJson = json else {
-                completion(user: nil, error: error)
+                completion(nil, error)
                 return
             }
             user = User.fromJson(userJson)
-            completion(user: user, error: error)
+            completion(user, error)
         })
         task?.resume()
     }
