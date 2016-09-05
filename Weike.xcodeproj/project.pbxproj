@@ -209,7 +209,7 @@
 			children = (
 				326523591D787DD80026BB42 /* LoginRequests.swift */,
 			);
-			name = Requests;
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		6F0DB98B1D7ABF2A00E8EB48 /* Requests */ = {
@@ -217,7 +217,7 @@
 			children = (
 				6F0DB9891D7ABF2200E8EB48 /* SignupRequests.swift */,
 			);
-			name = Requests;
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		6F1CC7A51D5C577400E7BDA0 /* Requests */ = {
@@ -225,8 +225,7 @@
 			children = (
 				6F1CC7A31D5C576E00E7BDA0 /* UserRequests.swift */,
 			);
-			name = Requests;
-			path = Request;
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		6F41F98C1D458B1400F7BD43 = {
@@ -255,13 +254,13 @@
 			isa = PBXGroup;
 			children = (
 				6FDCE1201D45A8AA0013B62C /* Discover */,
+				FAADD32F1D6CEF6300CAE4F9 /* ForgetPassword */,
 				6FB429BD1D4C54270025FCE2 /* Login */,
 				6FABFA491D4B2CB40006E093 /* Message */,
 				321D79611D6307B5006F68C2 /* More */,
 				6F41F9CA1D458F1400F7BD43 /* Profile */,
 				6F51D6B21D5D34F200803FC6 /* Request */,
 				6FC15CE81D512C9600F913AC /* Signup */,
-				FAADD32F1D6CEF6300CAE4F9 /* ForgetPassword */,
 				6FDCE1181D459EAE0013B62C /* UI */,
 				6F429C201D51823500E8B1A4 /* User */,
 				6FDCE11B1D45A0720013B62C /* Utils */,
@@ -385,13 +384,13 @@
 		6FDCE11B1D45A0720013B62C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				326523531D6E80770026BB42 /* Analytics.swift */,
 				6F43FDF41D590EC0002CC1B6 /* UIImage+Utils.swift */,
 				6F51D6B51D5D955F00803FC6 /* UIScreen+Utils.swift */,
 				6F429C211D51828D00E8B1A4 /* UIView+Utils.swift */,
-				6F24A9FF1D45953A00672A50 /* Weike-Bridging-Header.h */,
-				326523531D6E80770026BB42 /* Analytics.swift */,
-				326523551D6E867F0026BB42 /* WKUIViewController.swift */,
 				326523571D6E86940026BB42 /* WKTableViewController.swift */,
+				326523551D6E867F0026BB42 /* WKUIViewController.swift */,
+				6F24A9FF1D45953A00672A50 /* Weike-Bridging-Header.h */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -418,8 +417,8 @@
 			isa = PBXGroup;
 			children = (
 				FAADD3341D6CEFCF00CAE4F9 /* Views */,
-				FAADD3301D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift */,
 				FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */,
+				FAADD3301D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift */,
 			);
 			path = ForgetPassword;
 			sourceTree = "<group>";
@@ -427,8 +426,8 @@
 		FAADD3341D6CEFCF00CAE4F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FAADD3321D6CEFCB00CAE4F9 /* VerifyPhoneView.swift */,
 				FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */,
+				FAADD3321D6CEFCB00CAE4F9 /* VerifyPhoneView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
