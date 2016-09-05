@@ -20,6 +20,7 @@ final class LandingViewController: WKUIViewController {
         super.loadView()
         landingView.delegate = self
         view = landingView
+        IRI = landingViewIRI
 
         loadBackgroundVideo()
     }

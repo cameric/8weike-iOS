@@ -14,7 +14,13 @@ let mixpanelDidSetIRI = "mixpanel/set"
 
 // MARK: Login
 
+let landingViewIRI = "landing"
+let landingSignupIRI = "landing/signup"
+let landingLoginIRI = "landing/login"
 
+let loginViewIRI = "login"
+
+let signupViewIRI = "signup"
 
 // MARK: Wrappers
 

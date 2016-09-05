@@ -20,6 +20,7 @@ final class LoginViewController: WKUIViewController {
         loginView.delegate = self
         view = loginView
         self.title = "Login"
+        IRI = loginViewIRI
 
         // NavigationBar style
         if let navBar = navigationController?.navigationBar {

@@ -20,6 +20,8 @@ class SignupViewController: WKUIViewController {
         signupView.delegate = self
         view = signupView
         self.title = "Sign Up"
+
+        IRI = signupViewIRI
     }
 }
 
