@@ -27,13 +27,13 @@ class SignupViewController: WKUIViewController {
 
 extension SignupViewController: SignupViewDelegate {
     func signupButtonTapped() {
-        SignupRequests.signup(phone: phone!, password: password!, completion: { (user, error) in
-            guard let _ = user else {
-                return
+        SignupRequests.signup(phone: phone!, password: password!, completion: { (error) in
+            if error == nil {
+                let controller = SignupUsernameViewController()
+                self.navigationController?.pushViewController(controller, animated: true)
+            } else {
+                print(error)
             }
-
-            let controller = SignupUsernameViewController()
-            self.navigationController?.pushViewController(controller, animated: true)
         })
     }
 }

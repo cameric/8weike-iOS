@@ -10,17 +10,17 @@ class User: NSObject {
     var id: String
     var name: String
     var phone: String
-    
+
     var avatar: UIImage?
-    
+
     init(id: String, name: String, phone: String) {
         self.id = id
         self.name = name
         self.phone = phone
         super.init()
     }
-    
-    static func fromJson(_ json: AnyObject) -> User {
+
+    static func fromJson(_ json: [String: Any]) -> User {
         // todo
         return User(id: "", name: "", phone: "")
     }

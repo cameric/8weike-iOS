@@ -6,16 +6,21 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
+struct SignupError: Error {
+    var localizedDescription: String
+    init(description: String) {
+        localizedDescription = description
+    }
+}
+
 class SignupRequests: APIRequest {
-    static func signup(phone: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
-        var user: User?
+    static func signup(phone: String, password: String, completion: @escaping (_ error: Error?) -> Void) {
         let task = try? postTask(endpoint: "/signup/phone/mobile", params: ["phone": phone as AnyObject, "password": password as AnyObject], completion: { (json, error) in
-            guard let userJson = json else {
-                completion(nil, error)
-                return
+            if let message = json?["message"] {
+                completion(SignupError(description: message as! String))
+            } else {
+                completion(error)
             }
-            user = User.fromJson(userJson)
-            completion(user, error)
         })
         task?.resume()
     }

@@ -12,5 +12,6 @@
 #import "Mixpanel/Mixpanel.h"
 #import "JVFloatLabeledTextField/JVFloatLabeledTextField.h"
 #import "JVFloatLabeledTextField/JVFloatLabeledTextView.h"
+#import "AFNetworking/AFNetworking.h"
 
 #endif /* Weike_Bridging_Header_h */

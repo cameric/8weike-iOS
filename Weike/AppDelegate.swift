@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     // MARK: UIApplicationDelegate
 
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions
-                     launchOptions: [NSObject: AnyObject]?) -> Bool {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         registerAnalytics()
 
         self.window = UIWindow()
