@@ -32,7 +32,13 @@ extension SignupViewController: SignupViewDelegate {
                 let controller = SignupUsernameViewController()
                 self.navigationController?.pushViewController(controller, animated: true)
             } else {
-                print(error)
+                var message = error?.localizedDescription
+                if let signupError = error as? SignupError {
+                    message = signupError.localizedDescription
+                }
+                let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
             }
         })
     }

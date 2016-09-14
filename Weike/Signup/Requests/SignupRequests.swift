@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
+// to-do: this is a typical swift way of handling errors
 struct SignupError: Error {
     var localizedDescription: String
     init(description: String) {

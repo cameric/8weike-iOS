@@ -37,11 +37,7 @@ extension APIRequest {
         request.addValue("XMLHttpRequest", forHTTPHeaderField: "X-Requested-With")
 
         let task = manager.dataTask(with: request as URLRequest) { (response, responseObject, error) in
-            if error != nil {
-                completion(nil, error)
-                return
-            }
-            completion(responseObject as! [String: Any]?, nil) // to-do: create new Error type
+            completion(responseObject as! [String: Any]?, error) // to-do: create new Error type
             return
         }
         return task
