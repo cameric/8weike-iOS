@@ -6,13 +6,27 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-import JVFloatLabeledTextField
+import VLRTextField
 
 extension UITextField {
-    static var floatLabeled: JVFloatLabeledTextField {
-        let textField = JVFloatLabeledTextField()
+    static var floatLabeled: VLRTextField {
+        let textField = VLRTextField()
         textField.floatingLabelTextColor = UIColor.gray
-        textField.floatingLabelActiveTextColor = UIColor.main
+        textField.floatingLabelActiveValidTextColor = UIColor.main
+        textField.floatingLabelActiveUnvalidTextColor = UIColor.red
+        textField.shouldCheckWhileEditing = true
         return textField
+    }
+
+    static var formManager: VLRFormService {
+        return VLRFormService()
+    }
+}
+
+extension VLRFormService {
+    func addTextFields(_ textFields: [VLRTextField]) {
+        for field in textFields {
+            self.addTextField(field)
+        }
     }
 }

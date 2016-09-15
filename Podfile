@@ -9,8 +9,7 @@ target 'Weike' do
   pod 'Mixpanel'
 
   # UI/UX Components
-  pod 'JVFloatLabeledTextField'
-  pod 'zxcvbn-ios'
+  pod 'VLRTextField'
 
   # Networking
   pod 'AFNetworking'

@@ -9,12 +9,22 @@
 private let horizontalPadding = CGFloat(20)
 private let verticalPadding = CGFloat(20)
 
+protocol SignupUsernameViewDelegate {
+    func confirmUsernameButtonTapped()
+}
+
 class SignupUsernameView: UIView {
 
     // MARK: Properties
 
+    var delegate: SignupUsernameViewDelegate?
+    var username: String? { return usernameTextField.text }
+
+    // MARK: Views
+
     private let usernameTextField = UITextField.floatLabeled
     private let confirmUsernameButton = UIButton.rounded
+    private var formManager = UITextField.formManager
 
     // MARK: Initializers
 
@@ -22,6 +32,7 @@ class SignupUsernameView: UIView {
         super.init(frame: frame)
         configureSubviews()
         addSubviews([usernameTextField, confirmUsernameButton])
+        formManager.addTextFields([usernameTextField])
         installConstraints()
     }
 
@@ -33,6 +44,11 @@ class SignupUsernameView: UIView {
         backgroundColor = UIColor.background
 
         usernameTextField.setPlaceholder("Enter your name here", floatingTitle: "Username")
+        // Configure phoneNumberTextField
+        usernameTextField.placeholder = "Username"
+        usernameTextField.messageInvalid = "Your username is not a valid"
+        usernameTextField.messageRequired = "What is your nickname?"
+
         confirmUsernameButton.setTitle("Confirm Username", for: [])
     }
 
@@ -56,5 +72,15 @@ class SignupUsernameView: UIView {
             options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)
+    }
+
+    // Private Helpers
+
+    func confirmUsernameButtonTapped(event: UIEvent) {
+        let isValid = formManager.checkForm()
+        if isValid {
+            formManager.activeField.resignFirstResponder()
+            delegate?.confirmUsernameButtonTapped()
+        }
     }
 }

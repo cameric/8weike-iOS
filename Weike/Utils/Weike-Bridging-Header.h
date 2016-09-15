@@ -10,8 +10,7 @@
 #define Weike_Bridging_Header_h
 
 #import "Mixpanel/Mixpanel.h"
-#import "JVFloatLabeledTextField/JVFloatLabeledTextField.h"
-#import "JVFloatLabeledTextField/JVFloatLabeledTextView.h"
+#import "VLRTextField/VLRTextField.h"
 #import "AFNetworking/AFNetworking.h"
 
 #endif /* Weike_Bridging_Header_h */

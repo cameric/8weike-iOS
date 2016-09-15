@@ -6,22 +6,30 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-// to-do: this is a typical swift way of handling errors
-struct SignupError: Error {
-    var localizedDescription: String
-    init(description: String) {
-        localizedDescription = description
-    }
-}
-
 class SignupRequests: APIRequest {
     static func signup(phone: String, password: String, completion: @escaping (_ error: Error?) -> Void) {
-        let task = try? postTask(endpoint: "/signup/phone/mobile", params: ["phone": phone as AnyObject, "password": password as AnyObject], completion: { (json, error) in
-            if let message = json?["message"] {
-                completion(SignupError(description: message as! String))
-            } else {
-                completion(error)
-            }
+        let task = try? postTask(endpoint: "/signup/phone/mobile",
+                                 params: ["phone": phone as AnyObject, "password": password as AnyObject],
+                                 completion: { (json, error) in
+            completion(error)
+        })
+        task?.resume()
+    }
+
+    static func verify(code: String, completion: @escaping (_ error: Error?) -> Void) {
+        let task = try? postTask(endpoint: "/signup/verify",
+                                 params: ["code": code as AnyObject],
+                                 completion: { (json, error) in
+            completion(error)
+        })
+        task?.resume()
+    }
+
+    static func nickname(_ name: String, completion: @escaping (_ error: Error?) -> Void) {
+        let task = try? postTask(endpoint: "/profile",
+                                 params: ["nickname": name as AnyObject],
+                                 completion: { (json, error) in
+            completion(error)
         })
         task?.resume()
     }

@@ -37,8 +37,16 @@ extension APIRequest {
         request.addValue("XMLHttpRequest", forHTTPHeaderField: "X-Requested-With")
 
         let task = manager.dataTask(with: request as URLRequest) { (response, responseObject, error) in
-            completion(responseObject as! [String: Any]?, error) // to-do: create new Error type
-            return
+            let httpResponse = response as? HTTPURLResponse
+            let json = responseObject as! [String: Any]?
+            if let message = json?["message"] {
+                let userInfo: [String: Any] = [NSLocalizedDescriptionKey: message,
+                                               NSLocalizedFailureReasonErrorKey : message]
+                completion(json, NSError(domain: "APIRequestErrorDomain",
+                                         code: httpResponse!.statusCode, userInfo: userInfo))
+            } else {
+                completion(json, error)
+            }
         }
         return task
     }

@@ -15,11 +15,13 @@ protocol SignupViewDelegate: class {
 }
 
 class SignupView: UIView {
+
     // MARK: Properties
 
     weak var delegate: SignupViewDelegate?
-    var phone: String? { get { return phoneNumberTextField.text } }
-    var password: String? { get { return passwordTextField.text } }
+    var phone: String? { return phoneNumberTextField.text }
+    var password: String? { return passwordTextField.text }
+    private var formManager = UITextField.formManager
 
     // MARK: Views
 
@@ -34,6 +36,7 @@ class SignupView: UIView {
         super.init(frame: frame)
         configureSubviews()
         addSubviews([phoneNumberTextField, passwordTextField, confirmPasswordTextField, signupButton])
+        formManager.addTextFields([phoneNumberTextField, passwordTextField, confirmPasswordTextField])
         installConstraints()
     }
 
@@ -44,15 +47,34 @@ class SignupView: UIView {
     private func configureSubviews() {
         backgroundColor = UIColor.background
 
-        phoneNumberTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
+        // Configure phoneNumberTextField
+        phoneNumberTextField.placeholder = "Phone Number"
         phoneNumberTextField.keyboardType = .phonePad
+        phoneNumberTextField.regex = "^(\\+?0?86\\-?)?1[345789]\\d{9}$"
+        phoneNumberTextField.messageInvalid = "Your phone number is not a valid"
+        phoneNumberTextField.messageRequired = "Please enter a phone number"
+        phoneNumberTextField.formKeyPath = "phone"
 
-        passwordTextField.setPlaceholder("Password", floatingTitle: "Password")
+        // Configure passwordTextField
+        passwordTextField.placeholder = "Password"
         passwordTextField.isSecureTextEntry = true
+        passwordTextField.minimumNumberOfCharacters = 8
+        passwordTextField.messageRequired = "The password should be 8 characters long"
+        passwordTextField.messageInvalid = "Password invalid"
+        passwordTextField.formKeyPath = "password"
 
-        confirmPasswordTextField.setPlaceholder("Confirm Password", floatingTitle: "Confirm Password")
+        // Configure confirmPasswordTextField
+        confirmPasswordTextField.placeholder = "Confirm Password"
         confirmPasswordTextField.isSecureTextEntry = true
+        confirmPasswordTextField.minimumNumberOfCharacters = passwordTextField.minimumNumberOfCharacters
+        confirmPasswordTextField.validateBlock = { (textfield) -> Bool in
+            return self.passwordTextField.text == textfield?.text
+        }
+        confirmPasswordTextField.messageRequired = "Please re-enter your password"
+        confirmPasswordTextField.messageInvalid = "Passwords not match"
+        confirmPasswordTextField.formKeyPath = "password2"
 
+        // Configure signupButton
         signupButton.setTitle("Sign Up", for: [])
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
@@ -92,6 +114,10 @@ class SignupView: UIView {
     // MARK: Private Helpers
 
     func signupButtonTapped(event: UIEvent) {
-        delegate?.signupButtonTapped()
+        let isValid = formManager.checkForm()
+        if isValid {
+            formManager.activeField.resignFirstResponder()
+            delegate?.signupButtonTapped()
+        }
     }
 }
