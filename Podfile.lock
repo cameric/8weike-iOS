@@ -28,16 +28,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Mixpanel
-  - VLRTextField (from `https://github.com/JasonSZL/VLRTextField.git`)
-
-EXTERNAL SOURCES:
-  VLRTextField:
-    :git: https://github.com/JasonSZL/VLRTextField.git
-
-CHECKOUT OPTIONS:
-  VLRTextField:
-    :commit: e11a70f99d7e90b2f9f3969a631a411352ee1c34
-    :git: https://github.com/JasonSZL/VLRTextField.git
+  - VLRTextField
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -47,6 +38,6 @@ SPEC CHECKSUMS:
   VLRJVFloatLabeledTextField: 99a798b5a42a9e58b161453394b84358651d844e
   VLRTextField: 98c5ab15d1f1c928b160b60900d92ff5e48624d7
 
-PODFILE CHECKSUM: d8da1bf4129a1717bd49439a2b65c21943a4c42f
+PODFILE CHECKSUM: 05b5d7a006231ab83bca6d7aebe1290aab43ffa8
 
 COCOAPODS: 1.0.1

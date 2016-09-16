@@ -116,7 +116,6 @@ class SignupView: UIView {
     func signupButtonTapped(event: UIEvent) {
         let isValid = formManager.checkForm()
         if isValid {
-            formManager.activeField.resignFirstResponder()
             delegate?.signupButtonTapped()
         }
     }

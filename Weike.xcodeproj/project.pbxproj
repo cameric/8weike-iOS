@@ -21,6 +21,7 @@
 		326523581D6E86940026BB42 /* WKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326523571D6E86940026BB42 /* WKTableViewController.swift */; };
 		3265235A1D787DD80026BB42 /* LoginRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326523591D787DD80026BB42 /* LoginRequests.swift */; };
 		6F0DB98A1D7ABF2200E8EB48 /* SignupRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0DB9891D7ABF2200E8EB48 /* SignupRequests.swift */; };
+		6F133DC01D8B55A500CCA447 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F133DBF1D8B55A500CCA447 /* Localization.swift */; };
 		6F1CC7A41D5C576E00E7BDA0 /* UserRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1CC7A31D5C576E00E7BDA0 /* UserRequests.swift */; };
 		6F41F9991D458B1400F7BD43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F41F9981D458B1400F7BD43 /* AppDelegate.swift */; };
 		6F41F9A21D458B1400F7BD43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F41F9A11D458B1400F7BD43 /* Assets.xcassets */; };
@@ -91,6 +92,7 @@
 		3E331BCD3982987A26DED219 /* Pods_WeikeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeikeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		53BFFD4B66BBAD73BB2A187E /* Pods-WeikeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeikeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeikeUITests/Pods-WeikeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6F0DB9891D7ABF2200E8EB48 /* SignupRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupRequests.swift; sourceTree = "<group>"; };
+		6F133DBF1D8B55A500CCA447 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		6F1CC7A31D5C576E00E7BDA0 /* UserRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRequests.swift; sourceTree = "<group>"; };
 		6F24A9FF1D45953A00672A50 /* Weike-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Weike-Bridging-Header.h"; sourceTree = "<group>"; };
 		6F41F9951D458B1400F7BD43 /* Weike.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weike.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,6 +222,14 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		6F133DC11D8B5B0800CCA447 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				6F133DBF1D8B55A500CCA447 /* Localization.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		6F1CC7A51D5C577400E7BDA0 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +265,7 @@
 			children = (
 				6FDCE1201D45A8AA0013B62C /* Discover */,
 				FAADD32F1D6CEF6300CAE4F9 /* ForgetPassword */,
+				6F133DC11D8B5B0800CCA447 /* Localization */,
 				6FB429BD1D4C54270025FCE2 /* Login */,
 				6FABFA491D4B2CB40006E093 /* Message */,
 				321D79611D6307B5006F68C2 /* More */,
@@ -534,7 +545,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 				"zh-Hans-CN",
 			);
 			mainGroup = 6F41F98C1D458B1400F7BD43;
@@ -703,6 +713,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F133DC01D8B55A500CCA447 /* Localization.swift in Sources */,
 				6F429C221D51828D00E8B1A4 /* UIView+Utils.swift in Sources */,
 				3265235A1D787DD80026BB42 /* LoginRequests.swift in Sources */,
 				FAADD3311D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift in Sources */,
