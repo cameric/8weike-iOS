@@ -22,15 +22,6 @@ final class LoginViewController: WKUIViewController {
         self.title = "Login"
         IRI = loginViewIRI
 
-        // NavigationBar style
-        if let navBar = navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.main
-            navBar.tintColor = UIColor.white
-            navBar.barStyle = UIBarStyle.black
-            navBar.setValue(true, forKey: "hidesShadow")
-        } else {
-            print("View not nested in Navigation Controller")
-        }
     }
 }
 
@@ -38,13 +29,21 @@ final class LoginViewController: WKUIViewController {
 
 extension LoginViewController: LoginViewDelegate {
     func loginButtonTapped() {
+        print("Login button pressed")
         LoginRequests.login(phone: phone!, password: password!, completion: { (user, error) in
             guard let _ = user else {
                 return
             }
-            let loginSuccessViewController = SuccessViewController(message: "Login Successful")
-            self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
-            print("Login button pressed")
+            if error == nil {
+                let loginSuccessViewController = SuccessViewController(message: "Login Successful")
+                self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
+            } else {
+                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
+            
+            
         })
     }
 
