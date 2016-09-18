@@ -60,6 +60,7 @@ class LoginView: UIView {
 
         // Configure passwordTextField
         passwordTextField.placeholder = "Password"
+        passwordTextField.floatingLabelYPadding = textFieldFloatAdjustment
         passwordTextField.isSecureTextEntry = true
         passwordTextField.minimumNumberOfCharacters = 8
         passwordTextField.messageRequired = "The password should be 8 characters long"
