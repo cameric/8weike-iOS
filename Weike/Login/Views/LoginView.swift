@@ -9,6 +9,7 @@
 private let topPadding = CGFloat(80)
 private let horizontalPadding = CGFloat(20)
 private let verticalPadding = CGFloat(20)
+private let textFieldFloatAdjustment = CGFloat(-15)
 
 protocol LoginViewDelegate: class {
     func loginButtonTapped()
@@ -16,7 +17,7 @@ protocol LoginViewDelegate: class {
 }
 
 class LoginView: UIView {
-    
+
     // MARK: Properties
 
     weak var delegate: LoginViewDelegate?
@@ -50,6 +51,7 @@ class LoginView: UIView {
 
         // Configure phoneNumberTextField
         phoneNumberTextField.placeholder = "Phone Number"
+        phoneNumberTextField.floatingLabelYPadding = textFieldFloatAdjustment
         phoneNumberTextField.keyboardType = .phonePad
         phoneNumberTextField.regex = "^(\\+?0?86\\-?)?1[345789]\\d{9}$"
         phoneNumberTextField.messageInvalid = "Your phone number is not a valid"
@@ -68,7 +70,7 @@ class LoginView: UIView {
         loginButton.setTitle("Login", for: [])
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
 
-        // Configure forgetPassword
+       // Configure forgetPassword
         forgetPassword.setTitle("Forget Password?", for: [])
         forgetPassword.setTitleColor(UIColor.main, for: [])
         forgetPassword.addTarget(self, action: #selector(forgetPasswordTapped), for: .touchUpInside)
@@ -100,7 +102,7 @@ class LoginView: UIView {
 
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:|-(verticalPadding)-[phoneNumberTextField]-[passwordTextField]-(verticalPadding)-[loginButton]-[forgetPassword]",
+            "V:|-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[loginButton]-[forgetPassword]",
                                                                       options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)
@@ -112,7 +114,7 @@ class LoginView: UIView {
         let isValid = formManager.checkForm()
         if isValid {
             delegate?.loginButtonTapped()
-        }
+        }    
     }
 
     func forgetPasswordTapped(event: UIEvent) {

@@ -9,6 +9,7 @@
 private let topPadding = CGFloat(80)
 private let horizontalPadding = CGFloat(20)
 private let verticalPadding = CGFloat(20)
+private let textFieldFloatAdjustment = CGFloat(-15)
 
 protocol ResetPasswordViewDelegate: class {
     func confirmButtonTapped()
@@ -43,6 +44,7 @@ class ResetPasswordView: UIView {
         startListenToKeyboardEvent()
 
         passwordTextField.setPlaceholder("Set Password", floatingTitle: "Set Password")
+        passwordTextField.floatingLabelYPadding = textFieldFloatAdjustment
 
         confirmButton.setTitle("Confirm", for: [])
         confirmButton.addTarget(self, action: #selector(confirmButtonTapped), for: .touchUpInside)
