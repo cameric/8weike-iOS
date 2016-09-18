@@ -105,7 +105,7 @@ class SignupView: UIView {
 
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:|-(verticalPadding)-[phoneNumberTextField]-[passwordTextField]-[confirmPasswordTextField]-(verticalPadding)-[signupButton]",
+            "V:|-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[confirmPasswordTextField]-(verticalPadding)-[signupButton]",
                                                                       options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)

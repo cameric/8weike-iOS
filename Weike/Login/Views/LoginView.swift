@@ -16,7 +16,7 @@ protocol LoginViewDelegate: class {
 }
 
 class LoginView: UIView {
-    
+
     // MARK: Properties
 
     weak var delegate: LoginViewDelegate?
@@ -68,7 +68,7 @@ class LoginView: UIView {
         loginButton.setTitle("Login", for: [])
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
 
-        // Configure forgetPassword
+       // Configure forgetPassword
         forgetPassword.setTitle("Forget Password?", for: [])
         forgetPassword.setTitleColor(UIColor.main, for: [])
         forgetPassword.addTarget(self, action: #selector(forgetPasswordTapped), for: .touchUpInside)
@@ -100,7 +100,7 @@ class LoginView: UIView {
 
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:|-(verticalPadding)-[phoneNumberTextField]-[passwordTextField]-(verticalPadding)-[loginButton]-[forgetPassword]",
+            "V:|-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[loginButton]-[forgetPassword]",
                                                                       options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)
@@ -112,7 +112,7 @@ class LoginView: UIView {
         let isValid = formManager.checkForm()
         if isValid {
             delegate?.loginButtonTapped()
-        }
+        }    
     }
 
     func forgetPasswordTapped(event: UIEvent) {

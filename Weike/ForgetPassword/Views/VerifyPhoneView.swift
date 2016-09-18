@@ -47,7 +47,7 @@ class VerifyPhoneView: UIView {
 
         phoneNumberTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
         verificationCodeTextField.setPlaceholder("Verification Code", floatingTitle: "Verification Code")
-
+                
         getVerificationCodeButton.setTitle("Get Code", for: [])
         getVerificationCodeButton.addTarget(self, action: #selector(getVerificationCodeButtonTapped), for: .touchUpInside)
 
@@ -80,10 +80,10 @@ class VerifyPhoneView: UIView {
         verticalAnchor = verificationCodeTextField.centerYAnchor.constraint(equalTo: centerYAnchor)
         constraints.append(verticalAnchor!)
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[phoneNumberTextField]-[verificationCodeTextField]-(verticalPadding)-[confirmButton]",
+            "V:[phoneNumberTextField]-(verticalPadding)-[verificationCodeTextField]-(verticalPadding)-[confirmButton]",
                                                                       options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[phoneNumberTextField]-[getVerificationCodeButton]-(verticalPadding)-[confirmButton]",
+            "V:[phoneNumberTextField]-(verticalPadding)-[getVerificationCodeButton]-(verticalPadding)-[confirmButton]",
                                                                       options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)
