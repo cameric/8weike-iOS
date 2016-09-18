@@ -9,7 +9,6 @@
 private let topPadding = CGFloat(80)
 private let horizontalPadding = CGFloat(20)
 private let verticalPadding = CGFloat(20)
-private let textFieldFloatAdjustment = CGFloat(-15)
 
 protocol LoginViewDelegate: class {
     func loginButtonTapped()
@@ -51,7 +50,6 @@ class LoginView: UIView {
 
         // Configure phoneNumberTextField
         phoneNumberTextField.placeholder = "Phone Number"
-        phoneNumberTextField.floatingLabelYPadding = textFieldFloatAdjustment
         phoneNumberTextField.keyboardType = .phonePad
         phoneNumberTextField.regex = "^(\\+?0?86\\-?)?1[345789]\\d{9}$"
         phoneNumberTextField.messageInvalid = "Your phone number is not a valid"
@@ -60,7 +58,6 @@ class LoginView: UIView {
 
         // Configure passwordTextField
         passwordTextField.placeholder = "Password"
-        passwordTextField.floatingLabelYPadding = textFieldFloatAdjustment
         passwordTextField.isSecureTextEntry = true
         passwordTextField.minimumNumberOfCharacters = 8
         passwordTextField.messageRequired = "The password should be 8 characters long"

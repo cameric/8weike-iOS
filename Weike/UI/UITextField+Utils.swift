@@ -15,6 +15,7 @@ extension UITextField {
         textField.floatingLabelActiveValidTextColor = UIColor.main
         textField.floatingLabelActiveUnvalidTextColor = UIColor.red
         textField.shouldCheckWhileEditing = true
+        textField.floatingLabelYPadding = CGFloat(-15)
         return textField
     }
 

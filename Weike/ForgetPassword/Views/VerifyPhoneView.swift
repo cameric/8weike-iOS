@@ -9,7 +9,6 @@
 private let topPadding = CGFloat(80)
 private let horizontalPadding = CGFloat(20)
 private let verticalPadding = CGFloat(20)
-private let textFieldFloatAdjustment = CGFloat(-15)
 
 protocol VerifyPhoneDelegate: class {
     func getVerificationCodeButtonTapped()
@@ -47,10 +46,8 @@ class VerifyPhoneView: UIView {
         startListenToKeyboardEvent()
 
         phoneNumberTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
-        phoneNumberTextField.floatingLabelYPadding = textFieldFloatAdjustment
         verificationCodeTextField.setPlaceholder("Verification Code", floatingTitle: "Verification Code")
-        verificationCodeTextField.floatingLabelYPadding = textFieldFloatAdjustment
-
+                
         getVerificationCodeButton.setTitle("Get Code", for: [])
         getVerificationCodeButton.addTarget(self, action: #selector(getVerificationCodeButtonTapped), for: .touchUpInside)
 

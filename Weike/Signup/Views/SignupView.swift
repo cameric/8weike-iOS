@@ -9,7 +9,6 @@
 private let topPadding = CGFloat(80)
 private let horizontalPadding = CGFloat(20)
 private let verticalPadding = CGFloat(20)
-private let textFieldFloatAdjustment = CGFloat(-15)
 
 protocol SignupViewDelegate: class {
     func signupButtonTapped()
@@ -51,7 +50,6 @@ class SignupView: UIView {
         // Configure phoneNumberTextField
         phoneNumberTextField.placeholder = "Phone Number"
         phoneNumberTextField.keyboardType = .phonePad
-        phoneNumberTextField.floatingLabelYPadding = textFieldFloatAdjustment
         phoneNumberTextField.regex = "^(\\+?0?86\\-?)?1[345789]\\d{9}$"
         phoneNumberTextField.messageInvalid = "Your phone number is not a valid"
         phoneNumberTextField.messageRequired = "Please enter a phone number"
@@ -60,7 +58,6 @@ class SignupView: UIView {
         // Configure passwordTextField
         passwordTextField.placeholder = "Password"
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.floatingLabelYPadding = textFieldFloatAdjustment
         passwordTextField.minimumNumberOfCharacters = 8
         passwordTextField.messageRequired = "The password should be 8 characters long"
         passwordTextField.messageInvalid = "Password invalid"
@@ -69,7 +66,6 @@ class SignupView: UIView {
         // Configure confirmPasswordTextField
         confirmPasswordTextField.placeholder = "Confirm Password"
         confirmPasswordTextField.isSecureTextEntry = true
-        confirmPasswordTextField.floatingLabelYPadding = textFieldFloatAdjustment
         confirmPasswordTextField.minimumNumberOfCharacters = passwordTextField.minimumNumberOfCharacters
         confirmPasswordTextField.validateBlock = { (textfield) -> Bool in
             return self.passwordTextField.text == textfield?.text
