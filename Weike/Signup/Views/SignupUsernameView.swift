@@ -43,7 +43,6 @@ class SignupUsernameView: UIView {
     private func configureSubviews() {
         backgroundColor = UIColor.background
 
-        usernameTextField.setPlaceholder("Enter your name here", floatingTitle: "Username")
         // Configure phoneNumberTextField
         usernameTextField.placeholder = "Username"
         usernameTextField.messageInvalid = "Your username is not a valid"
