@@ -38,7 +38,7 @@ class LandingView: UIView {
     private let wechatButton = UIButton.whiteBorderTransparent(withTitle: "Wechat",
                                                                accessoryImage: UIDesign.wechatLogo())
     private let loginButton = UIButton.whiteBorderTransparent(withTitle: "Login")
-    private let signupButton = UIButton.whiteBorderTransparent(withTitle: "Signup")
+    private let signupButton = UIButton.whiteBorderTransparent(withTitle: "Sign Up")
     
     // MARK: Initializers
     
