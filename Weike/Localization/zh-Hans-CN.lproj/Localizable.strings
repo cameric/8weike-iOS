@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  Weike
+
+  Created by Weiyu Zhou on 9/26/16.
+  Copyright © 2016 Cameric. All rights reserved.
+*/
+
+"8 Microgram" = "八微克";
+"Confirm Password" = "确认密码";
+"Confirm Username" = "确认用户名";
+"Forget Password?" = "忘记密码?";
+"Login" = "登录";
+"Login Successful" = "登录成功";
+"OK" = "好的";
+"Password" = "密码";
+"Password invalid" = "密码不符合要求";
+"Passwords not match" = "密码不一致";
+"Phone Number" = "手机号";
+"Please enter a phone number" = "请输入您的手机号";
+"Please re-enter your password" = "请重新输入您的手机号";
+"Sign Up" = "注册";
+"The password should be 8 characters long" = "密码至少在八个字以上";
+"Username" = "用户名";
+"Wechat" = "微信登录";
+"What is your nickname?" = "如何称呼?";
+"Your phone number is not a valid" = "你的手机号码不符合要求";
+"Your username is not a valid" = "你的用户名不符合要求";

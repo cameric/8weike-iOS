@@ -49,27 +49,27 @@ class LoginView: UIView {
         backgroundColor = UIColor.background
 
         // Configure phoneNumberTextField
-        phoneNumberTextField.placeholder = "Phone Number"
+        phoneNumberTextField.placeholder = "Phone Number".localized()
         phoneNumberTextField.keyboardType = .phonePad
         phoneNumberTextField.regex = "^(\\+?0?86\\-?)?1[345789]\\d{9}$"
-        phoneNumberTextField.messageInvalid = "Your phone number is not a valid"
-        phoneNumberTextField.messageRequired = "Please enter a phone number"
+        phoneNumberTextField.messageInvalid = "Your phone number is not a valid".localized()
+        phoneNumberTextField.messageRequired = "Please enter a phone number".localized()
         phoneNumberTextField.formKeyPath = "phone"
 
         // Configure passwordTextField
-        passwordTextField.placeholder = "Password"
+        passwordTextField.placeholder = "Password".localized()
         passwordTextField.isSecureTextEntry = true
         passwordTextField.minimumNumberOfCharacters = 8
-        passwordTextField.messageRequired = "The password should be 8 characters long"
-        passwordTextField.messageInvalid = "Password invalid"
+        passwordTextField.messageRequired = "The password should be 8 characters long".localized()
+        passwordTextField.messageInvalid = "Password invalid".localized()
         passwordTextField.formKeyPath = "password"
 
         // Configure loginButton
-        loginButton.setTitle("Login", for: [])
+        loginButton.setTitle("Login".localized(), for: [])
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
 
        // Configure forgetPassword
-        forgetPassword.setTitle("Forget Password?", for: [])
+        forgetPassword.setTitle("Forget Password?".localized(), for: [])
         forgetPassword.setTitleColor(UIColor.main, for: [])
         forgetPassword.addTarget(self, action: #selector(forgetPasswordTapped), for: .touchUpInside)
     }
@@ -112,7 +112,7 @@ class LoginView: UIView {
         let isValid = formManager.checkForm()
         if isValid {
             delegate?.loginButtonTapped()
-        }    
+        }
     }
 
     func forgetPasswordTapped(event: UIEvent) {

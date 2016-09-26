@@ -44,6 +44,7 @@
 		6FE5A5E31D5C427000ED329C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE5A5E21D5C427000ED329C /* User.swift */; };
 		6FF5B66C1D4B35E1000E9554 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF5B66B1D4B35E1000E9554 /* MessageViewController.swift */; };
 		6FF5B66E1D4B44B6000E9554 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FF5B66D1D4B44B6000E9554 /* LaunchScreen.storyboard */; };
+		6FFBA63E1D99134C00706301 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FFBA6401D99134C00706301 /* Localizable.strings */; };
 		72093A1BFB496428F5826DCC /* Pods_WeikeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1BFCD6E011BC18F3FDAB994 /* Pods_WeikeTests.framework */; };
 		843C73FE6476E4E93371B6AC /* Pods_Weike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11961CD8041B7EA8F78EC0CD /* Pods_Weike.framework */; };
 		FAADD3241D63801A00CAE4F9 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3231D63801A00CAE4F9 /* SuccessViewController.swift */; };
@@ -122,6 +123,8 @@
 		6FE5A5E21D5C427000ED329C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6FF5B66B1D4B35E1000E9554 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		6FF5B66D1D4B44B6000E9554 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FFBA63F1D99134C00706301 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6FFBA6411D99135000706301 /* zh-Hans-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans-CN"; path = "zh-Hans-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AF2E638E317A4F993DAF9D84 /* Pods-Weike.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weike.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weike/Pods-Weike.debug.xcconfig"; sourceTree = "<group>"; };
 		BFBAFE4C54913564B55DAA8A /* Pods-WeikeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeikeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeikeUITests/Pods-WeikeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD4003D7FA1C493BB129BB5E /* Pods-Weike.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weike.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weike/Pods-Weike.release.xcconfig"; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 		6F133DC11D8B5B0800CCA447 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				6FFBA6401D99134C00706301 /* Localizable.strings */,
 				6F133DBF1D8B55A500CCA447 /* Localization.swift */,
 			);
 			path = Localization;
@@ -565,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F41F9A21D458B1400F7BD43 /* Assets.xcassets in Resources */,
+				6FFBA63E1D99134C00706301 /* Localizable.strings in Resources */,
 				6FF5B66E1D4B44B6000E9554 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -785,6 +790,19 @@
 			targetProxy = 6F41F9B71D458B1500F7BD43 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6FFBA6401D99134C00706301 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FFBA63F1D99134C00706301 /* en */,
+				6FFBA6411D99135000706301 /* zh-Hans-CN */,
+			);
+			name = Localizable.strings;
+			path = .;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		6F41F9BD1D458B1500F7BD43 /* Debug */ = {

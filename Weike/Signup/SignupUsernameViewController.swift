@@ -17,7 +17,7 @@ class SignupUsernameViewController: WKUIViewController {
         super.loadView()
         view = signupUsernameView
         signupUsernameView.delegate = self
-        self.title = "Nickname"
+        self.title = "Username".localized()
     }
 }
 

@@ -44,11 +44,12 @@ class SignupUsernameView: UIView {
         backgroundColor = UIColor.background
 
         // Configure phoneNumberTextField
-        usernameTextField.placeholder = "Username"
-        usernameTextField.messageInvalid = "Your username is not a valid"
-        usernameTextField.messageRequired = "What is your nickname?"
+        usernameTextField.placeholder = "Username".localized()
+        usernameTextField.minimumNumberOfCharacters = 3
+        usernameTextField.messageInvalid = "Your username is not a valid".localized()
+        usernameTextField.messageRequired = "What is your nickname?".localized()
 
-        confirmUsernameButton.setTitle("Confirm Username", for: [])
+        confirmUsernameButton.setTitle("Confirm Username".localized(), for: [])
     }
 
     private func installConstraints() {

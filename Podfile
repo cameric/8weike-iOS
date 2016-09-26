@@ -11,6 +11,9 @@ target 'Weike' do
   # Networking
   pod 'AFNetworking'
 
+  # Localization
+  pod 'Localize-Swift'
+
   target 'WeikeTests' do
     inherit! :search_paths
     # Pods for testing

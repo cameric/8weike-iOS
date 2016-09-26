@@ -6,6 +6,4 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-func localize(key: String) -> String {
-    return NSLocalizedString("lol", comment: "lol")
-}
+import Localize_Swift

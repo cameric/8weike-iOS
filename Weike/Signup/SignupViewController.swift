@@ -19,7 +19,7 @@ class SignupViewController: WKUIViewController {
         super.loadView()
         signupView.delegate = self
         view = signupView
-        self.title = "Sign Up"
+        self.title = "Sign Up".localized()
 
         IRI = signupViewIRI
     }

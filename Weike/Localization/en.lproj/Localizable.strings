@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  Weike
+
+  Created by Weiyu Zhou on 9/26/16.
+  Copyright © 2016 Cameric. All rights reserved.
+*/
+
+"8 Microgram" = "8 Microgram";
+"Confirm Password" = "Confirm Password";
+"Confirm Username" = "Confirm Username";
+"Forget Password?" = "Forget Password?";
+"Login" = "Login";
+"Login Successful" = "Login Successful";
+"OK" = "OK";
+"Password" = "Password";
+"Password invalid" = "Password invalid";
+"Passwords not match" = "Passwords not match";
+"Phone Number" = "Phone Number";
+"Please enter a phone number" = "Please enter a phone number";
+"Please re-enter your password" = "Please re-enter your password";
+"Sign Up" = "Sign Up";
+"The password should be 8 characters long" = "The password should be 8 characters long";
+"Username" = "Username";
+"Wechat" = "Wechat";
+"What is your nickname?" = "What is your nickname?";
+"Your phone number is not a valid" = "Your phone number is not a valid";
+"Your username is not a valid" = "Your username is not a valid";

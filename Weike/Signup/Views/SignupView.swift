@@ -48,34 +48,34 @@ class SignupView: UIView {
         backgroundColor = UIColor.background
 
         // Configure phoneNumberTextField
-        phoneNumberTextField.placeholder = "Phone Number"
+        phoneNumberTextField.placeholder = "Phone Number".localized()
         phoneNumberTextField.keyboardType = .phonePad
         phoneNumberTextField.regex = "^(\\+?0?86\\-?)?1[345789]\\d{9}$"
-        phoneNumberTextField.messageInvalid = "Your phone number is not a valid"
-        phoneNumberTextField.messageRequired = "Please enter a phone number"
+        phoneNumberTextField.messageInvalid = "Your phone number is not a valid".localized()
+        phoneNumberTextField.messageRequired = "Please enter a phone number".localized()
         phoneNumberTextField.formKeyPath = "phone"
 
         // Configure passwordTextField
-        passwordTextField.placeholder = "Password"
+        passwordTextField.placeholder = "Password".localized()
         passwordTextField.isSecureTextEntry = true
         passwordTextField.minimumNumberOfCharacters = 8
-        passwordTextField.messageRequired = "The password should be 8 characters long"
-        passwordTextField.messageInvalid = "Password invalid"
+        passwordTextField.messageRequired = "The password should be 8 characters long".localized()
+        passwordTextField.messageInvalid = "Password invalid".localized()
         passwordTextField.formKeyPath = "password"
 
         // Configure confirmPasswordTextField
-        confirmPasswordTextField.placeholder = "Confirm Password"
+        confirmPasswordTextField.placeholder = "Confirm Password".localized()
         confirmPasswordTextField.isSecureTextEntry = true
         confirmPasswordTextField.minimumNumberOfCharacters = passwordTextField.minimumNumberOfCharacters
         confirmPasswordTextField.validateBlock = { (textfield) -> Bool in
             return self.passwordTextField.text == textfield?.text
         }
-        confirmPasswordTextField.messageRequired = "Please re-enter your password"
-        confirmPasswordTextField.messageInvalid = "Passwords not match"
+        confirmPasswordTextField.messageRequired = "Please re-enter your password".localized()
+        confirmPasswordTextField.messageInvalid = "Passwords not match".localized()
         confirmPasswordTextField.formKeyPath = "password2"
 
         // Configure signupButton
-        signupButton.setTitle("Sign Up", for: [])
+        signupButton.setTitle("Sign Up".localized(), for: [])
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
 

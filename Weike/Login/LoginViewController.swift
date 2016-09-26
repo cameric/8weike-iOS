@@ -19,7 +19,7 @@ final class LoginViewController: WKUIViewController {
         super.loadView()
         loginView.delegate = self
         view = loginView
-        self.title = "Login"
+        self.title = "Login".localized()
         IRI = loginViewIRI
 
     }
@@ -35,15 +35,15 @@ extension LoginViewController: LoginViewDelegate {
                 return
             }
             if error == nil {
-                let loginSuccessViewController = SuccessViewController(message: "Login Successful")
+                let loginSuccessViewController = SuccessViewController(message: "Login Successful".localized())
                 self.navigationController?.pushViewController(loginSuccessViewController, animated: true)
             } else {
                 let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                alert.addAction(UIAlertAction(title: "OK".localized(), style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
-            
-            
+
+
         })
     }
 

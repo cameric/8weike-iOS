@@ -35,42 +35,42 @@ class LandingView: UIView {
     }
     private let logoView = UIImageView(image: UIDesign.logo())
     private let weikeLabel = UILabel()
-    private let wechatButton = UIButton.whiteBorderTransparent(withTitle: "Wechat",
+    private let wechatButton = UIButton.whiteBorderTransparent(withTitle: "Wechat".localized(),
                                                                accessoryImage: UIDesign.wechatLogo())
-    private let loginButton = UIButton.whiteBorderTransparent(withTitle: "Login")
-    private let signupButton = UIButton.whiteBorderTransparent(withTitle: "Sign Up")
-    
+    private let loginButton = UIButton.whiteBorderTransparent(withTitle: "Login".localized())
+    private let signupButton = UIButton.whiteBorderTransparent(withTitle: "Sign Up".localized())
+
     // MARK: Initializers
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
         addSubviews([logoView, weikeLabel, wechatButton, loginButton, signupButton])
         installConstraints()
     }
-    
+
     convenience required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     // MARK: Private Helpers
-    
+
     private func configureSubviews() {
         self.backgroundColor = UIColor.main
         // Configure Weike Label
-        weikeLabel.text = "8 Microgram"
+        weikeLabel.text = "8 Microgram".localized()
         weikeLabel.textColor = UIColor.white
-        
+
         // Configure Wechat Button
         wechatButton.addTarget(self, action: #selector(wechatButtonTapped), for: .touchUpInside)
-        
+
         // Configure Login Button
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        
+
         // Configure Signup Button
         signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
-    
+
     private func installConstraints() {
         let views = ["logoView": logoView,
                      "weikeLabel": weikeLabel,
@@ -81,7 +81,7 @@ class LandingView: UIView {
                        "logoPadding": logoPadding]
         disableTranslatesAutoresizingMaskIntoConstraints(views)
         var constraints = [NSLayoutConstraint]()
-        
+
         // Horizontal Constraints
         constraints.append(logoView.centerXAnchor.constraint(equalTo: centerXAnchor))
         constraints.append(logoView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.3))
@@ -93,7 +93,7 @@ class LandingView: UIView {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(buttonPadding)-[loginButton]-(buttonPadding)-[signupButton]-(buttonPadding)-|",
             options: [], metrics: metrics, views: views))
-        
+
         // Vertical Constraints
         constraints.append(weikeLabel.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: logoPadding))
         constraints.append(weikeLabel.centerYAnchor.constraint(equalTo: centerYAnchor))
@@ -103,15 +103,15 @@ class LandingView: UIView {
         constraints.append(bottomAnchor.constraint(equalTo: signupButton.bottomAnchor, constant: buttonPadding))
         NSLayoutConstraint.activate(constraints)
     }
-    
+
     func loginButtonTapped(event: UIEvent) {
         delegate?.LandingViewLoginButtonTapped()
     }
-    
+
     func signupButtonTapped(event: UIEvent) {
         delegate?.LandingViewSignupButtonTapped()
     }
-    
+
     func wechatButtonTapped(event: UIEvent) {
         delegate?.LandingViewWechatButtonTapped()
     }
