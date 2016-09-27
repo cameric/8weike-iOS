@@ -12,9 +12,9 @@ private let floatingLabelYPadding = CGFloat(-15)
 extension UITextField {
     static var floatLabeled: VLRTextField {
         let textField = VLRTextField()
-        textField.floatingLabelTextColor = UIColor.gray
-        textField.floatingLabelActiveValidTextColor = UIColor.main
-        textField.floatingLabelActiveUnvalidTextColor = UIColor.red
+        textField.floatingLabelTextColor = UIColor.white
+        textField.floatingLabelActiveValidTextColor = UIColor.white
+        textField.floatingLabelActiveUnvalidTextColor = UIColor.white
         textField.shouldCheckWhileEditing = true
         textField.floatingLabelYPadding = floatingLabelYPadding
         return textField

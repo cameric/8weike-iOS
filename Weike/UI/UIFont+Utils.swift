@@ -8,28 +8,44 @@
 
 extension UIFont {
     // MARK: Fonts
-    
-    static func small() -> UIFont {
+
+    static var small: UIFont {
         return UIFont.systemFont(ofSize: 9)
     }
-    
-    static func normal() -> UIFont {
+
+    static var normal: UIFont {
         return UIFont.systemFont(ofSize: 13)
     }
-    
-    static func large() -> UIFont {
+
+    static var large: UIFont {
         return UIFont.systemFont(ofSize: 17)
     }
-    
-    static func smallBold() -> UIFont {
+
+    static var extraLarge: UIFont {
+        return UIFont.systemFont(ofSize: 19)
+    }
+
+    static var extraExtraLarge: UIFont {
+        return UIFont.systemFont(ofSize: 21)
+    }
+
+    static var smallBold: UIFont {
         return UIFont.boldSystemFont(ofSize: 9)
     }
-    
-    static func normalBold() -> UIFont {
+
+    static var normalBold: UIFont {
         return UIFont.boldSystemFont(ofSize: 13)
     }
-    
-    static func largeBold() -> UIFont {
+
+    static var largeBold: UIFont {
         return UIFont.boldSystemFont(ofSize: 17)
+    }
+
+    static var extraLargeBold: UIFont {
+        return UIFont.boldSystemFont(ofSize: 19)
+    }
+
+    static var extraExtraLargeBold: UIFont {
+        return UIFont.boldSystemFont(ofSize: 21)
     }
 }

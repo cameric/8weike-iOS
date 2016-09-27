@@ -10,7 +10,7 @@ extension UIColor {
     // MARK: Colors
 
     static var background: UIColor {
-        return UIColor(white: 0.95, alpha: 1)
+        return UIColor.main
     }
 
     static var main: UIColor {

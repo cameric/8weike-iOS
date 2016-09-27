@@ -20,7 +20,12 @@ let landingLoginIRI = "landing/login"
 
 let loginViewIRI = "login"
 
+// MARK: Signup
+
 let signupViewIRI = "signup"
+
+let phoneVerifyIRI = "phone_verify"
+let phoneVerifyResendIRI = "phone_verify/resend"
 
 // MARK: Wrappers
 

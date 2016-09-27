@@ -9,7 +9,7 @@
 private let horizontalPadding = CGFloat(20)
 private let verticalPadding = CGFloat(20)
 
-protocol SignupUsernameViewDelegate {
+protocol SignupUsernameViewDelegate: class {
     func confirmUsernameButtonTapped()
 }
 
@@ -17,7 +17,7 @@ class SignupUsernameView: UIView {
 
     // MARK: Properties
 
-    var delegate: SignupUsernameViewDelegate?
+    weak var delegate: SignupUsernameViewDelegate?
     var username: String? { return usernameTextField.text }
 
     // MARK: Views

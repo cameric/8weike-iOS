@@ -29,7 +29,7 @@ extension SignupViewController: SignupViewDelegate {
     func signupButtonTapped() {
         SignupRequests.signup(phone: phone!, password: password!, completion: { (error) in
             if error == nil {
-                let controller = SignupUsernameViewController()
+                let controller = PhoneVerifyViewController()
                 self.navigationController?.pushViewController(controller, animated: true)
             } else {
                 let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)

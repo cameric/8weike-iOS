@@ -36,7 +36,7 @@ class SuccessView: UIView {
 
         // Message related
         successMessageLabel.text = message
-        successMessageLabel.font = UIFont.large()
+        successMessageLabel.font = UIFont.large
         successMessageLabel.textColor = UIColor.white
         successMessageLabel.textAlignment = NSTextAlignment.center
 
