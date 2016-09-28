@@ -18,7 +18,7 @@
 "Passwords not match" = "密码不一致";
 "Phone Number" = "手机号";
 "Please enter a phone number" = "请输入您的手机号";
-"Please re-enter your password" = "请重新输入您的手机号";
+"Please re-enter your password" = "请重新输入您的密码";
 "Sign Up" = "注册";
 "The password should be 8 characters long" = "密码至少在八个字以上";
 "Username" = "用户名";

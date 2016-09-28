@@ -12,11 +12,14 @@ private let floatingLabelYPadding = CGFloat(-15)
 extension UITextField {
     static var floatLabeled: VLRTextField {
         let textField = VLRTextField()
-        textField.floatingLabelTextColor = UIColor.white
-        textField.floatingLabelActiveValidTextColor = UIColor.white
-        textField.floatingLabelActiveUnvalidTextColor = UIColor.white
+        textField.placeholderColor = .white
+        textField.floatingLabelTextColor = .white
+        textField.floatingLabelActiveValidTextColor = .white
+        textField.floatingLabelActiveUnvalidTextColor = .white
         textField.shouldCheckWhileEditing = true
         textField.floatingLabelYPadding = floatingLabelYPadding
+        textField.textColor = .white
+        textField.enablesReturnKeyAutomatically = true
         return textField
     }
 

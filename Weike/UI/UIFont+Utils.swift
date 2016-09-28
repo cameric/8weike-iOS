@@ -10,42 +10,42 @@ extension UIFont {
     // MARK: Fonts
 
     static var small: UIFont {
-        return UIFont.systemFont(ofSize: 9)
+        return .systemFont(ofSize: 9)
     }
 
     static var normal: UIFont {
-        return UIFont.systemFont(ofSize: 13)
+        return .systemFont(ofSize: 13)
     }
 
     static var large: UIFont {
-        return UIFont.systemFont(ofSize: 17)
+        return .systemFont(ofSize: 17)
     }
 
     static var extraLarge: UIFont {
-        return UIFont.systemFont(ofSize: 19)
+        return .systemFont(ofSize: 21)
     }
 
     static var extraExtraLarge: UIFont {
-        return UIFont.systemFont(ofSize: 21)
+        return .systemFont(ofSize: 25)
     }
 
     static var smallBold: UIFont {
-        return UIFont.boldSystemFont(ofSize: 9)
+        return .boldSystemFont(ofSize: 9)
     }
 
     static var normalBold: UIFont {
-        return UIFont.boldSystemFont(ofSize: 13)
+        return .boldSystemFont(ofSize: 13)
     }
 
     static var largeBold: UIFont {
-        return UIFont.boldSystemFont(ofSize: 17)
+        return .boldSystemFont(ofSize: 17)
     }
 
     static var extraLargeBold: UIFont {
-        return UIFont.boldSystemFont(ofSize: 19)
+        return .boldSystemFont(ofSize: 21)
     }
 
     static var extraExtraLargeBold: UIFont {
-        return UIFont.boldSystemFont(ofSize: 21)
+        return .boldSystemFont(ofSize: 25)
     }
 }

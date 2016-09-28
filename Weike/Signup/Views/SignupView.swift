@@ -7,24 +7,25 @@
 //
 
 private let topPadding = CGFloat(80)
-private let horizontalPadding = CGFloat(20)
-private let verticalPadding = CGFloat(20)
+private let horizontalPadding = CGFloat(30)
+private let verticalPadding = CGFloat(30)
 
 protocol SignupViewDelegate: class {
     func signupButtonTapped()
 }
 
-class SignupView: UIView {
+final class SignupView: UIView {
 
     // MARK: Properties
 
     weak var delegate: SignupViewDelegate?
     var phone: String? { return phoneNumberTextField.text }
     var password: String? { return passwordTextField.text }
-    private var formManager = UITextField.formManager
+    var formManager = UITextField.formManager
 
     // MARK: Views
 
+    fileprivate let titleLabel = UILabel()
     fileprivate let phoneNumberTextField = UITextField.floatLabeled
     fileprivate let passwordTextField = UITextField.floatLabeled
     fileprivate let confirmPasswordTextField = UITextField.floatLabeled
@@ -35,7 +36,7 @@ class SignupView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
-        addSubviews([phoneNumberTextField, passwordTextField, confirmPasswordTextField, signupButton])
+        addSubviews([titleLabel, phoneNumberTextField, passwordTextField, confirmPasswordTextField, signupButton])
         formManager.addTextFields([phoneNumberTextField, passwordTextField, confirmPasswordTextField])
         installConstraints()
     }
@@ -47,6 +48,10 @@ class SignupView: UIView {
     private func configureSubviews() {
         backgroundColor = UIColor.background
 
+        titleLabel.text = "Sign Up".localized()
+        titleLabel.font = .extraExtraLargeBold
+        titleLabel.textColor = .white
+
         // Configure phoneNumberTextField
         phoneNumberTextField.placeholder = "Phone Number".localized()
         phoneNumberTextField.keyboardType = .phonePad
@@ -54,6 +59,7 @@ class SignupView: UIView {
         phoneNumberTextField.messageInvalid = "Your phone number is not a valid".localized()
         phoneNumberTextField.messageRequired = "Please enter a phone number".localized()
         phoneNumberTextField.formKeyPath = "phone"
+        phoneNumberTextField.returnKeyType = .next
 
         // Configure passwordTextField
         passwordTextField.placeholder = "Password".localized()
@@ -62,6 +68,7 @@ class SignupView: UIView {
         passwordTextField.messageRequired = "The password should be 8 characters long".localized()
         passwordTextField.messageInvalid = "Password invalid".localized()
         passwordTextField.formKeyPath = "password"
+        passwordTextField.returnKeyType = .next
 
         // Configure confirmPasswordTextField
         confirmPasswordTextField.placeholder = "Confirm Password".localized()
@@ -73,6 +80,8 @@ class SignupView: UIView {
         confirmPasswordTextField.messageRequired = "Please re-enter your password".localized()
         confirmPasswordTextField.messageInvalid = "Passwords not match".localized()
         confirmPasswordTextField.formKeyPath = "password2"
+        confirmPasswordTextField.returnKeyType = .send
+        confirmPasswordTextField.delegate = self
 
         // Configure signupButton
         signupButton.setTitle("Sign Up".localized(), for: [])
@@ -80,16 +89,21 @@ class SignupView: UIView {
     }
 
     private func installConstraints() {
-        let views = ["phoneNumberTextField": phoneNumberTextField,
+        let views = ["titleLabel": titleLabel,
+                     "phoneNumberTextField": phoneNumberTextField,
                      "passwordTextField": passwordTextField,
                      "confirmPasswordTextField": confirmPasswordTextField,
                      "signupButton": signupButton]
-        let metrics = ["horizontalPadding": horizontalPadding,
+        let metrics = ["topPadding": topPadding,
+                       "horizontalPadding": horizontalPadding,
                        "verticalPadding": verticalPadding]
         disableTranslatesAutoresizingMaskIntoConstraints(views)
         var constraints = [NSLayoutConstraint]()
 
         // Horizontal constraints
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
+            "H:|-(horizontalPadding)-[titleLabel]|",
+                                                                      options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[phoneNumberTextField]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
@@ -100,12 +114,12 @@ class SignupView: UIView {
             "H:|-(horizontalPadding)-[confirmPasswordTextField]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:|-(horizontalPadding)-[signupButton]-(horizontalPadding)-|",
+            "H:|-(horizontalPadding)-[signupButton]",
                                                                       options: [], metrics: metrics, views: views))
 
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:|-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[confirmPasswordTextField]-(verticalPadding)-[signupButton]",
+            "V:|-(topPadding)-[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[confirmPasswordTextField]-(verticalPadding)-[signupButton]",
                                                                       options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)
@@ -114,9 +128,26 @@ class SignupView: UIView {
     // MARK: Private Helpers
 
     func signupButtonTapped(event: UIEvent) {
-        let isValid = formManager.checkForm()
-        if isValid {
+        delegate?.signupButtonTapped()
+    }
+}
+
+// MARK: UITextFieldDelegate
+
+extension SignupView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.returnKeyType == .send {
             delegate?.signupButtonTapped()
+            return true
         }
+        return false
+    }
+}
+
+// MARK: Keyboard Dismiss
+
+extension SignupView {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        formManager.activeField?.resignFirstResponder()
     }
 }

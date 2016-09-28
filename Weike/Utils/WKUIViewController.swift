@@ -28,3 +28,9 @@ class WKUIViewController: UIViewController {
         if IRI != nil { track(event: IRI!) }
     }
 }
+
+extension WKUIViewController {
+    func dismissAnimated() {
+        dismiss(animated: true, completion: nil)
+    }
+}

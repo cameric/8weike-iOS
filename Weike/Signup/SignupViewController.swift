@@ -9,7 +9,7 @@
 class SignupViewController: WKUIViewController {
     // MARK: Properties
 
-    private let signupView = SignupView()
+    fileprivate let signupView = SignupView()
     var phone: String? { get { return signupView.phone } }
     var password: String? { get { return signupView.password } }
 
@@ -19,14 +19,17 @@ class SignupViewController: WKUIViewController {
         super.loadView()
         signupView.delegate = self
         view = signupView
-        self.title = "Sign Up".localized()
+        configureNavBar()
 
         IRI = signupViewIRI
     }
-}
 
-extension SignupViewController: SignupViewDelegate {
-    func signupButtonTapped() {
+    private func configureNavBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissAnimated))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Up".localized(), style: .done, target: self, action: #selector(signupButtonTapped))
+    }
+
+    fileprivate func signup() {
         SignupRequests.signup(phone: phone!, password: password!, completion: { (error) in
             if error == nil {
                 let controller = PhoneVerifyViewController()
@@ -37,5 +40,11 @@ extension SignupViewController: SignupViewDelegate {
                 self.present(alert, animated: true, completion: nil)
             }
         })
+    }
+}
+
+extension SignupViewController: SignupViewDelegate {
+    func signupButtonTapped() {
+        if signupView.formManager.checkForm() { signup() }
     }
 }

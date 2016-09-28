@@ -52,8 +52,8 @@ class PhoneVerifyView: UIView {
         // Configure titleLabel
 
         titleLabel.text = "Passcode send".localized()
-        titleLabel.textColor = UIColor.white
-        titleLabel.font = UIFont.extraExtraLarge
+        titleLabel.textColor = .white
+        titleLabel.font = .extraExtraLargeBold
 
         // Configure verifyCodeTextField
 
