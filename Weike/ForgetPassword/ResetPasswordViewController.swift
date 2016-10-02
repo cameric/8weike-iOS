@@ -36,7 +36,7 @@ extension ResetPasswordViewController: ResetPasswordViewDelegate {
     func confirmButtonTapped(){
         // Pop twice to get to login again
         if let viewControllers = self.navigationController?.viewControllers {
-            self.navigationController?.popToViewController(viewControllers[viewControllers.count - 2 - 1], animated: true)
+            _ = self.navigationController?.popToViewController(viewControllers[viewControllers.count - 2 - 1], animated: true)
         }
         print("Confirm button pressed")
     }

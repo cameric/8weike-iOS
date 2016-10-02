@@ -23,11 +23,10 @@ final class SignupView: UIView {
     var formManager = UITextField.formManager
 
     fileprivate var topConstraint = NSLayoutConstraint()
-    fileprivate var topPadding = CGFloat(80) {
+    var topPadding = CGFloat(80) {
         didSet {
-            NSLayoutConstraint.deactivate([topConstraint])
-            topConstraint = titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: topPadding)
-            NSLayoutConstraint.activate([topConstraint])
+            topConstraint.constant = topPadding
+            layoutIfNeeded()
         }
     }
 
@@ -54,7 +53,6 @@ final class SignupView: UIView {
 
     private func configureSubviews() {
         backgroundColor = UIColor.background
-        startListenToKeyboardEvent()
 
         titleLabel.text = "Sign Up".localized()
         titleLabel.font = .extraExtraLargeBold
@@ -145,17 +143,5 @@ extension SignupView: UITextFieldDelegate {
 extension SignupView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         formManager.activeField?.resignFirstResponder()
-    }
-}
-
-// MARK: Keyboard Delegate
-
-extension SignupView: KeyboardDelegate {
-    func keyboardWillShow(notification: NSNotification) {
-        topPadding = CGFloat(30)
-    }
-
-    func keyboardWillHide(notification: NSNotification) {
-        topPadding = CGFloat(80)
     }
 }
