@@ -26,7 +26,7 @@ class SignupViewController: WKUIViewController {
 
     private func configureNavBar() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissAnimated))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sign Up".localized(), style: .done, target: self, action: #selector(signupButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(), style: .done, target: self, action: #selector(signupButtonTapped))
     }
 
     fileprivate func signup() {

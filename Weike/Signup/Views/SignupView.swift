@@ -37,14 +37,13 @@ final class SignupView: UIView {
     fileprivate let phoneNumberTextField = UITextField.floatLabeled
     fileprivate let passwordTextField = UITextField.floatLabeled
     fileprivate let confirmPasswordTextField = UITextField.floatLabeled
-    fileprivate let signupButton = UIButton.rounded
 
     // MARK: Initializers
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
-        addSubviews([titleLabel, phoneNumberTextField, passwordTextField, confirmPasswordTextField, signupButton])
+        addSubviews([titleLabel, phoneNumberTextField, passwordTextField, confirmPasswordTextField])
         formManager.addTextFields([phoneNumberTextField, passwordTextField, confirmPasswordTextField])
         installConstraints()
     }
@@ -91,18 +90,13 @@ final class SignupView: UIView {
         confirmPasswordTextField.formKeyPath = "password2"
         confirmPasswordTextField.returnKeyType = .send
         confirmPasswordTextField.delegate = self
-
-        // Configure signupButton
-        signupButton.setTitle("Sign Up".localized(), for: [])
-        signupButton.addTarget(self, action: #selector(signupButtonTapped), for: .touchUpInside)
     }
 
     private func installConstraints() {
         let views = ["titleLabel": titleLabel,
                      "phoneNumberTextField": phoneNumberTextField,
                      "passwordTextField": passwordTextField,
-                     "confirmPasswordTextField": confirmPasswordTextField,
-                     "signupButton": signupButton]
+                     "confirmPasswordTextField": confirmPasswordTextField]
         let metrics = ["topPadding": topPadding,
                        "horizontalPadding": horizontalPadding,
                        "verticalPadding": verticalPadding]
@@ -122,24 +116,15 @@ final class SignupView: UIView {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[confirmPasswordTextField]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:|-(horizontalPadding)-[signupButton]",
-                                                                      options: [], metrics: metrics, views: views))
 
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[confirmPasswordTextField]-(verticalPadding)-[signupButton]",
+            "V:[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[confirmPasswordTextField]",
                                                                       options: [], metrics: metrics, views: views))
         topConstraint = titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: topPadding)
         constraints.append(topConstraint)
 
         NSLayoutConstraint.activate(constraints)
-    }
-
-    // MARK: Private Helpers
-
-    func signupButtonTapped(event: UIEvent) {
-        delegate?.signupButtonTapped()
     }
 }
 
