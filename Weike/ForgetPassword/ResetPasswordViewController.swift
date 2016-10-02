@@ -6,21 +6,19 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-import UIKit
-
 class ResetPasswordViewController: UIViewController {
     // MARK: Properties
-    
+
     private let resetPasswordView = ResetPasswordView()
-    
+
     // MARK: UIViewController
-    
+
     override func loadView() {
         super.loadView()
         resetPasswordView.delegate = self
         view = resetPasswordView
         self.title = "Reset Password"
-        
+
         // NavigationBar style
         if let navBar = navigationController?.navigationBar {
             navBar.barTintColor = UIColor.main
@@ -34,7 +32,7 @@ class ResetPasswordViewController: UIViewController {
 }
 
 extension ResetPasswordViewController: ResetPasswordViewDelegate {
-    
+
     func confirmButtonTapped(){
         // Pop twice to get to login again
         if let viewControllers = self.navigationController?.viewControllers {

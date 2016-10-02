@@ -84,7 +84,7 @@ class ResetPasswordView: UIView {
 // MARK: KeyboardDelegate
 
 extension ResetPasswordView: KeyboardDelegate {
-    func keyboardWillShow() {
+    func keyboardWillShow(notification: NSNotification) {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
@@ -96,7 +96,7 @@ extension ResetPasswordView: KeyboardDelegate {
         setNeedsLayout()
     }
 
-    func keyboardWillHide() {
+    func keyboardWillHide(notification: NSNotification) {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }

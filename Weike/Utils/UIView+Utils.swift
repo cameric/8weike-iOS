@@ -25,8 +25,8 @@ extension UIView {
 /// This is for checking whether the keyboard will show or hide
 /// Call startListenToKeyboardEvent to start listening
 @objc protocol KeyboardDelegate: class {
-    func keyboardWillShow()
-    func keyboardWillHide()
+    @objc func keyboardWillShow(notification: NSNotification)
+    @objc func keyboardWillHide(notification: NSNotification)
 }
 
 extension KeyboardDelegate {

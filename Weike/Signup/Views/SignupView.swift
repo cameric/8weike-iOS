@@ -6,7 +6,6 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-private let topPadding = CGFloat(80)
 private let horizontalPadding = CGFloat(30)
 private let verticalPadding = CGFloat(30)
 
@@ -22,6 +21,15 @@ final class SignupView: UIView {
     var phone: String? { return phoneNumberTextField.text }
     var password: String? { return passwordTextField.text }
     var formManager = UITextField.formManager
+
+    fileprivate var topConstraint = NSLayoutConstraint()
+    fileprivate var topPadding = CGFloat(80) {
+        didSet {
+            NSLayoutConstraint.deactivate([topConstraint])
+            topConstraint = titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: topPadding)
+            NSLayoutConstraint.activate([topConstraint])
+        }
+    }
 
     // MARK: Views
 
@@ -47,6 +55,7 @@ final class SignupView: UIView {
 
     private func configureSubviews() {
         backgroundColor = UIColor.background
+        startListenToKeyboardEvent()
 
         titleLabel.text = "Sign Up".localized()
         titleLabel.font = .extraExtraLargeBold
@@ -119,8 +128,10 @@ final class SignupView: UIView {
 
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:|-(topPadding)-[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[confirmPasswordTextField]-(verticalPadding)-[signupButton]",
+            "V:[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[confirmPasswordTextField]-(verticalPadding)-[signupButton]",
                                                                       options: [], metrics: metrics, views: views))
+        topConstraint = titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: topPadding)
+        constraints.append(topConstraint)
 
         NSLayoutConstraint.activate(constraints)
     }
@@ -149,5 +160,17 @@ extension SignupView: UITextFieldDelegate {
 extension SignupView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         formManager.activeField?.resignFirstResponder()
+    }
+}
+
+// MARK: Keyboard Delegate
+
+extension SignupView: KeyboardDelegate {
+    func keyboardWillShow(notification: NSNotification) {
+        topPadding = CGFloat(30)
+    }
+
+    func keyboardWillHide(notification: NSNotification) {
+        topPadding = CGFloat(80)
     }
 }

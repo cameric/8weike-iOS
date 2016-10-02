@@ -47,7 +47,7 @@ class VerifyPhoneView: UIView {
 
         phoneNumberTextField.setPlaceholder("Phone Number", floatingTitle: "Phone Number")
         verificationCodeTextField.setPlaceholder("Verification Code", floatingTitle: "Verification Code")
-                
+
         getVerificationCodeButton.setTitle("Get Code", for: [])
         getVerificationCodeButton.addTarget(self, action: #selector(getVerificationCodeButtonTapped), for: .touchUpInside)
 
@@ -115,7 +115,7 @@ class VerifyPhoneView: UIView {
 // MARK: KeyboardDelegate
 
 extension VerifyPhoneView: KeyboardDelegate {
-    func keyboardWillShow() {
+    func keyboardWillShow(notification: NSNotification) {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
@@ -127,7 +127,7 @@ extension VerifyPhoneView: KeyboardDelegate {
         setNeedsLayout()
     }
 
-    func keyboardWillHide() {
+    func keyboardWillHide(notification: NSNotification) {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }

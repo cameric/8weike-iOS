@@ -537,6 +537,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 92EWH8V794;
 						DevelopmentTeamName = "Weiyu Zhou (Personal Team)";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 6F41F9941D458B1400F7BD43;
 					};
@@ -544,6 +545,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 92EWH8V794;
 						DevelopmentTeamName = "Weiyu Zhou (Personal Team)";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 6F41F9941D458B1400F7BD43;
 					};
