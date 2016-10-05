@@ -25,6 +25,17 @@ class SignupViewController: WKUIViewController {
         IRI = signupViewIRI
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startListenToKeyboardEvent()
+
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopListenToKeyboardEvent()
+    }
+
     private func configureNavBar() {
         // Configure left nav bar
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissAnimated))
@@ -62,11 +73,31 @@ class SignupViewController: WKUIViewController {
     }
 }
 
+// MARK: SignupViewDelegate
+
 extension SignupViewController: SignupViewDelegate {
     func signupButtonTapped() {
         if signupView.formManager.checkForm() {
             userInteractionEnable(false)
             signup()
+        }
+    }
+}
+
+// MARK: Keyboard Delegate
+
+extension SignupViewController: KeyboardDelegate {
+    func keyboardWillShow(notification: NSNotification) {
+        guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else { return }
+        UIView.animate(withDuration: duration) {
+            self.signupView.topPadding = CGFloat(30)
+        }
+    }
+
+    func keyboardWillHide(notification: NSNotification) {
+        guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else { return }
+        UIView.animate(withDuration: duration) {
+            self.signupView.topPadding = CGFloat(80)
         }
     }
 }
