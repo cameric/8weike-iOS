@@ -6,7 +6,7 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-class SignupViewController: WKUIViewController {
+final class SignupViewController: WKUIViewController {
     // MARK: Properties
 
     fileprivate let signupView = SignupView()

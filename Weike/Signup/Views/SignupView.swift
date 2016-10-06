@@ -65,6 +65,7 @@ final class SignupView: UIView {
         phoneNumberTextField.messageInvalid = "Your phone number is not a valid".localized()
         phoneNumberTextField.messageRequired = "Please enter a phone number".localized()
         phoneNumberTextField.formKeyPath = "phone"
+        phoneNumberTextField.accessibilityIdentifier = "Phone"
         phoneNumberTextField.returnKeyType = .next
 
         // Configure passwordTextField
@@ -74,6 +75,7 @@ final class SignupView: UIView {
         passwordTextField.messageRequired = "The password should be 8 characters long".localized()
         passwordTextField.messageInvalid = "Password invalid".localized()
         passwordTextField.formKeyPath = "password"
+        passwordTextField.accessibilityIdentifier = "Password"
         passwordTextField.returnKeyType = .next
 
         // Configure confirmPasswordTextField
@@ -85,7 +87,8 @@ final class SignupView: UIView {
         }
         confirmPasswordTextField.messageRequired = "Please re-enter your password".localized()
         confirmPasswordTextField.messageInvalid = "Passwords not match".localized()
-        confirmPasswordTextField.formKeyPath = "password2"
+        confirmPasswordTextField.formKeyPath = "password_confirm"
+        confirmPasswordTextField.accessibilityIdentifier = "PasswordConfirm"
         confirmPasswordTextField.returnKeyType = .send
         confirmPasswordTextField.delegate = self
     }
