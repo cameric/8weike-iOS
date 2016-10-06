@@ -13,6 +13,7 @@ final class SignupViewController: WKUIViewController {
     fileprivate var signupButtonItem = UIBarButtonItem()
     var phone: String? { get { return signupView.phone } }
     var password: String? { get { return signupView.password } }
+    var signupTask: URLSessionDataTask? { didSet { userInteractionEnable(signupTask == nil) } }
 
     // MARK: UIViewController
 
@@ -46,8 +47,12 @@ final class SignupViewController: WKUIViewController {
     }
 
     fileprivate func signup() {
-        SignupRequests.signup(phone: phone!, password: password!, completion: { (error) in
-            self.userInteractionEnable(true)
+        if (signupTask != nil) {
+            return
+        }
+
+        signupTask = SignupRequests.signupTask(phone: phone!, password: password!, completion: { (error) in
+            self.signupTask = nil
             if error == nil {
                 let controller = PhoneVerifyViewController()
                 self.navigationController?.pushViewController(controller, animated: true)
@@ -57,6 +62,14 @@ final class SignupViewController: WKUIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         })
+        signupTask?.resume()
+
+        // Set request time out
+        let dispatchTime: DispatchTime = DispatchTime.now() + SignupRequests.timeout
+        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
+            self.signupTask?.cancel()
+            self.signupTask = nil
+        }
     }
 
     fileprivate func userInteractionEnable(_ enabled: Bool) {
@@ -78,7 +91,6 @@ final class SignupViewController: WKUIViewController {
 extension SignupViewController: SignupViewDelegate {
     func signupButtonTapped() {
         if signupView.formManager.checkForm() {
-            userInteractionEnable(false)
             signup()
         }
     }

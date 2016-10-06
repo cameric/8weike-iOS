@@ -23,7 +23,7 @@ class SignupUsernameViewController: WKUIViewController {
 
 extension SignupUsernameViewController: SignupUsernameViewDelegate {
     func confirmUsernameButtonTapped() {
-        SignupRequests.nickname(signupUsernameView.username!) { (error) in
+        let nicknameTask = SignupRequests.nicknameTask(signupUsernameView.username!) { (error) in
             if error == nil {
                 self.dismiss(animated: true, completion: nil)
             } else {
@@ -32,5 +32,6 @@ extension SignupUsernameViewController: SignupUsernameViewDelegate {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        nicknameTask?.resume()
     }
 }
