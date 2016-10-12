@@ -9,12 +9,12 @@
 class LoginRequests: APIRequest {
     static func login(phone: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
         var user: User?
-        let task = try? postTask(endpoint: "/login/general", params: ["phone": phone as AnyObject, "password": password as AnyObject], completion: { (json, error) in
+        let task = try? postTask("/login/general", params: ["phone": phone as AnyObject, "password": password as AnyObject], completion: { (json, error) in
             guard let userJson = json else {
                 completion(nil, error)
                 return
             }
-            user = User.fromJson(userJson)
+            user = try? User.fromJson(userJson)
             completion(user, error)
         })
         task?.resume()

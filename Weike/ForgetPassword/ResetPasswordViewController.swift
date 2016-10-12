@@ -9,7 +9,7 @@
 class ResetPasswordViewController: UIViewController {
     // MARK: Properties
 
-    private let resetPasswordView = ResetPasswordView()
+    fileprivate let resetPasswordView = ResetPasswordView()
 
     // MARK: UIViewController
 

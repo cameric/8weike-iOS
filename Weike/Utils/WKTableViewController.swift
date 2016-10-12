@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WKTableViewController: UITableViewController {
+class WKUITableViewController: UITableViewController {
 
     var IRI: String?
 
@@ -27,7 +27,7 @@ class WKTableViewController: UITableViewController {
             print("View not nested in Navigation Controller")
         }
 
-        if IRI != nil { track(event: IRI!) }
+        if IRI != nil { track(IRI!) }
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,7 +8,7 @@ target 'Weike' do
   # UI/UX Components
   pod 'VLRTextField'
 
-  # Networking
+  # Network
   pod 'AFNetworking'
 
   # Localization

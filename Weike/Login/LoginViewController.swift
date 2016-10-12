@@ -9,7 +9,7 @@
 final class LoginViewController: WKUIViewController {
     // MARK: Properties
 
-    private let loginView = LoginView()
+    fileprivate let loginView = LoginView()
     var phone: String? { get { return loginView.phone } }
     var password: String? { get { return loginView.password } }
 

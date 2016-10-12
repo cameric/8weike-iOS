@@ -99,14 +99,14 @@ extension SignupViewController: SignupViewDelegate {
 // MARK: Keyboard Delegate
 
 extension SignupViewController: KeyboardDelegate {
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: NSNotification) {
         guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else { return }
         UIView.animate(withDuration: duration) {
             self.signupView.topPadding = CGFloat(30)
         }
     }
 
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: NSNotification) {
         guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else { return }
         UIView.animate(withDuration: duration) {
             self.signupView.topPadding = CGFloat(80)

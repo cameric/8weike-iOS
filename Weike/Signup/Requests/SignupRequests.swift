@@ -10,8 +10,7 @@ class SignupRequests: APIRequest {
     static let timeout = 30.0
 
     static func signupTask(phone: String, password: String, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
-        let task = try? postTask(endpoint: "/signup/phone/mobile",
-                                 params: ["phone": phone as AnyObject, "password": password as AnyObject],
+        let task = try? postTask("/signup/phone/mobile", params: ["phone": phone as AnyObject, "password": password as AnyObject],
                                  completion: { (json, error) in
             completion(error)
         })
@@ -19,17 +18,15 @@ class SignupRequests: APIRequest {
     }
 
     static func verifyTask(code: String, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
-        let task = try? postTask(endpoint: "/signup/verify",
-                                 params: ["code": code as AnyObject],
+        let task = try? postTask("/signup/verify", params: ["code": code as AnyObject],
                                  completion: { (json, error) in
             completion(error)
         })
         return task
     }
 
-    static func nicknameTask(_ name: String, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
-        let task = try? postTask(endpoint: "/profile",
-                                 params: ["nickname": name as AnyObject],
+    static func nicknameTask(name: String, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
+        let task = try? postTask("/profile", params: ["nickname": name as AnyObject],
                                  completion: { (json, error) in
             completion(error)
         })

@@ -11,7 +11,7 @@ import UIKit
 class VerifyPhoneViewController: UIViewController {
     // MARK: Properties
 
-    private let verifyPhoneView = VerifyPhoneView()
+    fileprivate let verifyPhoneView = VerifyPhoneView()
 
     // MARK: UIViewController
 

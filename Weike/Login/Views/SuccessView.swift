@@ -16,13 +16,13 @@ class SuccessView: UIView {
     // MARK: Views
 
     let successMessageLabel = UILabel()
-    private let successImageView = UIImageView(image: UIImage(named: "success")!)
+    fileprivate let successImageView = UIImageView(image: UIImage(named: "success")!)
 
     // MARK: Initializers
 
     init(message: String) {
         super.init(frame: .zero)
-        configureSubviews(message: message)
+        configureSubviews(with: message)
         addSubviews([successMessageLabel, successImageView])
         installConstraints()
     }
@@ -31,7 +31,7 @@ class SuccessView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func configureSubviews(message: String) {
+    private func configureSubviews(with message: String) {
         backgroundColor = UIColor.main
 
         // Message related

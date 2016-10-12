@@ -12,7 +12,7 @@ import AVFoundation
 final class LandingViewController: WKUIViewController {
     // MARK: Properties
 
-    private let landingView = LandingView()
+    fileprivate let landingView = LandingView()
 
     // MARK: UIViewController
 
@@ -69,7 +69,7 @@ final class LandingViewController: WKUIViewController {
 
 extension LandingViewController: LandingViewDelegate {
     func LandingViewWechatButtonTapped() {
-
+        dismissAnimated()
     }
 
     func LandingViewLoginButtonTapped() {

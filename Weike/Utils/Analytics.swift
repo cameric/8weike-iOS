@@ -32,11 +32,11 @@ let phoneVerifyResendIRI = "phone_verify/resend"
 func registerAnalytics() {
     let token = "ff3427461722afac1dd1312b42fa7b54"
     _ = Mixpanel.sharedInstance(withToken: token)
-    track(event: mixpanelDidSetIRI)
+    track(mixpanelDidSetIRI)
 }
 
-func track(event: String, properties: [NSObject : AnyObject]? = nil) {
-    let allProperties: [NSObject : AnyObject] = properties == nil ? [NSObject : AnyObject]() : properties!
+func track(_ event: String, properties: [AnyHashable: Any]? = nil) {
+    let allProperties: [AnyHashable: Any] = properties == nil ? [NSObject : AnyObject]() : properties!
 
     Mixpanel.sharedInstance().track(event, properties: allProperties)
 }

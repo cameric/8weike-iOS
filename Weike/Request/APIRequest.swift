@@ -11,19 +11,19 @@ import AFNetworking
 protocol APIRequest {}
 
 extension APIRequest {
-    static func getTask(endpoint: String, params: [String: AnyObject], completion: @escaping (_ json: [String: Any]?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
-        return try self.task(endpoint: endpoint, method: "GET", params: params, completion: completion)
+    static func getTask(_ endpoint: String, params: [String: AnyObject], completion: @escaping (_ json: [String: Any]?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
+        return try self.task(endpoint, method: "GET", params: params, completion: completion)
     }
 
-    static func postTask(endpoint: String, params: [String: AnyObject], completion: @escaping (_ json: [String: Any]?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
-        return try self.task(endpoint: endpoint, method: "POST", params: params, completion: completion)
+    static func postTask(_ endpoint: String, params: [String: AnyObject], completion: @escaping (_ json: [String: Any]?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
+        return try self.task(endpoint, method: "POST", params: params, completion: completion)
     }
 
     /**
      * Get a request task
      * It throws an error if the front end has error, and it returns backend error in completion
      */
-    private static func task(endpoint: String, method: String, params: [String: AnyObject], completion: @escaping (_ json: [String: Any]?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
+    fileprivate static func task(_ endpoint: String, method: String, params: [String: AnyObject], completion: @escaping (_ json: [String: Any]?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
         let config = URLSessionConfiguration.default
         let manager = AFURLSessionManager(sessionConfiguration: config)
 
