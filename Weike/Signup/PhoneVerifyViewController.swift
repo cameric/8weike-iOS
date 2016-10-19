@@ -28,7 +28,7 @@ extension PhoneVerifyViewController: PhoneVerifyViewDelegate {
     func resendButtonTapped() {
         phoneVerifyView.resendButtonText = "Passcode Sent".localized()
         phoneVerifyView.resendButtonEnable = false
-        track(phoneVerifyResendIRI)
+        track(event: phoneVerifyResendIRI)
 
         // Reset resendButton
         let dispatchTime: DispatchTime = DispatchTime.now() + 10.0

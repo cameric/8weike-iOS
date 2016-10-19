@@ -9,6 +9,7 @@
 private let horizontalPadding = CGFloat(30)
 private let verticalPadding = CGFloat(30)
 
+
 protocol SignupViewDelegate: class {
     func signupButtonTapped()
 }
@@ -16,11 +17,11 @@ protocol SignupViewDelegate: class {
 final class SignupView: UIView {
 
     // MARK: Properties
-
+    var formManager = UITextField.formManager
     weak var delegate: SignupViewDelegate?
     var phone: String? { return phoneNumberTextField.text }
     var password: String? { return passwordTextField.text }
-    var formManager = UITextField.formManager
+    
 
     fileprivate var topConstraint = NSLayoutConstraint()
     var topPadding = CGFloat(80) {
@@ -65,7 +66,6 @@ final class SignupView: UIView {
         phoneNumberTextField.messageInvalid = "Your phone number is not a valid".localized()
         phoneNumberTextField.messageRequired = "Please enter a phone number".localized()
         phoneNumberTextField.formKeyPath = "phone"
-        phoneNumberTextField.accessibilityIdentifier = "Phone"
         phoneNumberTextField.returnKeyType = .next
 
         // Configure passwordTextField
@@ -75,7 +75,6 @@ final class SignupView: UIView {
         passwordTextField.messageRequired = "The password should be 8 characters long".localized()
         passwordTextField.messageInvalid = "Password invalid".localized()
         passwordTextField.formKeyPath = "password"
-        passwordTextField.accessibilityIdentifier = "Password"
         passwordTextField.returnKeyType = .next
 
         // Configure confirmPasswordTextField
@@ -87,8 +86,7 @@ final class SignupView: UIView {
         }
         confirmPasswordTextField.messageRequired = "Please re-enter your password".localized()
         confirmPasswordTextField.messageInvalid = "Passwords not match".localized()
-        confirmPasswordTextField.formKeyPath = "password_confirm"
-        confirmPasswordTextField.accessibilityIdentifier = "PasswordConfirm"
+        confirmPasswordTextField.formKeyPath = "password2"
         confirmPasswordTextField.returnKeyType = .send
         confirmPasswordTextField.delegate = self
     }
@@ -120,7 +118,7 @@ final class SignupView: UIView {
 
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[confirmPasswordTextField]",
+            "V:|-(topPadding)-[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[confirmPasswordTextField]",
                                                                       options: [], metrics: metrics, views: views))
         topConstraint = titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: topPadding)
         constraints.append(topConstraint)
@@ -131,20 +129,20 @@ final class SignupView: UIView {
 
 // MARK: UITextFieldDelegate
 
-extension SignupView: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField.returnKeyType == .send {
-            delegate?.signupButtonTapped()
-            return true
+    extension SignupView: UITextFieldDelegate {
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            if textField.returnKeyType == .send {
+                delegate?.signupButtonTapped()
+                return true
+            }
+            return false
         }
-        return false
     }
-}
 
 // MARK: Keyboard Dismiss
 
-extension SignupView {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        formManager.activeField?.resignFirstResponder()
+    extension SignupView {
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            formManager.activeField?.resignFirstResponder()
+        }
     }
-}
