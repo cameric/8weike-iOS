@@ -9,20 +9,21 @@
 import UIKit
 
 private let horizontalPadding = CGFloat(30)
-private let verticalPadding = CGFloat(22)
+private let verticalPadding = CGFloat(30)
+private let topPadding = CGFloat(80)
 
-class SuccessView: UIView {
+final class SuccessView: UIView {
 
     // MARK: Views
 
-    let successMessageLabel = UILabel()
+    fileprivate let successMessageLabel = UILabel()
     fileprivate let successImageView = UIImageView(image: UIImage(named: "success")!)
 
     // MARK: Initializers
 
     init(message: String) {
         super.init(frame: .zero)
-        configureSubviews(with: message)
+        configureSubviews(message: message)
         addSubviews([successMessageLabel, successImageView])
         installConstraints()
     }
@@ -31,8 +32,8 @@ class SuccessView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func configureSubviews(with message: String) {
-        backgroundColor = UIColor.main
+    private func configureSubviews(message: String) {
+        backgroundColor = UIColor.background
 
         // Message related
         successMessageLabel.text = message
@@ -47,7 +48,8 @@ class SuccessView: UIView {
     private func installConstraints() {
         let views = ["successMessageLabel": successMessageLabel,
                      "successImageView": successImageView]
-        let metrics = ["horizontalPadding": horizontalPadding,
+        let metrics = ["topPadding": topPadding,
+                       "horizontalPadding": horizontalPadding,
                        "verticalPadding": verticalPadding]
         disableTranslatesAutoresizingMaskIntoConstraints(views)
         var constraints = [NSLayoutConstraint]()
@@ -64,7 +66,7 @@ class SuccessView: UIView {
         constraints.append(successImageView.centerYAnchor.constraint(equalTo: centerYAnchor))
         constraints.append(successImageView.heightAnchor.constraint(equalTo: successImageView.widthAnchor))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:[successMessageLabel]-(verticalPadding)-[successImageView]",
+            "V:|-(topPadding)-[successImageView]-(verticalPadding)-[successMessageLabel]",
                                                                       options: [], metrics: metrics, views: views))
 
         NSLayoutConstraint.activate(constraints)

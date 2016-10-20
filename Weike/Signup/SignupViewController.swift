@@ -6,14 +6,12 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-final class SignupViewController: WKUIViewController {
+class SignupViewController: WKUIViewController {
     // MARK: Properties
 
     fileprivate let signupView = SignupView()
-    fileprivate var signupButtonItem = UIBarButtonItem()
     var phone: String? { get { return signupView.phone } }
     var password: String? { get { return signupView.password } }
-    var signupTask: URLSessionDataTask? { didSet { userInteractionEnable(signupTask == nil) } }
 
     // MARK: UIViewController
 
@@ -37,22 +35,18 @@ final class SignupViewController: WKUIViewController {
         stopListenToKeyboardEvent()
     }
 
+    
+    
+    
+    
+    
     private func configureNavBar() {
-        // Configure left nav bar
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissAnimated))
-
-        // Configure right nav bar
-        signupButtonItem = UIBarButtonItem(title: "Next".localized(), style: .done, target: self, action: #selector(signupButtonTapped))
-        navigationItem.rightBarButtonItem = signupButtonItem
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next".localized(), style: .done, target: self, action: #selector(signupButtonTapped))
     }
 
     fileprivate func signup() {
-        if (signupTask != nil) {
-            return
-        }
-
-        signupTask = SignupRequests.signupTask(phone: phone!, password: password!, completion: { (error) in
-            self.signupTask = nil
+        SignupRequests.signup(phone: phone!, password: password!, completion: { (error) in
             if error == nil {
                 let controller = PhoneVerifyViewController()
                 self.navigationController?.pushViewController(controller, animated: true)
@@ -62,27 +56,6 @@ final class SignupViewController: WKUIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         })
-        signupTask?.resume()
-
-        // Set request time out
-        let dispatchTime: DispatchTime = DispatchTime.now() + SignupRequests.timeout
-        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
-            self.signupTask?.cancel()
-            self.signupTask = nil
-        }
-    }
-
-    fileprivate func userInteractionEnable(_ enabled: Bool) {
-        signupView.isUserInteractionEnabled = enabled
-        if enabled {
-            signupButtonItem.title = "Next".localized()
-            signupButtonItem.customView = nil
-        } else {
-            signupButtonItem.title = nil
-            let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .white)
-            signupButtonItem.customView = activityIndicator
-            activityIndicator.startAnimating()
-        }
     }
 }
 
@@ -90,23 +63,23 @@ final class SignupViewController: WKUIViewController {
 
 extension SignupViewController: SignupViewDelegate {
     func signupButtonTapped() {
-        if signupView.formManager.checkForm() {
-            signup()
-        }
+        if signupView.formManager.checkForm() { signup() }
     }
 }
 
 // MARK: Keyboard Delegate
 
 extension SignupViewController: KeyboardDelegate {
-    func keyboardWillShow(_ notification: NSNotification) {
+    func keyboardWillShow(notification: NSNotification) {
         guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else { return }
         UIView.animate(withDuration: duration) {
             self.signupView.topPadding = CGFloat(30)
         }
     }
+    
+    
 
-    func keyboardWillHide(_ notification: NSNotification) {
+    func keyboardWillHide(notification: NSNotification) {
         guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else { return }
         UIView.animate(withDuration: duration) {
             self.signupView.topPadding = CGFloat(80)

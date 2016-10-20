@@ -9,7 +9,7 @@
 final class SuccessViewController: WKUIViewController {
     // MARK: Properties
 
-    fileprivate let successView: SuccessView
+    private let successView: SuccessView
 
     // MARK: Initializers
 
@@ -36,7 +36,7 @@ final class SuccessViewController: WKUIViewController {
         // Dismiss the view after 2 seconds
         let dispatchTime: DispatchTime = DispatchTime.now() + 2.0
         DispatchQueue.main.asyncAfter(deadline: dispatchTime, execute: {
-            self.dismissAnimated()
+            self.dismiss(animated: true, completion: nil)
         })
     }
 

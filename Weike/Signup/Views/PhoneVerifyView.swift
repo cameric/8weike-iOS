@@ -7,8 +7,8 @@
 //
 
 private let topPadding = CGFloat(80)
-private let horizontalPadding = CGFloat(20)
-private let verticalPadding = CGFloat(20)
+private let horizontalPadding = CGFloat(30)
+private let verticalPadding = CGFloat(30)
 
 protocol PhoneVerifyViewDelegate: class {
     func resendButtonTapped()
@@ -16,7 +16,7 @@ protocol PhoneVerifyViewDelegate: class {
 
 class PhoneVerifyView: UIView {
     // MARK: Properties
-    fileprivate var formManager = UITextField.formManager
+    var formManager = UITextField.formManager
     weak var delegate: PhoneVerifyViewDelegate?
     var resendButtonText: String? {
         set { resendButton.setTitle(newValue, for: []) }
@@ -82,7 +82,7 @@ class PhoneVerifyView: UIView {
 
         // Horizontal Constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:|-(horizontalPadding)-[titleLabel]-(horizontalPadding)-|", options: [], metrics: metrics, views: views))
+            "H:|-(horizontalPadding)-[titleLabel]|", options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[verifyCodeTextField]-(horizontalPadding)-|", options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
@@ -94,11 +94,19 @@ class PhoneVerifyView: UIView {
 
         NSLayoutConstraint.activate(constraints)
     }
+}
 
-    // MARK: Helpers
-
-    func resendButtonTapped() {
-        delegate?.resendButtonTapped()
+    // MARK: UITextFieldDelegate
+    extension PhoneVerifyView: UITextFieldDelegate {
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            if textField.returnKeyType == .send {
+                delegate?.resendButtonTapped()
+                return true
+            }
+            return false
+        }
     }
 
-}
+
+
+

@@ -104,15 +104,15 @@ class LandingView: UIView {
         NSLayoutConstraint.activate(constraints)
     }
 
-    func loginButtonTapped(_ event: UIEvent) {
+    func loginButtonTapped(event: UIEvent) {
         delegate?.LandingViewLoginButtonTapped()
     }
 
-    func signupButtonTapped(_ event: UIEvent) {
+    func signupButtonTapped(event: UIEvent) {
         delegate?.LandingViewSignupButtonTapped()
     }
 
-    func wechatButtonTapped(_ event: UIEvent) {
+    func wechatButtonTapped(event: UIEvent) {
         delegate?.LandingViewWechatButtonTapped()
     }
 }
