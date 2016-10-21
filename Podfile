@@ -7,6 +7,7 @@ target 'Weike' do
 
   # UI/UX Components
   pod 'VLRTextField'
+  pod 'DGElasticPullToRefresh'
 
   # Network
   pod 'AFNetworking'

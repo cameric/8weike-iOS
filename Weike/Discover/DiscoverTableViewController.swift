@@ -12,16 +12,27 @@ class DiscoverViewController: WKUITableViewController {
 
     init() {
         super.init(nibName: nil, bundle: nil)
-        tableView = UITableView()
-        tableView.dataSource = dataSource
-        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: String(describing: PostTableViewCell.self))
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+
     override func loadView() {
+        super.loadView()
+
+        tableView = UITableView()
+        tableView.dataSource = dataSource
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: String(describing: PostTableViewCell.self))
+
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         title = "Discover"
     }
 }

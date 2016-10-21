@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.1.0)
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
+  - DGElasticPullToRefresh (1.1)
   - HTAutocompleteTextField (1.3.2)
   - Localize-Swift (1.6)
   - Mixpanel (3.0.0):
@@ -28,12 +29,14 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - DGElasticPullToRefresh
   - Localize-Swift
   - Mixpanel
   - VLRTextField
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  DGElasticPullToRefresh: 28f11a6026302a90f8ffebbc6e24748e584dddd3
   HTAutocompleteTextField: ce809f04875e843e20f214ab973bb496ba7a93b1
   Localize-Swift: d34c70b34ffb1468b2942c3f0b5c1dfd9119877e
   Mixpanel: ac92056ee35a961362513ba11049e67cffcaa1f1
@@ -41,6 +44,6 @@ SPEC CHECKSUMS:
   VLRJVFloatLabeledTextField: 99a798b5a42a9e58b161453394b84358651d844e
   VLRTextField: 98c5ab15d1f1c928b160b60900d92ff5e48624d7
 
-PODFILE CHECKSUM: b0fe71cf531519e5e62e6f262ed0fe8554ea7ae7
+PODFILE CHECKSUM: c21558ebda9d872d9a218d89372e2468b008d0d7
 
 COCOAPODS: 1.0.1

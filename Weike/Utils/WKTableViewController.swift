@@ -6,11 +6,15 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-import UIKit
+import DGElasticPullToRefresh
 
 class WKUITableViewController: UITableViewController {
 
     var IRI: String?
+
+    deinit {
+        tableView.dg_removePullToRefresh()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,8 @@ class WKUITableViewController: UITableViewController {
         } else {
             print("View not nested in Navigation Controller")
         }
+
+        configurePullToRefresh()
 
         if IRI != nil { track(IRI!) }
     }
@@ -102,4 +108,21 @@ class WKUITableViewController: UITableViewController {
     }
     */
 
+}
+
+// MARK: Pull to Refresh
+
+extension WKUITableViewController {
+    func configurePullToRefresh() {
+        // Initialize tableView
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = .white
+        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            // Add your logic here
+            // Do not forget to call dg_stopLoading() at the end
+            self?.tableView.dg_stopLoading()
+            }, loadingView: loadingView)
+        tableView.dg_setPullToRefreshFillColor(.main)
+        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
+    }
 }
