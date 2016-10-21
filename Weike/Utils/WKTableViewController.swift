@@ -113,16 +113,19 @@ class WKUITableViewController: UITableViewController {
 // MARK: Pull to Refresh
 
 extension WKUITableViewController {
-    func configurePullToRefresh() {
+    fileprivate func configurePullToRefresh() {
         // Initialize tableView
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = .white
         tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-            // Add your logic here
-            // Do not forget to call dg_stopLoading() at the end
-            self?.tableView.dg_stopLoading()
+            self?.pullToRefresh()
             }, loadingView: loadingView)
         tableView.dg_setPullToRefreshFillColor(.main)
         tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
+    }
+
+    // Override this method to refresh the table view
+    func pullToRefresh() {
+        tableView.dg_stopLoading()
     }
 }

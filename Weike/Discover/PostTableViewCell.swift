@@ -7,15 +7,12 @@
 //
 
 class PostTableViewCell: UITableViewCell {
-    var post: Post? {
-        didSet {
+    var post: Post? { didSet { postView.post = post } }
 
-        }
-    }
+    fileprivate var postView = PostView()
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -35,4 +35,8 @@ class DiscoverViewController: WKUITableViewController {
         super.viewDidLoad()
         title = "Discover"
     }
+
+    override func pullToRefresh() {
+
+    }
 }
