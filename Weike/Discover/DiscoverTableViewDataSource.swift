@@ -18,11 +18,11 @@ class DiscoverTableViewDataSource: NSObject {
 
 extension DiscoverTableViewDataSource: UITableViewDataSource {
 
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
 
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: PostTableViewCell.self), for: indexPath) as! PostTableViewCell
         cell.post = posts[indexPath.row]
         return cell
