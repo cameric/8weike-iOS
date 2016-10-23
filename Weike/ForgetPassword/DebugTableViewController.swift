@@ -6,30 +6,31 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-import UIKit
-
 class DebugTableViewController: WKUITableViewController {
+    fileprivate let dataSource = DebugTableViewDataSource()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        super.loadView()
 
-        // Do any additional setup after loading the view.
+        tableView = UITableView()
+        tableView.dataSource = dataSource
+        tableView.delegate = dataSource
+        dataSource.delegate = self
+
+        title = "More"
+    }
+}
+
+extension DebugTableViewController: DebugTableViewDataSourceDelegate {
+    func openExperiments() {
+        print("Yay")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func openHosts() {
+
     }
 
+    func openViews() {
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }

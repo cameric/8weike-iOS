@@ -21,17 +21,10 @@ extension MoreTableViewDataSource: UITableViewDataSource {
         return 4
     }
 
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section {
-        case 3:
-            return "Setting"
-        default:
-            return nil
-        }
-    }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
+        case 0, 1, 2:
+            return 1
         case 3:
             return DEBUG ? 2 : 1
         default:
@@ -41,6 +34,10 @@ extension MoreTableViewDataSource: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
+        case 0, 1, 2:
+            let cell = UITableViewCell(style: .value1, reuseIdentifier: "value1")
+            cell.textLabel?.text = "Placeholder"
+            return cell
         case 3:
             return self.tableView(tableView, cellForSettingSectionRow: indexPath.row)
         default:
@@ -69,8 +66,10 @@ extension MoreTableViewDataSource: UITableViewDataSource {
 // MARK: UITableViewDelegate
 
 extension MoreTableViewDataSource: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
+        case 0, 1, 2:
+            break
         case 3:
             self.tableView(tableView, settingSectionDidDeselect: indexPath.row)
             break
