@@ -6,20 +6,12 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-fileprivate enum DebugTableViewCells: Int {
+fileprivate enum DebugTableViewCells: Int, CaseCountable {
     case experiments
     case hosts
     case views
 
-    /**
-     * Because swift enum does not have a count,
-     * We use the rawValue of the last type to get the count
-     */
-    static func count() -> Int {
-        return views.rawValue + 1
-    }
-
-    func name() -> String {
+    var name: String {
         switch self {
         case .experiments:
             return "Experiments"
@@ -30,7 +22,7 @@ fileprivate enum DebugTableViewCells: Int {
         }
     }
 
-    func selector() -> Selector! {
+    var selector: Selector! {
         switch self {
         case .experiments:
             return #selector(DebugTableViewDataSourceDelegate.openExperiments)
@@ -56,12 +48,12 @@ class DebugTableViewDataSource: NSObject {
 
 extension DebugTableViewDataSource: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DebugTableViewCells.count()
+        return DebugTableViewCells.caseCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "value1")
-        cell.textLabel?.text = DebugTableViewCells(rawValue: indexPath.row)!.name()
+        cell.textLabel?.text = DebugTableViewCells(rawValue: indexPath.row)!.name
         return cell
     }
 }
@@ -70,6 +62,6 @@ extension DebugTableViewDataSource: UITableViewDataSource {
 
 extension DebugTableViewDataSource: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let _ = delegate?.perform(DebugTableViewCells(rawValue: indexPath.row)!.selector())
+        let _ = delegate?.perform(DebugTableViewCells(rawValue: indexPath.row)!.selector)
     }
 }
