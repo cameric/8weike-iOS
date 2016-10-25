@@ -13,6 +13,12 @@ func disableTranslatesAutoresizingMaskIntoConstraints(_ views: [String: UIView])
     }
 }
 
+func disableTranslatesAutoresizingMaskIntoConstraints(_ views: [UIView]) {
+    for view in views {
+        view.translatesAutoresizingMaskIntoConstraints = false
+    }
+}
+
 extension UIView {
     /// Add a list of subviews
     func addSubviews(_ views: [UIView]) {

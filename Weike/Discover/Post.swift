@@ -19,7 +19,7 @@ class Post: NSObject {
     var time: Date
     var image: UIImage
     var likes = [User]()
-    var reply = [Comment]()
+    var comments = [Comment]()
 
     init(title: String, from author: User, at time: Date, image: UIImage) {
         self.title = title
