@@ -6,7 +6,6 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-
 class DebugViewsTableViewController: UITableViewController {
     fileprivate let dataSource = DebugViewsTableViewDataSource()
 
@@ -18,7 +17,7 @@ class DebugViewsTableViewController: UITableViewController {
         tableView.delegate = dataSource
         dataSource.delegate = self
 
-        title = "More"
+        title = "Views"
     }
 }
 

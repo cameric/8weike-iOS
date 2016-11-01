@@ -27,9 +27,10 @@ extension DebugTableViewController: DebugTableViewDataSourceDelegate {
     }
 
     func openHosts() {
-        // Prod and Test Host
-
-        print("not implemented")
+        let controller = DebugHostsTableViewController()
+        if let navController = navigationController {
+            navController.pushViewController(controller, animated: true)
+        }
     }
 
     func openViews() {
