@@ -33,6 +33,9 @@ extension DebugTableViewController: DebugTableViewDataSourceDelegate {
     }
 
     func openViews() {
-        print("not implemented")
+        let controller = DebugViewsTableViewController()
+        if let navController = navigationController {
+            navController.pushViewController(controller, animated: true)
+        }
     }
 }

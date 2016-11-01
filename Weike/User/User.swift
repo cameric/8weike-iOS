@@ -7,6 +7,8 @@
 //
 
 class User: NSObject {
+    static var currentUser: User?
+
     var id: String
     var name: String
     var phone: String
