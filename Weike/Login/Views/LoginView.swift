@@ -22,7 +22,7 @@ class LoginView: UIView {
     weak var delegate: LoginViewDelegate?
     var phone: String? { get { return phoneNumberTextField.text } }
     var password: String? { get { return passwordTextField.text } }
-    private var formManager = UITextField.formManager
+    fileprivate var formManager = UITextField.formManager
 
     // MARK: Views
 
@@ -108,14 +108,14 @@ class LoginView: UIView {
 
     // MARK: Private Helpers
 
-    func loginButtonTapped(event: UIEvent) {
+    func loginButtonTapped(_ event: UIEvent) {
         let isValid = formManager.checkForm()
         if isValid {
             delegate?.loginButtonTapped()
         }
     }
 
-    func forgetPasswordTapped(event: UIEvent) {
+    func forgetPasswordTapped(_ event: UIEvent) {
         delegate?.forgetPasswordTapped()
     }
 }

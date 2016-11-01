@@ -16,7 +16,7 @@ protocol PhoneVerifyViewDelegate: class {
 
 class PhoneVerifyView: UIView {
     // MARK: Properties
-    private var formManager = UITextField.formManager
+    fileprivate var formManager = UITextField.formManager
     weak var delegate: PhoneVerifyViewDelegate?
     var resendButtonText: String? {
         set { resendButton.setTitle(newValue, for: []) }

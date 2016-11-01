@@ -76,7 +76,7 @@ class ResetPasswordView: UIView {
 
     // MARK: Private Helpers
 
-    func confirmButtonTapped(event: UIEvent) {
+    func confirmButtonTapped(_ event: UIEvent) {
         delegate?.confirmButtonTapped()
     }
 }
@@ -84,7 +84,7 @@ class ResetPasswordView: UIView {
 // MARK: KeyboardDelegate
 
 extension ResetPasswordView: KeyboardDelegate {
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: NSNotification) {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
@@ -96,7 +96,7 @@ extension ResetPasswordView: KeyboardDelegate {
         setNeedsLayout()
     }
 
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: NSNotification) {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }

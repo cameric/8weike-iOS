@@ -91,7 +91,7 @@ class VerifyPhoneView: UIView {
 
     // MARK: Private Helpers
 
-    func getVerificationCodeButtonTapped(event: UIEvent) {
+    func getVerificationCodeButtonTapped(_ event: UIEvent) {
         // Color change after tap
         getVerificationCodeButton.setTitle("Code Sent", for: [])
         getVerificationCodeButton.backgroundColor = UIColor.gray
@@ -107,7 +107,7 @@ class VerifyPhoneView: UIView {
         delegate?.getVerificationCodeButtonTapped()
     }
 
-    func confirmButtonTapped(event: UIEvent) {
+    func confirmButtonTapped(_ event: UIEvent) {
         delegate?.confirmButtonTapped()
     }
 }
@@ -115,7 +115,7 @@ class VerifyPhoneView: UIView {
 // MARK: KeyboardDelegate
 
 extension VerifyPhoneView: KeyboardDelegate {
-    func keyboardWillShow(notification: NSNotification) {
+    func keyboardWillShow(_ notification: NSNotification) {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }
@@ -127,7 +127,7 @@ extension VerifyPhoneView: KeyboardDelegate {
         setNeedsLayout()
     }
 
-    func keyboardWillHide(notification: NSNotification) {
+    func keyboardWillHide(_ notification: NSNotification) {
         if verticalAnchor != nil {
             NSLayoutConstraint.deactivate([verticalAnchor!])
         }

@@ -20,7 +20,7 @@ class User: NSObject {
         super.init()
     }
 
-    static func fromJson(_ json: [String: Any]) -> User {
+    static func fromJson(_ json: [String: Any]) throws -> User {
         // todo
         return User(id: "", name: "", phone: "")
     }

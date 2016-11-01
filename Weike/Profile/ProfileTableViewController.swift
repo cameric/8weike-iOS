@@ -9,9 +9,9 @@
 
 class ProfileTableViewController: UITableViewController {
     // MARK: Properties
-    
-    private let profileDataSource = ProfileTableViewDataSource()
-    
+
+    fileprivate let profileDataSource = ProfileTableViewDataSource()
+
     // MARK: Initializers
 
     init() {
@@ -20,7 +20,7 @@ class ProfileTableViewController: UITableViewController {
         tableView.delegate = self
         tableView.dataSource = profileDataSource
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -29,5 +29,5 @@ class ProfileTableViewController: UITableViewController {
 // MARK: UITableViewDelegate
 
 extension ProfileTableViewController {
-    
+
 }

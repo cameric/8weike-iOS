@@ -25,7 +25,7 @@ class WKUIViewController: UIViewController {
             print("View not nested in Navigation Controller")
         }
 
-        if IRI != nil { track(event: IRI!) }
+        if IRI != nil { track(IRI!) }
     }
 }
 

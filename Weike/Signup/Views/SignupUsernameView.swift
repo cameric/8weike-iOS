@@ -22,9 +22,9 @@ class SignupUsernameView: UIView {
 
     // MARK: Views
 
-    private let usernameTextField = UITextField.floatLabeled
-    private let confirmUsernameButton = UIButton.rounded
-    private var formManager = UITextField.formManager
+    fileprivate let usernameTextField = UITextField.floatLabeled
+    fileprivate let confirmUsernameButton = UIButton.rounded
+    fileprivate var formManager = UITextField.formManager
 
     // MARK: Initializers
 
@@ -76,7 +76,7 @@ class SignupUsernameView: UIView {
 
     // Private Helpers
 
-    func confirmUsernameButtonTapped(event: UIEvent) {
+    func confirmUsernameButtonTapped(_ event: UIEvent) {
         let isValid = formManager.checkForm()
         if isValid {
             formManager.activeField.resignFirstResponder()

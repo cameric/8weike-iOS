@@ -13,6 +13,12 @@ func disableTranslatesAutoresizingMaskIntoConstraints(_ views: [String: UIView])
     }
 }
 
+func disableTranslatesAutoresizingMaskIntoConstraints(_ views: [UIView]) {
+    for view in views {
+        view.translatesAutoresizingMaskIntoConstraints = false
+    }
+}
+
 extension UIView {
     /// Add a list of subviews
     func addSubviews(_ views: [UIView]) {
@@ -25,13 +31,17 @@ extension UIView {
 /// This is for checking whether the keyboard will show or hide
 /// Call startListenToKeyboardEvent to start listening
 @objc protocol KeyboardDelegate: class {
-    @objc func keyboardWillShow(notification: NSNotification)
-    @objc func keyboardWillHide(notification: NSNotification)
+    @objc func keyboardWillShow(_ notification: NSNotification)
+    @objc func keyboardWillHide(_ notification: NSNotification)
 }
 
 extension KeyboardDelegate {
     func startListenToKeyboardEvent() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: .UIKeyboardWillHide, object: nil)
+    }
+    func stopListenToKeyboardEvent() {
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
 }
