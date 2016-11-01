@@ -23,14 +23,16 @@ class DebugTableViewController: WKUITableViewController {
 
 extension DebugTableViewController: DebugTableViewDataSourceDelegate {
     func openExperiments() {
-        print("Yay")
+        print("not implemented")
     }
 
     func openHosts() {
+        // Prod and Test Host
 
+        print("not implemented")
     }
 
     func openViews() {
-
+        print("not implemented")
     }
 }

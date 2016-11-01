@@ -6,10 +6,10 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-class UserRequests: APIRequest {
+class UserRequests {
     static func user(_ id: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
         var user: User?
-        let task = try? getTask("/user", params: ["id": id as AnyObject], completion: { (json, error) in
+        let task = try? APIRequest.getTask("/user", params: ["id": id as AnyObject], completion: { (json, error) in
             guard let userJson = json else {
                 completion(nil, error)
                 return

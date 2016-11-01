@@ -6,10 +6,10 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-class LoginRequests: APIRequest {
+class LoginRequests {
     static func login(phone: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
         var user: User?
-        let task = try? postTask("/login/general", params: ["phone": phone as AnyObject, "password": password as AnyObject], completion: { (json, error) in
+        let task = try? APIRequest.postTask("/login/general", params: ["phone": phone as AnyObject, "password": password as AnyObject], completion: { (json, error) in
             guard let userJson = json else {
                 completion(nil, error)
                 return

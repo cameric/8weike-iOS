@@ -8,7 +8,14 @@
 
 import AFNetworking
 
-protocol APIRequest {}
+enum Host: String {
+    case prod = "https://oav0gkqdmk.execute-api.us-east-1.amazonaws.com/prod"
+    case test = "https://oav0gkqdmk.execute-api.us-east-1.amazonaws.com/test"
+}
+
+class APIRequest {
+    static var host = Host.test;
+}
 
 extension APIRequest {
     static func getTask(_ endpoint: String, params: [String: AnyObject], completion: @escaping (_ json: [String: Any]?, _ error: Error?) -> Void) throws -> URLSessionDataTask {
@@ -27,7 +34,7 @@ extension APIRequest {
         let config = URLSessionConfiguration.default
         let manager = AFURLSessionManager(sessionConfiguration: config)
 
-        let hostName = "http://8weike.com/api"
+        let hostName = host.rawValue
         let url = "\(hostName)\(endpoint)"
 
         let request = AFJSONRequestSerializer().request(withMethod: method,
