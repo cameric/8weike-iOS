@@ -6,13 +6,13 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-private let topPadding = CGFloat(80)
-private let horizontalPadding = CGFloat(20)
-private let verticalPadding = CGFloat(20)
+private let horizontalPadding = CGFloat(30)
+private let verticalPadding = CGFloat(30)
 
 protocol LoginViewDelegate: class {
     func loginButtonTapped()
     func forgetPasswordTapped()
+    func signUpButtonTapped()
 }
 
 class LoginView: UIView {
@@ -22,21 +22,31 @@ class LoginView: UIView {
     weak var delegate: LoginViewDelegate?
     var phone: String? { get { return phoneNumberTextField.text } }
     var password: String? { get { return passwordTextField.text } }
-    fileprivate var formManager = UITextField.formManager
+    var formManager = UITextField.formManager
 
+    fileprivate var topConstraint = NSLayoutConstraint()
+    var topPadding = CGFloat(80) {
+        didSet {
+            topConstraint.constant = topPadding
+            layoutIfNeeded()
+        }
+    }
+    
     // MARK: Views
-
+    
+    fileprivate let titleLabel = UILabel()
     fileprivate let phoneNumberTextField = UITextField.floatLabeled
     fileprivate let passwordTextField = UITextField.floatLabeled
-    fileprivate let loginButton = UIButton.rounded
-    fileprivate let forgetPassword = UIButton(type: .system)
+    fileprivate let forgetPasswordButton = UIButton()
+    fileprivate let signUpLabel = UILabel()
+    fileprivate let signUpButton = UIButton()
 
     // MARK: Initializers
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
-        addSubviews([phoneNumberTextField, passwordTextField, loginButton, forgetPassword])
+        addSubviews([titleLabel, phoneNumberTextField, passwordTextField, forgetPasswordButton, signUpLabel, signUpButton])
         formManager.addTextFields([phoneNumberTextField, passwordTextField])
         installConstraints()
     }
@@ -48,13 +58,20 @@ class LoginView: UIView {
     private func configureSubviews() {
         backgroundColor = UIColor.background
 
+        // Configure title
+        titleLabel.text = "Login".localized()
+        titleLabel.font = .extraExtraLargeBold
+        titleLabel.textColor = .white
+        
         // Configure phoneNumberTextField
         phoneNumberTextField.placeholder = "Phone Number".localized()
         phoneNumberTextField.keyboardType = .phonePad
         phoneNumberTextField.regex = "^(\\+?0?86\\-?)?1[345789]\\d{9}$"
         phoneNumberTextField.messageInvalid = "Your phone number is not a valid".localized()
-        phoneNumberTextField.messageRequired = "Please enter a phone number".localized()
-        phoneNumberTextField.formKeyPath = "phone"
+        phoneNumberTextField.messageRequired = "Sorry, please enter numbers only".localized()
+        phoneNumberTextField.formKeyPath = "Phone"
+        phoneNumberTextField.accessibilityIdentifier = "Phone"
+        phoneNumberTextField.returnKeyType = .next
 
         // Configure passwordTextField
         passwordTextField.placeholder = "Password".localized()
@@ -63,28 +80,48 @@ class LoginView: UIView {
         passwordTextField.messageRequired = "The password should be 8 characters long".localized()
         passwordTextField.messageInvalid = "Password invalid".localized()
         passwordTextField.formKeyPath = "password"
-
-        // Configure loginButton
-        loginButton.setTitle("Login".localized(), for: [])
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-
-       // Configure forgetPassword
-        forgetPassword.setTitle("Forget Password?".localized(), for: [])
-        forgetPassword.setTitleColor(UIColor.main, for: [])
-        forgetPassword.addTarget(self, action: #selector(forgetPasswordTapped), for: .touchUpInside)
+        passwordTextField.accessibilityIdentifier = "Password"
+        passwordTextField.returnKeyType = .send
+        
+        // Configure forgotPasswordButton
+        let attributes = [
+            NSFontAttributeName: UIFont.normal,
+            NSForegroundColorAttributeName: UIColor.white,
+            NSUnderlineStyleAttributeName: 1
+        ] as [String : Any]?
+        let forgetPasswordString = NSAttributedString(string: "Forget Password", attributes: attributes)
+        forgetPasswordButton.setAttributedTitle(forgetPasswordString, for: .normal)
+        forgetPasswordButton.addTarget(self, action: #selector(forgetPasswordTapped), for: .touchUpInside)
+        
+        // Configure signUpButton
+        let signUpString = NSAttributedString(string: "Sign Up", attributes: attributes)
+        signUpButton.setAttributedTitle(signUpString, for: .normal)
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        
+        // Configure signUpLabel
+        signUpLabel.text = "Don't have an account?".localized()
+        signUpLabel.textColor = .white
+        signUpLabel.font = .normal
+        
     }
 
     private func installConstraints() {
-        let views = ["phoneNumberTextField": phoneNumberTextField,
+        let views = ["titleLabel": titleLabel,
+                     "phoneNumberTextField": phoneNumberTextField,
                      "passwordTextField": passwordTextField,
-                     "loginButton": loginButton,
-                     "forgetPassword": forgetPassword]
-        let metrics = ["horizontalPadding": horizontalPadding,
+                     "forgetPasswordButton": forgetPasswordButton,
+                     "signUpLabel": signUpLabel,
+                     "signUpButton": signUpButton]
+        let metrics = ["topPadding": topPadding,
+                       "horizontalPadding": horizontalPadding,
                        "verticalPadding": verticalPadding]
         disableTranslatesAutoresizingMaskIntoConstraints(views)
         var constraints = [NSLayoutConstraint]()
 
         // Horizontal constraints
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
+            "H:|-(horizontalPadding)-[titleLabel]-(horizontalPadding)-|",
+                                                                      options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[phoneNumberTextField]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
@@ -92,30 +129,51 @@ class LoginView: UIView {
             "H:|-(horizontalPadding)-[passwordTextField]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:|-(horizontalPadding)-[loginButton]-(horizontalPadding)-|",
+            "H:|-(horizontalPadding)-[forgetPasswordButton]",
                                                                       options: [], metrics: metrics, views: views))
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "H:[forgetPassword]-(horizontalPadding)-|",
+            "H:|-(horizontalPadding)-[signUpLabel]-[signUpButton]",
                                                                       options: [], metrics: metrics, views: views))
 
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:|-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[loginButton]-[forgetPassword]",
+            "V:|-(verticalPadding)-[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[forgetPasswordButton]-[signUpLabel]",
                                                                       options: [], metrics: metrics, views: views))
-
+        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
+            "V:|-(verticalPadding)-[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[forgetPasswordButton]-[signUpButton]",
+                                                                      options: [], metrics: metrics, views: views))
+        
         NSLayoutConstraint.activate(constraints)
+        signUpLabel.bottomAnchor.constraint(equalTo: signUpButton.bottomAnchor).isActive = true
     }
+    
+    // MARK: Helpers
 
-    // MARK: Private Helpers
-
-    func loginButtonTapped(_ event: UIEvent) {
-        let isValid = formManager.checkForm()
-        if isValid {
-            delegate?.loginButtonTapped()
-        }
-    }
-
-    func forgetPasswordTapped(_ event: UIEvent) {
+    func forgetPasswordTapped() {
         delegate?.forgetPasswordTapped()
+    }
+    
+    func signUpButtonTapped() {
+        delegate?.signUpButtonTapped()
+    }
+}
+
+// MARK: UITextFieldDelegate
+
+extension LoginView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.returnKeyType == .send {
+            delegate?.loginButtonTapped()
+            return true
+        }
+        return false
+    }
+}
+
+// MARK: Keyboard Dismiss
+
+extension LoginView {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        formManager.activeField?.resignFirstResponder()
     }
 }
