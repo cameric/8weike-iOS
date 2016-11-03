@@ -57,8 +57,8 @@ final class LoginViewController: WKUIViewController {
                 let controller = SuccessViewController(message: "Login Successful".localized())
                 self.navigationController?.pushViewController(controller, animated: true)
             } else {
-                let alert = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                let alert = UIAlertController(title: "Error".localized(), message: error?.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK".localized(), style: .cancel, handler: nil))
                 self.present(alert, animated: true, completion: nil)
             }
         })

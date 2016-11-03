@@ -89,12 +89,12 @@ class LoginView: UIView {
             NSForegroundColorAttributeName: UIColor.white,
             NSUnderlineStyleAttributeName: 1
         ] as [String : Any]?
-        let forgetPasswordString = NSAttributedString(string: "Forget Password", attributes: attributes)
+        let forgetPasswordString = NSAttributedString(string: "Forget Password".localized(), attributes: attributes)
         forgetPasswordButton.setAttributedTitle(forgetPasswordString, for: .normal)
         forgetPasswordButton.addTarget(self, action: #selector(forgetPasswordTapped), for: .touchUpInside)
         
         // Configure signUpButton
-        let signUpString = NSAttributedString(string: "Sign Up", attributes: attributes)
+        let signUpString = NSAttributedString(string: "Sign Up".localized(), attributes: attributes)
         signUpButton.setAttributedTitle(signUpString, for: .normal)
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         
@@ -134,17 +134,16 @@ class LoginView: UIView {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[signUpLabel]-[signUpButton]",
                                                                       options: [], metrics: metrics, views: views))
+        constraints.append(signUpLabel.bottomAnchor.constraint(equalTo: signUpButton.bottomAnchor))
+        constraints.append(signUpLabel.topAnchor.constraint(equalTo: signUpButton.topAnchor))
 
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "V:|-(verticalPadding)-[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[forgetPasswordButton]-[signUpLabel]",
                                                                       options: [], metrics: metrics, views: views))
-        constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:|-(verticalPadding)-[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[forgetPasswordButton]-[signUpButton]",
-                                                                      options: [], metrics: metrics, views: views))
         
         NSLayoutConstraint.activate(constraints)
-        signUpLabel.bottomAnchor.constraint(equalTo: signUpButton.bottomAnchor).isActive = true
+
     }
     
     // MARK: Helpers
