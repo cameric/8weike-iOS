@@ -19,6 +19,8 @@ let landingSignupIRI = "landing/signup"
 let landingLoginIRI = "landing/login"
 
 let loginViewIRI = "login"
+let EnterPhoneNumberViewIRI = "login/password_reset/phone"
+let EnterPasscodeIRI = "login/password_reset/passcode"
 
 // MARK: Signup
 

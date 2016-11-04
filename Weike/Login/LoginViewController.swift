@@ -91,16 +91,14 @@ final class LoginViewController: WKUIViewController {
 
 extension LoginViewController: LoginViewDelegate {
     func loginButtonTapped() {
-        print("Login button pressed")
         if loginView.formManager.checkForm() {
             login()
         }
     }
 
     func forgetPasswordTapped() {
-        let verifyPhoneViewController = VerifyPhoneViewController()
-        self.navigationController?.pushViewController(verifyPhoneViewController, animated: true)
-        print("Forgot password button pressed")
+        let enterPhoneNumberViewController = EnterPhoneNumberViewController()
+        self.navigationController?.pushViewController(enterPhoneNumberViewController, animated: true)
     }
     
     func signUpButtonTapped() {
