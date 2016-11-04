@@ -6,38 +6,73 @@
 //  Copyright © 2016 Cameric. All rights reserved.
 //
 
-class ResetPasswordViewController: UIViewController {
+class ResetPasswordViewController: WKUIViewController {
     // MARK: Properties
-
+    
     fileprivate let resetPasswordView = ResetPasswordView()
-
+    fileprivate var loginButtonItem = UIBarButtonItem()
+    var password: String? { get { return resetPasswordView.password } }
+    var confirmPassword: String? { get { return resetPasswordView.confirmPassword } }
+    
     // MARK: UIViewController
-
+    
     override func loadView() {
         super.loadView()
         resetPasswordView.delegate = self
         view = resetPasswordView
-        self.title = "Reset Password"
-
-        // NavigationBar style
-        if let navBar = navigationController?.navigationBar {
-            navBar.barTintColor = UIColor.main
-            navBar.tintColor = UIColor.white
-            navBar.barStyle = UIBarStyle.black
-            navBar.setValue(true, forKey: "hidesShadow")
-        } else {
-            print("View not nested in Navigation Controller")
-        }
+        configureNavBar()
+        
+        IRI = ResetPasswordViewIRI
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startListenToKeyboardEvent()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        stopListenToKeyboardEvent()
+    }
+    
+    private func configureNavBar() {
+        // Configure left nav bar
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissAnimated))
+        
+        // Configure right nav bar
+        loginButtonItem = UIBarButtonItem(title: "Confirm".localized(), style: .done, target: self, action: #selector(confirmButtonTapped))
+        navigationItem.rightBarButtonItem = loginButtonItem
     }
 }
+
+// MARK: resetPasswordViewDelegate
 
 extension ResetPasswordViewController: ResetPasswordViewDelegate {
-
-    func confirmButtonTapped(){
-        // Pop twice to get to login again
-        if let viewControllers = self.navigationController?.viewControllers {
-            _ = self.navigationController?.popToViewController(viewControllers[viewControllers.count - 2 - 1], animated: true)
+    func confirmButtonTapped() {
+        if resetPasswordView.formManager.checkForm() {
+            // TODO: Send Request
+            dismiss(animated: true, completion: nil)
         }
-        print("Confirm button pressed")
     }
 }
+
+// MARK: Keyboard Delegate
+
+extension ResetPasswordViewController: KeyboardDelegate {
+    func keyboardWillShow(_ notification: NSNotification) {
+        guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else { return }
+        UIView.animate(withDuration: duration) {
+            self.resetPasswordView.topPadding = 30
+        }
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else { return }
+        UIView.animate(withDuration: duration) {
+            self.resetPasswordView.topPadding = 80
+        }
+    }
+}
+

@@ -71,14 +71,13 @@
 		843C73FE6476E4E93371B6AC /* Pods_Weike.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11961CD8041B7EA8F78EC0CD /* Pods_Weike.framework */; };
 		FAADD3241D63801A00CAE4F9 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3231D63801A00CAE4F9 /* SuccessViewController.swift */; };
 		FAADD3261D63805A00CAE4F9 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3251D63805A00CAE4F9 /* SuccessView.swift */; };
-		FAADD3311D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3301D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift */; };
-		FAADD3331D6CEFCB00CAE4F9 /* VerifyPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3321D6CEFCB00CAE4F9 /* VerifyPhoneView.swift */; };
 		FAADD3361D6D087A00CAE4F9 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */; };
 		FAADD3381D6D089000CAE4F9 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */; };
 		FABB1D031DCC373B0003E5BE /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D021DCC373B0003E5BE /* EnterPhoneNumberView.swift */; };
 		FABB1D051DCC37730003E5BE /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D041DCC37730003E5BE /* EnterPhoneNumberViewController.swift */; };
 		FABB1D0B1DCC41110003E5BE /* EnterPasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D0A1DCC41110003E5BE /* EnterPasscodeView.swift */; };
 		FABB1D0D1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D0C1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift */; };
+		FABB1D101DCD34A10003E5BE /* ForgetPasswordRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D0F1DCD34A10003E5BE /* ForgetPasswordRequests.swift */; };
 		FEB1596E43375FC821F7689E /* Pods_WeikeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E331BCD3982987A26DED219 /* Pods_WeikeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -179,14 +178,13 @@
 		D1BFCD6E011BC18F3FDAB994 /* Pods_WeikeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeikeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAADD3231D63801A00CAE4F9 /* SuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
 		FAADD3251D63805A00CAE4F9 /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
-		FAADD3301D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneViewController.swift; sourceTree = "<group>"; };
-		FAADD3321D6CEFCB00CAE4F9 /* VerifyPhoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyPhoneView.swift; sourceTree = "<group>"; };
 		FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		FABB1D021DCC373B0003E5BE /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
 		FABB1D041DCC37730003E5BE /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		FABB1D0A1DCC41110003E5BE /* EnterPasscodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPasscodeView.swift; sourceTree = "<group>"; };
 		FABB1D0C1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPasscodeViewViewController.swift; sourceTree = "<group>"; };
+		FABB1D0F1DCD34A10003E5BE /* ForgetPasswordRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgetPasswordRequests.swift; path = ../ForgetPasswordRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -579,9 +577,9 @@
 		FAADD32F1D6CEF6300CAE4F9 /* ForgetPassword */ = {
 			isa = PBXGroup;
 			children = (
+				FABB1D0E1DCD34480003E5BE /* Requests */,
 				FAADD3341D6CEFCF00CAE4F9 /* Views */,
 				FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */,
-				FAADD3301D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift */,
 				FABB1D041DCC37730003E5BE /* EnterPhoneNumberViewController.swift */,
 				FABB1D0C1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift */,
 			);
@@ -592,10 +590,18 @@
 			isa = PBXGroup;
 			children = (
 				FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */,
-				FAADD3321D6CEFCB00CAE4F9 /* VerifyPhoneView.swift */,
 				FABB1D021DCC373B0003E5BE /* EnterPhoneNumberView.swift */,
 				FABB1D0A1DCC41110003E5BE /* EnterPasscodeView.swift */,
 			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FABB1D0E1DCD34480003E5BE /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				FABB1D0F1DCD34A10003E5BE /* ForgetPasswordRequests.swift */,
+			);
+			name = Requests;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -898,10 +904,10 @@
 				6F8793831DADD87F00B82D9A /* PostTableViewCell.swift in Sources */,
 				6F87937E1DADD31D00B82D9A /* Post.swift in Sources */,
 				6F8793881DADE68500B82D9A /* String+Utils.swift in Sources */,
-				FAADD3311D6CEFB600CAE4F9 /* VerifyPhoneViewController.swift in Sources */,
 				6F43FDF51D590EC0002CC1B6 /* UIImage+Utils.swift in Sources */,
 				FAADD3241D63801A00CAE4F9 /* SuccessViewController.swift in Sources */,
 				6F429C1E1D51794C00E8B1A4 /* SignupView.swift in Sources */,
+				FABB1D101DCD34A10003E5BE /* ForgetPasswordRequests.swift in Sources */,
 				FAADD3361D6D087A00CAE4F9 /* ResetPasswordView.swift in Sources */,
 				6FB429BC1D4C541F0025FCE2 /* LandingViewController.swift in Sources */,
 				32CBF5791DC95B560010ABE7 /* DebugHostsTableViewController.swift in Sources */,
@@ -946,7 +952,6 @@
 				6F51D6B61D5D955F00803FC6 /* UIScreen+Utils.swift in Sources */,
 				6F0DB98A1D7ABF2200E8EB48 /* SignupRequests.swift in Sources */,
 				FAADD3381D6D089000CAE4F9 /* ResetPasswordViewController.swift in Sources */,
-				FAADD3331D6CEFCB00CAE4F9 /* VerifyPhoneView.swift in Sources */,
 				FABB1D0B1DCC41110003E5BE /* EnterPasscodeView.swift in Sources */,
 				32A5A5F51DBC730B00EE0B67 /* DebugTableViewDataSource.swift in Sources */,
 				6FF5B66C1D4B35E1000E9554 /* MessageViewController.swift in Sources */,
