@@ -7,16 +7,15 @@
 //
 
 class LoginRequests {
-    static func login(phone: String, password: String, completion: @escaping (_ user: User?, _ error: Error?) -> Void) {
-        var user: User?
-        let task = try? APIRequest.postTask("/login/general", params: ["phone": phone as AnyObject, "password": password as AnyObject], completion: { (json, error) in
-            guard let userJson = json else {
-                completion(nil, error)
-                return
-            }
-            user = try? User.fromJson(userJson)
-            completion(user, error)
+    
+    static let timeout = 30.0
+    
+    static func loginTask(phone: String, password: String, completion: @escaping (_ error: Error?) -> Void) -> URLSessionDataTask? {
+        let task = try? APIRequest.postTask("/api/login/phone HTTP/1.1", params: ["phone": phone as AnyObject, "password": password as AnyObject],
+                                            completion: { (json, error) in
+                                                completion(error)
         })
-        task?.resume()
+        return task
     }
+    
 }
