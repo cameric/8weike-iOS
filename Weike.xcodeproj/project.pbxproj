@@ -184,7 +184,7 @@
 		FABB1D041DCC37730003E5BE /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
 		FABB1D0A1DCC41110003E5BE /* EnterPasscodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPasscodeView.swift; sourceTree = "<group>"; };
 		FABB1D0C1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPasscodeViewViewController.swift; sourceTree = "<group>"; };
-		FABB1D0F1DCD34A10003E5BE /* ForgetPasswordRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ForgetPasswordRequests.swift; path = ../ForgetPasswordRequests.swift; sourceTree = "<group>"; };
+		FABB1D0F1DCD34A10003E5BE /* ForgetPasswordRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,44 +274,42 @@
 			children = (
 				32A5A5EB1DB9B3E900EE0B67 /* MoreTableViewDataSource.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		32A5A5EA1DB9B3CE00EE0B67 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Cells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		32A5A5ED1DB9B75500EE0B67 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Setting;
-			path = Signup;
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		32A5A5EE1DB9B77600EE0B67 /* Debug */ = {
 			isa = PBXGroup;
 			children = (
 				32A5A5F31DBC72E700EE0B67 /* Models */,
+				32CBF5781DC95B560010ABE7 /* DebugHostsTableViewController.swift */,
 				32A5A5F11DB9BE1C00EE0B67 /* DebugTableViewController.swift */,
 				32CBF5741DC952C40010ABE7 /* DebugViewsTableViewController.swift */,
-				32CBF5781DC95B560010ABE7 /* DebugHostsTableViewController.swift */,
 			);
-			name = Debug;
-			path = ForgetPassword;
+			path = Debug;
 			sourceTree = "<group>";
 		};
 		32A5A5F31DBC72E700EE0B67 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				32CBF57A1DC95BAF0010ABE7 /* DebugHostsTableViewDataSource.swift */,
 				32A5A5F41DBC730B00EE0B67 /* DebugTableViewDataSource.swift */,
 				32CBF5761DC953150010ABE7 /* DebugViewsTableViewDataSource.swift */,
-				32CBF57A1DC95BAF0010ABE7 /* DebugHostsTableViewDataSource.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6F0DB98B1D7ABF2A00E8EB48 /* Requests */ = {
@@ -364,8 +362,8 @@
 		6F41F9971D458B1400F7BD43 /* Weike */ = {
 			isa = PBXGroup;
 			children = (
-				6FDCE1201D45A8AA0013B62C /* Discover */,
 				32A5A5EE1DB9B77600EE0B67 /* Debug */,
+				6FDCE1201D45A8AA0013B62C /* Discover */,
 				FAADD32F1D6CEF6300CAE4F9 /* ForgetPassword */,
 				6F133DC11D8B5B0800CCA447 /* Localization */,
 				6FB429BD1D4C54270025FCE2 /* Login */,
@@ -373,8 +371,8 @@
 				321D79611D6307B5006F68C2 /* More */,
 				6F41F9CA1D458F1400F7BD43 /* Profile */,
 				6F51D6B21D5D34F200803FC6 /* Request */,
-				6FC15CE81D512C9600F913AC /* Signup */,
 				32A5A5ED1DB9B75500EE0B67 /* Setting */,
+				6FC15CE81D512C9600F913AC /* Signup */,
 				6FDCE1181D459EAE0013B62C /* UI */,
 				6F429C201D51823500E8B1A4 /* User */,
 				6FDCE11B1D45A0720013B62C /* Utils */,
@@ -398,8 +396,8 @@
 		6F41F9B91D458B1500F7BD43 /* WeikeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				6FE6DEDC1DA0D3DD0001DD48 /* Signup */,
 				321D795C1D618C8C006F68C2 /* Login */,
+				6FE6DEDC1DA0D3DD0001DD48 /* Signup */,
 				6F41F9BC1D458B1500F7BD43 /* Info.plist */,
 				6F41F9BA1D458B1500F7BD43 /* WeikeUITests.swift */,
 			);
@@ -419,8 +417,8 @@
 		6F429C1F1D51795200E8B1A4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				3265234D1D6C9A120026BB42 /* SignupUsernameView.swift */,
 				6F7ED3431D99E54F00AC2C2E /* PhoneVerifyView.swift */,
+				3265234D1D6C9A120026BB42 /* SignupUsernameView.swift */,
 				6F429C1D1D51794C00E8B1A4 /* SignupView.swift */,
 			);
 			path = Views;
@@ -456,11 +454,11 @@
 		6F87937C1DADD2F600B82D9A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				6F87937D1DADD31D00B82D9A /* Post.swift */,
 				6F87937F1DADD6C000B82D9A /* Comment.swift */,
 				6F8793841DADD91B00B82D9A /* DiscoverTableViewDataSource.swift */,
+				6F87937D1DADD31D00B82D9A /* Post.swift */,
 			);
-			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		6F8793811DADD85300B82D9A /* Cells */ = {
@@ -468,18 +466,18 @@
 			children = (
 				6F8793821DADD87F00B82D9A /* PostTableViewCell.swift */,
 			);
-			name = Cells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		6F8793861DADE0D800B82D9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32A5A5E71DB9B18A00EE0B67 /* PostView.swift */,
-				32CBF56E1DBF18300010ABE7 /* PostImageView.swift */,
 				32CBF5701DBF23B40010ABE7 /* PostAuthorView.swift */,
 				32CBF5721DBF23CD0010ABE7 /* PostCommentsView.swift */,
+				32CBF56E1DBF18300010ABE7 /* PostImageView.swift */,
+				32A5A5E71DB9B18A00EE0B67 /* PostView.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		6FABFA491D4B2CB40006E093 /* Message */ = {
@@ -507,8 +505,8 @@
 			children = (
 				6F0DB98B1D7ABF2A00E8EB48 /* Requests */,
 				6F429C1F1D51795200E8B1A4 /* Views */,
-				3265234F1D6DB0DC0026BB42 /* SignupUsernameViewController.swift */,
 				6F7ED3411D99E4C800AC2C2E /* PhoneVerifyViewController.swift */,
+				3265234F1D6DB0DC0026BB42 /* SignupUsernameViewController.swift */,
 				6FC15CE61D512C9100F913AC /* SignupViewController.swift */,
 			);
 			path = Signup;
@@ -531,16 +529,16 @@
 			isa = PBXGroup;
 			children = (
 				326523531D6E80770026BB42 /* Analytics.swift */,
+				32A5A5F61DBDD46F00EE0B67 /* CaseCountable.swift */,
+				6F8793891DADE6DC00B82D9A /* Date+Utils.swift */,
+				32A5A5EF1DB9B8AE00EE0B67 /* Debug.swift */,
+				6F8793871DADE68500B82D9A /* String+Utils.swift */,
 				6F43FDF41D590EC0002CC1B6 /* UIImage+Utils.swift */,
 				6F51D6B51D5D955F00803FC6 /* UIScreen+Utils.swift */,
 				6F429C211D51828D00E8B1A4 /* UIView+Utils.swift */,
 				326523571D6E86940026BB42 /* WKTableViewController.swift */,
 				326523551D6E867F0026BB42 /* WKUIViewController.swift */,
 				6F24A9FF1D45953A00672A50 /* Weike-Bridging-Header.h */,
-				6F8793871DADE68500B82D9A /* String+Utils.swift */,
-				6F8793891DADE6DC00B82D9A /* Date+Utils.swift */,
-				32A5A5EF1DB9B8AE00EE0B67 /* Debug.swift */,
-				32A5A5F61DBDD46F00EE0B67 /* CaseCountable.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -548,9 +546,9 @@
 		6FDCE1201D45A8AA0013B62C /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				6F8793861DADE0D800B82D9A /* Views */,
 				6F8793811DADD85300B82D9A /* Cells */,
 				6F87937C1DADD2F600B82D9A /* Models */,
+				6F8793861DADE0D800B82D9A /* Views */,
 				6FDCE11E1D45A8A60013B62C /* DiscoverTableViewController.swift */,
 			);
 			path = Discover;
@@ -561,7 +559,7 @@
 			children = (
 				6FE6DEDD1DA0D3FF0001DD48 /* SignupViewUITest.swift */,
 			);
-			name = Signup;
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		94781A6E0E9633DEBF8A9C0D /* Frameworks */ = {
@@ -579,9 +577,9 @@
 			children = (
 				FABB1D0E1DCD34480003E5BE /* Requests */,
 				FAADD3341D6CEFCF00CAE4F9 /* Views */,
-				FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */,
-				FABB1D041DCC37730003E5BE /* EnterPhoneNumberViewController.swift */,
 				FABB1D0C1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift */,
+				FABB1D041DCC37730003E5BE /* EnterPhoneNumberViewController.swift */,
+				FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */,
 			);
 			path = ForgetPassword;
 			sourceTree = "<group>";
@@ -589,9 +587,9 @@
 		FAADD3341D6CEFCF00CAE4F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */,
-				FABB1D021DCC373B0003E5BE /* EnterPhoneNumberView.swift */,
 				FABB1D0A1DCC41110003E5BE /* EnterPasscodeView.swift */,
+				FABB1D021DCC373B0003E5BE /* EnterPhoneNumberView.swift */,
+				FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -601,8 +599,7 @@
 			children = (
 				FABB1D0F1DCD34A10003E5BE /* ForgetPasswordRequests.swift */,
 			);
-			name = Requests;
-			path = Views;
+			path = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
