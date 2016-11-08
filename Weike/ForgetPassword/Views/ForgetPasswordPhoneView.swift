@@ -1,5 +1,5 @@
 //
-//  EnterPhoneNumberView.swift
+//  ForgetPasswordPhoneView.swift
 //  Weike
 //
 //  Created by Danny Yulang Wang on 11/3/16.
@@ -9,18 +9,18 @@
 private let horizontalPadding = CGFloat(30)
 private let verticalPadding = CGFloat(30)
 
-protocol EnterPhoneNumberViewDelegate: class {
+protocol ForgetPasswordPhoneViewDelegate: class {
     func nextButtonTapped()
 }
 
-class EnterPhoneNumberView: UIView {
-    
+class ForgetPasswordPhoneView: UIView {
+
     // MARK: Properties
-    
-    weak var delegate: EnterPhoneNumberViewDelegate?
+
+    weak var delegate: ForgetPasswordPhoneViewDelegate?
     var phone: String? { get { return phoneNumberTextField.text } }
     var formManager = UITextField.formManager
-    
+
     fileprivate var topConstraint = NSLayoutConstraint()
     var topPadding = CGFloat(80) {
         didSet {
@@ -28,14 +28,14 @@ class EnterPhoneNumberView: UIView {
             layoutIfNeeded()
         }
     }
-    
+
     // MARK: Views
-    
+
     fileprivate let titleLabel = UILabel()
     fileprivate let phoneNumberTextField = UITextField.floatLabeled
-    
+
     // MARK: Initializers
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureSubviews()
@@ -43,19 +43,19 @@ class EnterPhoneNumberView: UIView {
         formManager.addTextFields([phoneNumberTextField])
         installConstraints()
     }
-    
+
     convenience required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     private func configureSubviews() {
         backgroundColor = UIColor.background
-        
+
         // Configure title
         titleLabel.text = "Forgot Password".localized()
         titleLabel.font = .extraExtraLargeBold
         titleLabel.textColor = .white
-        
+
         // Configure phoneNumberTextField
         phoneNumberTextField.placeholder = "Phone Number".localized()
         phoneNumberTextField.keyboardType = .phonePad
@@ -66,7 +66,7 @@ class EnterPhoneNumberView: UIView {
         phoneNumberTextField.accessibilityIdentifier = "Phone"
         phoneNumberTextField.returnKeyType = .next
     }
-    
+
     private func installConstraints() {
         let views = ["titleLabel": titleLabel,
                      "phoneNumberTextField": phoneNumberTextField]
@@ -75,7 +75,7 @@ class EnterPhoneNumberView: UIView {
                        "verticalPadding": verticalPadding]
         disableTranslatesAutoresizingMaskIntoConstraints(views)
         var constraints = [NSLayoutConstraint]()
-        
+
         // Horizontal constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[titleLabel]-(horizontalPadding)-|",
@@ -83,18 +83,18 @@ class EnterPhoneNumberView: UIView {
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "H:|-(horizontalPadding)-[phoneNumberTextField]-(horizontalPadding)-|",
                                                                       options: [], metrics: metrics, views: views))
-        
+
         // Vertical constraints
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
             "V:|-(verticalPadding)-[titleLabel]-(verticalPadding)-[phoneNumberTextField]",
                                                                       options: [], metrics: metrics, views: views))
-        
+
         NSLayoutConstraint.activate(constraints)
-        
+
     }
-    
+
     // MARK: Helpers
-    
+
     func nextButtonTapped() {
         delegate?.nextButtonTapped()
     }
@@ -103,7 +103,7 @@ class EnterPhoneNumberView: UIView {
 
 // MARK: UITextFieldDelegate
 
-extension EnterPhoneNumberView: UITextFieldDelegate {
+extension ForgetPasswordPhoneView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.returnKeyType == .send {
             delegate?.nextButtonTapped()
@@ -115,7 +115,7 @@ extension EnterPhoneNumberView: UITextFieldDelegate {
 
 // MARK: Keyboard Dismiss
 
-extension EnterPhoneNumberView {
+extension ForgetPasswordPhoneView {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         formManager.activeField?.resignFirstResponder()
     }

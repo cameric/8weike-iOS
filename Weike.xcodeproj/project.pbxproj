@@ -26,6 +26,8 @@
 		32A5A5F21DB9BE1C00EE0B67 /* DebugTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5A5F11DB9BE1C00EE0B67 /* DebugTableViewController.swift */; };
 		32A5A5F51DBC730B00EE0B67 /* DebugTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5A5F41DBC730B00EE0B67 /* DebugTableViewDataSource.swift */; };
 		32A5A5F71DBDD46F00EE0B67 /* CaseCountable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A5A5F61DBDD46F00EE0B67 /* CaseCountable.swift */; };
+		32A8AF1A1DD197F800F2410A /* DiscoverRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8AF191DD197F800F2410A /* DiscoverRequests.swift */; };
+		32A8AF1E1DD19A0300F2410A /* AddRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A8AF1D1DD19A0300F2410A /* AddRequests.swift */; };
 		32CBF56F1DBF18300010ABE7 /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CBF56E1DBF18300010ABE7 /* PostImageView.swift */; };
 		32CBF5711DBF23B40010ABE7 /* PostAuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CBF5701DBF23B40010ABE7 /* PostAuthorView.swift */; };
 		32CBF5731DBF23CD0010ABE7 /* PostCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CBF5721DBF23CD0010ABE7 /* PostCommentsView.swift */; };
@@ -73,10 +75,10 @@
 		FAADD3261D63805A00CAE4F9 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3251D63805A00CAE4F9 /* SuccessView.swift */; };
 		FAADD3361D6D087A00CAE4F9 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */; };
 		FAADD3381D6D089000CAE4F9 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */; };
-		FABB1D031DCC373B0003E5BE /* EnterPhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D021DCC373B0003E5BE /* EnterPhoneNumberView.swift */; };
+		FABB1D031DCC373B0003E5BE /* ForgetPasswordPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D021DCC373B0003E5BE /* ForgetPasswordPhoneView.swift */; };
 		FABB1D051DCC37730003E5BE /* EnterPhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D041DCC37730003E5BE /* EnterPhoneNumberViewController.swift */; };
-		FABB1D0B1DCC41110003E5BE /* EnterPasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D0A1DCC41110003E5BE /* EnterPasscodeView.swift */; };
-		FABB1D0D1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D0C1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift */; };
+		FABB1D0B1DCC41110003E5BE /* ForgetPasswordPasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D0A1DCC41110003E5BE /* ForgetPasswordPasscodeView.swift */; };
+		FABB1D0D1DCC412B0003E5BE /* ForgetPasswordPasscodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D0C1DCC412B0003E5BE /* ForgetPasswordPasscodeViewController.swift */; };
 		FABB1D101DCD34A10003E5BE /* ForgetPasswordRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABB1D0F1DCD34A10003E5BE /* ForgetPasswordRequests.swift */; };
 		FEB1596E43375FC821F7689E /* Pods_WeikeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E331BCD3982987A26DED219 /* Pods_WeikeUITests.framework */; };
 /* End PBXBuildFile section */
@@ -119,6 +121,8 @@
 		32A5A5F11DB9BE1C00EE0B67 /* DebugTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableViewController.swift; sourceTree = "<group>"; };
 		32A5A5F41DBC730B00EE0B67 /* DebugTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugTableViewDataSource.swift; sourceTree = "<group>"; };
 		32A5A5F61DBDD46F00EE0B67 /* CaseCountable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseCountable.swift; sourceTree = "<group>"; };
+		32A8AF191DD197F800F2410A /* DiscoverRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverRequests.swift; sourceTree = "<group>"; };
+		32A8AF1D1DD19A0300F2410A /* AddRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRequests.swift; sourceTree = "<group>"; };
 		32CBF56E1DBF18300010ABE7 /* PostImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
 		32CBF5701DBF23B40010ABE7 /* PostAuthorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostAuthorView.swift; sourceTree = "<group>"; };
 		32CBF5721DBF23CD0010ABE7 /* PostCommentsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentsView.swift; sourceTree = "<group>"; };
@@ -180,10 +184,10 @@
 		FAADD3251D63805A00CAE4F9 /* SuccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 		FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		FABB1D021DCC373B0003E5BE /* EnterPhoneNumberView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberView.swift; sourceTree = "<group>"; };
+		FABB1D021DCC373B0003E5BE /* ForgetPasswordPhoneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPhoneView.swift; sourceTree = "<group>"; };
 		FABB1D041DCC37730003E5BE /* EnterPhoneNumberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPhoneNumberViewController.swift; sourceTree = "<group>"; };
-		FABB1D0A1DCC41110003E5BE /* EnterPasscodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPasscodeView.swift; sourceTree = "<group>"; };
-		FABB1D0C1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterPasscodeViewViewController.swift; sourceTree = "<group>"; };
+		FABB1D0A1DCC41110003E5BE /* ForgetPasswordPasscodeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPasscodeView.swift; sourceTree = "<group>"; };
+		FABB1D0C1DCC412B0003E5BE /* ForgetPasswordPasscodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordPasscodeViewController.swift; sourceTree = "<group>"; };
 		FABB1D0F1DCD34A10003E5BE /* ForgetPasswordRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -312,6 +316,31 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		32A8AF181DD197DD00F2410A /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				32A8AF191DD197F800F2410A /* DiscoverRequests.swift */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
+		32A8AF1B1DD199CB00F2410A /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				32A8AF1C1DD199E800F2410A /* Requests */,
+			);
+			name = Add;
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		32A8AF1C1DD199E800F2410A /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				32A8AF1D1DD19A0300F2410A /* AddRequests.swift */,
+			);
+			name = Requests;
+			sourceTree = "<group>";
+		};
 		6F0DB98B1D7ABF2A00E8EB48 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				32A5A5EE1DB9B77600EE0B67 /* Debug */,
+				32A8AF1B1DD199CB00F2410A /* Add */,
 				6FDCE1201D45A8AA0013B62C /* Discover */,
 				FAADD32F1D6CEF6300CAE4F9 /* ForgetPassword */,
 				6F133DC11D8B5B0800CCA447 /* Localization */,
@@ -546,6 +576,7 @@
 		6FDCE1201D45A8AA0013B62C /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				32A8AF181DD197DD00F2410A /* Requests */,
 				6F8793811DADD85300B82D9A /* Cells */,
 				6F87937C1DADD2F600B82D9A /* Models */,
 				6F8793861DADE0D800B82D9A /* Views */,
@@ -577,7 +608,7 @@
 			children = (
 				FABB1D0E1DCD34480003E5BE /* Requests */,
 				FAADD3341D6CEFCF00CAE4F9 /* Views */,
-				FABB1D0C1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift */,
+				FABB1D0C1DCC412B0003E5BE /* ForgetPasswordPasscodeViewController.swift */,
 				FABB1D041DCC37730003E5BE /* EnterPhoneNumberViewController.swift */,
 				FAADD3371D6D089000CAE4F9 /* ResetPasswordViewController.swift */,
 			);
@@ -587,8 +618,8 @@
 		FAADD3341D6CEFCF00CAE4F9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FABB1D0A1DCC41110003E5BE /* EnterPasscodeView.swift */,
-				FABB1D021DCC373B0003E5BE /* EnterPhoneNumberView.swift */,
+				FABB1D0A1DCC41110003E5BE /* ForgetPasswordPasscodeView.swift */,
+				FABB1D021DCC373B0003E5BE /* ForgetPasswordPhoneView.swift */,
 				FAADD3351D6D087A00CAE4F9 /* ResetPasswordView.swift */,
 			);
 			path = Views;
@@ -674,7 +705,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = Cameric;
 				TargetAttributes = {
 					6F41F9941D458B1400F7BD43 = {
@@ -909,7 +940,9 @@
 				6FB429BC1D4C541F0025FCE2 /* LandingViewController.swift in Sources */,
 				32CBF5791DC95B560010ABE7 /* DebugHostsTableViewController.swift in Sources */,
 				6FC15CE71D512C9100F913AC /* SignupViewController.swift in Sources */,
+				32A8AF1E1DD19A0300F2410A /* AddRequests.swift in Sources */,
 				6FDCE11D1D45A6D10013B62C /* ProfileTableViewController.swift in Sources */,
+				32A8AF1A1DD197F800F2410A /* DiscoverRequests.swift in Sources */,
 				32A5A5F71DBDD46F00EE0B67 /* CaseCountable.swift in Sources */,
 				321D79551D614060006F68C2 /* ProfileTableViewDataSource.swift in Sources */,
 				326523541D6E80770026BB42 /* Analytics.swift in Sources */,
@@ -921,7 +954,7 @@
 				6F429C241D51A4A800E8B1A4 /* LandingView.swift in Sources */,
 				321D79581D615C1E006F68C2 /* UserBasicInfoCell.swift in Sources */,
 				326523561D6E867F0026BB42 /* WKUIViewController.swift in Sources */,
-				FABB1D031DCC373B0003E5BE /* EnterPhoneNumberView.swift in Sources */,
+				FABB1D031DCC373B0003E5BE /* ForgetPasswordPhoneView.swift in Sources */,
 				6F6E9E531D51C303007CC2A2 /* UIDesign.swift in Sources */,
 				326523501D6DB0DC0026BB42 /* SignupUsernameViewController.swift in Sources */,
 				FAADD3261D63805A00CAE4F9 /* SuccessView.swift in Sources */,
@@ -936,7 +969,7 @@
 				6F51D6B11D5D34E800803FC6 /* APIRequest.swift in Sources */,
 				FABB1D051DCC37730003E5BE /* EnterPhoneNumberViewController.swift in Sources */,
 				6F49BAA01D5D18340028ED52 /* UIFont+Utils.swift in Sources */,
-				FABB1D0D1DCC412B0003E5BE /* EnterPasscodeViewViewController.swift in Sources */,
+				FABB1D0D1DCC412B0003E5BE /* ForgetPasswordPasscodeViewController.swift in Sources */,
 				6F8793801DADD6C000B82D9A /* Comment.swift in Sources */,
 				3265234E1D6C9A120026BB42 /* SignupUsernameView.swift in Sources */,
 				321A0BA81D5FD35E00B07B09 /* LoginView.swift in Sources */,
@@ -949,7 +982,7 @@
 				6F51D6B61D5D955F00803FC6 /* UIScreen+Utils.swift in Sources */,
 				6F0DB98A1D7ABF2200E8EB48 /* SignupRequests.swift in Sources */,
 				FAADD3381D6D089000CAE4F9 /* ResetPasswordViewController.swift in Sources */,
-				FABB1D0B1DCC41110003E5BE /* EnterPasscodeView.swift in Sources */,
+				FABB1D0B1DCC41110003E5BE /* ForgetPasswordPasscodeView.swift in Sources */,
 				32A5A5F51DBC730B00EE0B67 /* DebugTableViewDataSource.swift in Sources */,
 				6FF5B66C1D4B35E1000E9554 /* MessageViewController.swift in Sources */,
 				32CBF57B1DC95BAF0010ABE7 /* DebugHostsTableViewDataSource.swift in Sources */,
@@ -1103,6 +1136,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AF2E638E317A4F993DAF9D84 /* Pods-Weike.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7638954Y34;
@@ -1120,6 +1154,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CD4003D7FA1C493BB129BB5E /* Pods-Weike.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7638954Y34;

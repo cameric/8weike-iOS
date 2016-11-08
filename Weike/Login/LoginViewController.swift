@@ -22,31 +22,31 @@ final class LoginViewController: WKUIViewController {
         loginView.delegate = self
         view = loginView
         configureNavBar()
-        
+
         IRI = loginViewIRI
 
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         startListenToKeyboardEvent()
-        
+
     }
-    
+
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         stopListenToKeyboardEvent()
     }
-    
+
     private func configureNavBar() {
         // Configure left nav bar
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: #selector(dismissAnimated))
-        
+
         // Configure right nav bar
         loginButtonItem = UIBarButtonItem(title: "Next".localized(), style: .done, target: self, action: #selector(loginButtonTapped))
         navigationItem.rightBarButtonItem = loginButtonItem
     }
-    
+
     fileprivate func login() {
         if (loginTask != nil) {
             return
@@ -63,16 +63,8 @@ final class LoginViewController: WKUIViewController {
             }
         })
         loginTask?.resume()
-        
-        // Set request time out
-        let dispatchTime: DispatchTime = DispatchTime.now() + SignupRequests.timeout
-        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
-            self.loginTask?.cancel()
-            self.loginTask = nil
-        }
-
     }
-    
+
     fileprivate func userInteractionEnable(_ enabled: Bool) {
         loginView.isUserInteractionEnabled = enabled
         if enabled {
@@ -97,10 +89,10 @@ extension LoginViewController: LoginViewDelegate {
     }
 
     func forgetPasswordTapped() {
-        let enterPhoneNumberViewController = EnterPhoneNumberViewController()
+        let enterPhoneNumberViewController = ForgetPasswordPhoneViewController()
         self.navigationController?.pushViewController(enterPhoneNumberViewController, animated: true)
     }
-    
+
     func signUpButtonTapped() {
         let signUpViewController = SignupViewController()
         self.navigationController?.pushViewController(signUpViewController, animated: true)
@@ -116,7 +108,7 @@ extension LoginViewController: KeyboardDelegate {
             self.loginView.topPadding = 30
         }
     }
-    
+
     func keyboardWillHide(_ notification: NSNotification) {
         guard let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double else { return }
         UIView.animate(withDuration: duration) {

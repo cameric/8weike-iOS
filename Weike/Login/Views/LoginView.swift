@@ -31,9 +31,9 @@ class LoginView: UIView {
             layoutIfNeeded()
         }
     }
-    
+
     // MARK: Views
-    
+
     fileprivate let titleLabel = UILabel()
     fileprivate let phoneNumberTextField = UITextField.floatLabeled
     fileprivate let passwordTextField = UITextField.floatLabeled
@@ -62,7 +62,7 @@ class LoginView: UIView {
         titleLabel.text = "Login".localized()
         titleLabel.font = .extraExtraLargeBold
         titleLabel.textColor = .white
-        
+
         // Configure phoneNumberTextField
         phoneNumberTextField.placeholder = "Phone Number".localized()
         phoneNumberTextField.keyboardType = .phonePad
@@ -82,7 +82,7 @@ class LoginView: UIView {
         passwordTextField.formKeyPath = "password"
         passwordTextField.accessibilityIdentifier = "Password"
         passwordTextField.returnKeyType = .send
-        
+
         // Configure forgotPasswordButton
         let attributes = [
             NSFontAttributeName: UIFont.normal,
@@ -92,17 +92,17 @@ class LoginView: UIView {
         let forgetPasswordString = NSAttributedString(string: "Forget Password".localized(), attributes: attributes)
         forgetPasswordButton.setAttributedTitle(forgetPasswordString, for: .normal)
         forgetPasswordButton.addTarget(self, action: #selector(forgetPasswordTapped), for: .touchUpInside)
-        
+
         // Configure signUpButton
         let signUpString = NSAttributedString(string: "Sign Up".localized(), attributes: attributes)
         signUpButton.setAttributedTitle(signUpString, for: .normal)
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
-        
+
         // Configure signUpLabel
         signUpLabel.text = "Don't have an account?".localized()
         signUpLabel.textColor = .white
         signUpLabel.font = .normal
-        
+
     }
 
     private func installConstraints() {
@@ -138,20 +138,22 @@ class LoginView: UIView {
         constraints.append(signUpLabel.topAnchor.constraint(equalTo: signUpButton.topAnchor))
 
         // Vertical constraints
+        topConstraint = titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: topPadding)
+        constraints.append(topConstraint)
         constraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat:
-            "V:|-(verticalPadding)-[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[forgetPasswordButton]-[signUpLabel]",
+            "V:[titleLabel]-(verticalPadding)-[phoneNumberTextField]-(verticalPadding)-[passwordTextField]-(verticalPadding)-[forgetPasswordButton]-[signUpLabel]",
                                                                       options: [], metrics: metrics, views: views))
-        
+
         NSLayoutConstraint.activate(constraints)
 
     }
-    
+
     // MARK: Helpers
 
     func forgetPasswordTapped() {
         delegate?.forgetPasswordTapped()
     }
-    
+
     func signUpButtonTapped() {
         delegate?.signUpButtonTapped()
     }

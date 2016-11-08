@@ -63,13 +63,6 @@ final class SignupViewController: WKUIViewController {
             }
         })
         signupTask?.resume()
-
-        // Set request time out
-        let dispatchTime: DispatchTime = DispatchTime.now() + SignupRequests.timeout
-        DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
-            self.signupTask?.cancel()
-            self.signupTask = nil
-        }
     }
 
     fileprivate func userInteractionEnable(_ enabled: Bool) {
